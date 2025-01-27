@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Footer from "@/components/footer/footer";
+import { toast,ToastContainer  } from "react-toastify"; // Importing toastify
+import "react-toastify/dist/ReactToastify.css"; // Importing the required CSS
 
 const services = [
   {
@@ -118,13 +120,20 @@ const seoservices = [
 
 export default function HowItWorksPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false); 
   const [isScrolled, setIsScrolled] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
-    lastName: "",
+    websiteLink: "",
     email: "",
     phoneNumber: "",
   });
+  const [contactFormData, setContactFormData] = useState({
+    name: "",
+    email: "",
+    phoneNumber: "",
+    message: "",
+  }); 
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 const router = useRouter();
@@ -132,6 +141,11 @@ const router = useRouter();
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
+  const handleContactChange = (e) => {
+    const { name, value } = e.target;
+    setContactFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+  
 
   const validateForm = async () => {
     const newErrors = {};
@@ -172,7 +186,6 @@ const router = useRouter();
 
         if (response.ok) {
           // Success
-          console.log("Form submitted successfully");
           setFormData({
             fullName: "",
             websiteLink: "",
@@ -180,20 +193,85 @@ const router = useRouter();
             phoneNumber: "",
           }); // Clear form fields
           setErrors({});
-          alert("Form submitted successfully!"); // Optional: Replace with toast
-           router.push("/quiz");
+ toast.success("Contact form submitted successfully!");            
         } else {
           const result = await response.json();
+          toast.error("Error submitting contact form");
           console.error("Error:", result.error);
         }
       } catch (error) {
         console.error("Error submitting form:", error);
       } finally {
         setLoading(false); // Set loading to false after submission
+        router.push("/quiz");
       }
     }
   };
+ const validateContactForm = async () => {
+    const newErrors = {};
 
+    // Validate Name
+    if (!contactFormData.name.trim()) {
+      newErrors.name = "Full name is required.";
+    }
+
+    // Validate Email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!contactFormData.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!emailRegex.test(contactFormData.email)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+
+    // Validate Phone Number
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!contactFormData.phoneNumber.trim()) {
+      newErrors.phoneNumber = "Phone number is required.";
+    } else if (!phoneRegex.test(contactFormData.phoneNumber)) {
+      newErrors.phoneNumber = "Phone number must be 10 digits.";
+    }
+
+    // Validate Message
+    if (!contactFormData.message.trim()) {
+      newErrors.message = "Message is required.";
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      setLoading(true); // Set loading to true during submission
+
+      try {
+        const response = await fetch("/api/csend", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(contactFormData),
+        });
+
+        if (response.ok) {
+          console.log("Contact form submitted successfully");
+          setContactFormData({
+            name: "",
+            email: "",
+            phoneNumber: "",
+            message: "",
+          }); // Clear form fields
+          setErrors({});
+ toast.success("Contact form submitted successfully!");           setIsContactModalOpen(false); // Close the contact modal after success
+        } else {
+          const result = await response.json();
+          toast.error("Error submitting contact form");
+          console.error("Error:", result.error);
+        }
+      } catch (error) {
+        console.error("Error submitting contact form:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+  };
 
   // Detect scroll to adjust header width
   useEffect(() => {
@@ -214,32 +292,17 @@ const router = useRouter();
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+    const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
+
 
   
 
   return (
     <>
-   <div
-  className="relative min-h-screen py-16 px-6 md:px-12"
- 
->
-  {/* Background Video */}
-  <video
-    className="absolute top-0 left-0 w-full h-full object-cover"
-    src="/glassfrogweb.mp4" // Replace with your video file path
-    autoPlay
-    loop
-    muted
-    playsInline
-  ></video>
-
-  {/* Overlay for Background Color */}
-  <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-
+   <div className="relative min-h-screen py-16 px-6 md:px-12 bg-gray-100">
   {/* Content */}
-  <div className="relative z-10">
-    {/* Header Component */}
-    <motion.header
+        <div className="max-w-7xl mx-auto h-screen flex items-center justify-between text-center md:text-left">
+          <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "w-full bg-[#f3f8fc] " : "w-full"
       } text-white py-4 px-6`}
@@ -247,250 +310,414 @@ const router = useRouter();
       animate={{ opacity: 1 }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <img
-          src={isScrolled ? "/logo.svg" : "/whitelogo.png"}
+        <a href="/"><img
+          src={isScrolled ? "/logo.svg" : "/logo.svg"}
           alt="Logo"
           className={isScrolled ? "h-12" : "h-12"}
-        />
-        <nav className="flex space-x-6">
+        /></a>
+        <nav className="flex space-x-6 items-center">
           <a
-            href="#"
+            href="/"
             className={`${
-              isScrolled ? "text-black" : "text-white"
-            } hover:text-gray-900 transition-colors`}
+              isScrolled ? "text-black" : "text-black"
+            } hover:text-[#f76c6c] transition-colors`}
           >
             Home
           </a>
           <a
-            href="#"
+            href="/#about"
             className={`${
-              isScrolled ? "text-black" : "text-white"
-            } hover:text-gray-900 transition-colors`}
+              isScrolled ? "text-black" : "text-black"
+            } hover:text-[#f76c6c] transition-colors`}
           >
             About
           </a>
-          <a
-            href="#"
-            className={`${
-              isScrolled ? "text-black" : "text-white"
-            } hover:text-gray-900 transition-colors`}
+           <motion.button
+            className="ml-4 bg-[#f76c6c] text-white py-3 px-6 rounded-md  transition"
+            onClick={toggleContactModal}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            Contact
-          </a>
+            Contact Us
+          </motion.button>
         </nav>
       </div>
     </motion.header>
-
-    {/* Main Content */}
-    <div className="max-w-7xl mx-auto pt-20 flex flex-col-reverse md:flex-row items-center text-center justify-center ">
-      {/* Text Section */}
-      <div className="flex-1 h-[70vh] flex flex-col items-center text-center justify-center">
-        <motion.h2
-          className="text-6xl font-bold text-white mb-4"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                style={{ lineHeight: "1.4" }}
-        >
-          Higher Rankings.
-                <br></br>
-                <span className="pt-2">
-          Relevant Visitors.</span>
-          <br></br>
-         <span className="pt-2"> More Customers</span>
-        </motion.h2>
-        <motion.p
-          className="text-lg text-white mb-6"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-         Multiple award-winning search marketing with outstanding results.
-        </motion.p>
-        <motion.button
-          className="bg-[#f76c6c] text-white py-3 px-6 rounded-md hover:bg-[#f55c5c] transition"
-          onClick={toggleModal}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Take the Scorecard
-        </motion.button>
-      </div>
-  {isModalOpen && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-    <motion.div
-      className="bg-white rounded-lg p-8 shadow-lg max-w-lg mx-4 relative"
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.8 }}
-      transition={{ duration: 0.3 }}
-    >
-      {/* Close Button */}
-      <button
-        onClick={toggleModal}
-        className="absolute top-4 right-4 text-black hover:text-gray-600"
+    {/* Text Section */}
+    <div className="flex-1 h-[70vh] flex flex-col items-center md:items-start  justify-center">
+      <motion.h2
+        className="text-6xl font-bold text-gray-800 mb-4"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        style={{ lineHeight: "1.4" }}
       >
-        &#x2715;
-      </button>
-
-      <h2 className="text-2xl font-bold mb-4 text-center text-black">
-        Enter your details below to start the scorecard
-      </h2>
-
-      <form
-      className="space-y-4"
-      onSubmit={(e) => {
-        e.preventDefault();
-        validateForm();
-      }}
-    >
-      {/* Name Fields */}
-      <div className="flex gap-4">
-        <div className="w-full">
-          <label
-            htmlFor="fullName"
-            className="block text-sm font-medium text-black"
-          >
-            Full Name *
-          </label>
-          <input
-            type="text"
-            id="fullName"
-            name="fullName"
-            placeholder="First name"
-            className="mt-1 block w-full text-black p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-          />
-          {errors.fullName && (
-            <p className="text-sm text-red-500 mt-1">{errors.fullName}</p>
-          )}
-        </div>
+        Higher Rankings,
+       
+        Relevant Visitors,  
         
-      </div>
-
-      {/* Email Field */}
-      <div>
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium text-black"
-        >
-          Email *
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Email"
-          className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        {errors.email && (
-          <p className="text-sm text-red-500 mt-1">{errors.email}</p>
-        )}
-      </div>
-
-      {/* Phone Number Field */}
-      <div>
-        <label
-          htmlFor="phoneNumber"
-          className="block text-sm font-medium text-black"
-        >
-          Phone Number *
-        </label>
-        <input
-          type="text"
-          id="phoneNumber"
-          name="phoneNumber"
-          placeholder="Phone Number"
-          className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
-          value={formData.phoneNumber}
-          onChange={handleChange}
-          required
-        />
-        {errors.phoneNumber && (
-          <p className="text-sm text-red-500 mt-1">{errors.phoneNumber}</p>
-        )}
-      </div>
-<div className="w-full">
-          <label
-            htmlFor="websiteLink"
-            className="block text-sm font-medium text-black"
-          >
-            Website Link *
-          </label>
-          <input
-            type="text"
-            id="websiteLink"
-            name="websiteLink"
-            placeholder="Website Link"
-            className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
-            value={formData.websiteLink}
-            onChange={handleChange}
-            required
-          />
-          {errors.websiteLink && (
-            <p className="text-sm text-red-500 mt-1">{errors.websiteLink}</p>
-          )}
-        </div>
-      {/* Submit Button */}
-      <button
-        type="submit"
-        className=" w-full bg-[#f76c6c] text-white py-3 rounded-md text-lg font-semibold hover:bg-[#f55c5c] transition flex items-center justify-center"
-        disabled={loading}
+        More Customers
+      </motion.h2>
+      <motion.p
+        className="text-lg text-gray-700 mb-6"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       >
-        {loading ? (
-          <>
-            <svg
-              className="animate-spin h-5 w-5 text-white mr-2"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              ></circle>
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8v4a4 4 0 000 8v4a8 8 0 01-8-8z"
-              ></path>
-            </svg>
-            Submitting...
-          </>
-        ) : (
-          "Start"
-        )}
-      </button>
-    </form>
+        Multiple award-winning search marketing with outstanding results.
+      </motion.p>
+      <motion.button
+        className="bg-[#f76c6c] text-white py-3 px-6 rounded-md hover:bg-[#f55c5c] transition"
+        onClick={toggleModal}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Take the Scorecard
+      </motion.button>
+    </div>
 
-      {/* Footer Note */}
-      <p className="text-sm text-black mt-4 text-center">
-        Your personalised results will be emailed to you along with relevant
-        marketing tips. You can opt out at any time.
-      </p>
-      <p className="text-sm text-center mt-2">
-        <a href="#" className="text-pink-500 hover:underline">
-          Privacy Policy
-        </a>
-      </p>
-    </motion.div>
-  </div>
-)}
-
-
-     
+    {/* Image Section */}
+    <div className="flex-1 h-[70vh] flex justify-center items-center">
+      <motion.img
+        src="/newbg1.png"  // Replace with your image path
+        alt="Illustration"
+        className="max-w-full h-96 object-cover"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+      />
     </div>
   </div>
+
+  {/* Modal (if applicable) */}
+  {isModalOpen && (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+      <motion.div
+        className="bg-white rounded-lg p-8 shadow-lg max-w-lg mx-4 relative"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.8 }}
+        transition={{ duration: 0.3 }}
+      >
+        {/* Close Button */}
+        <button
+          onClick={toggleModal}
+          className="absolute top-4 right-4 text-black hover:text-gray-600"
+        >
+          &#x2715;
+        </button>
+
+        <h2 className="text-2xl font-bold mb-4 text-center text-black">
+          Enter your details below to start the scorecard
+        </h2>
+
+        <form
+          className="space-y-4"
+          onSubmit={(e) => {
+            e.preventDefault();
+            validateForm();
+          }}
+        >
+          {/* Name Fields */}
+          <div className="flex gap-4">
+            <div className="w-full">
+              <label
+                htmlFor="fullName"
+                className="block text-sm font-medium text-black"
+              >
+                Full Name *
+              </label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="First name"
+                className="mt-1 block w-full text-black p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+                value={formData.fullName}
+                onChange={handleChange}
+                required
+              />
+              {errors.fullName && (
+                <p className="text-sm text-red-500 mt-1">{errors.fullName}</p>
+              )}
+            </div>
+          </div>
+
+          {/* Email Field */}
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-black">
+              Email *
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            {errors.email && (
+              <p className="text-sm text-red-500 mt-1">{errors.email}</p>
+            )}
+          </div>
+
+          {/* Phone Number Field */}
+          <div>
+            <label
+              htmlFor="phoneNumber"
+              className="block text-sm font-medium text-black"
+            >
+              Phone Number *
+            </label>
+            <input
+              type="text"
+              id="phoneNumber"
+              name="phoneNumber"
+              placeholder="Phone Number"
+              className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              required
+            />
+            {errors.phoneNumber && (
+              <p className="text-sm text-red-500 mt-1">{errors.phoneNumber}</p>
+            )}
+          </div>
+
+          {/* Website Link */}
+          <div className="w-full">
+            <label
+              htmlFor="websiteLink"
+              className="block text-sm font-medium text-black"
+            >
+              Website Link *
+            </label>
+            <input
+              type="text"
+              id="websiteLink"
+              name="websiteLink"
+              placeholder="Website Link"
+              className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+              value={formData.websiteLink}
+              onChange={handleChange}
+              required
+            />
+            {errors.websiteLink && (
+              <p className="text-sm text-red-500 mt-1">{errors.websiteLink}</p>
+            )}
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full bg-[#f76c6c] text-white py-3 rounded-md text-lg font-semibold hover:bg-[#f55c5c] transition flex items-center justify-center"
+            disabled={loading}
+          >
+            {loading ? (
+              <>
+                <svg
+                  className="animate-spin h-5 w-5 text-white mr-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4a4 4 0 000 8v4a8 8 0 01-8-8z"
+                  ></path>
+                </svg>
+                Submitting...
+              </>
+            ) : (
+              "Start"
+            )}
+          </button>
+        </form>
+
+        {/* Footer Note */}
+        <p className="text-sm text-black mt-4 text-center">
+          Your personalised results will be emailed to you along with relevant
+          marketing tips. You can opt out at any time.
+        </p>
+        <p className="text-sm text-center mt-2">
+          <a href="#" className="text-pink-500 hover:underline">
+            Privacy Policy
+          </a>
+        </p>
+      </motion.div>
+    </div>
+        )}
+          {isContactModalOpen && (
+        <div className="fixed w-full inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <motion.div
+            className="bg-white rounded-lg p-8 shadow-lg w-[50%] mx-4 relative"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Close Button */}
+            <button
+              onClick={toggleContactModal}
+              className="absolute top-4 right-4 text-black hover:text-gray-600"
+            >
+              &#x2715;
+            </button>
+
+            <h2 className="text-2xl font-bold mb-4 text-center text-black">
+              Contact Us
+            </h2>
+
+            <form
+              className="space-y-4"
+              onSubmit={(e) => {
+                e.preventDefault();
+                validateContactForm();
+              }}
+            >
+              {/* Name Field */}
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-black"
+                >
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  value={contactFormData.name}
+                  onChange={handleContactChange}
+                  required
+                />
+                {errors.name && (
+                  <p className="text-sm text-red-500 mt-1">{errors.name}</p>
+                )}
+              </div>
+
+              {/* Email Field */}
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-black"
+                >
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your email"
+                  className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  value={contactFormData.email}
+                  onChange={handleContactChange}
+                  required
+                />
+                {errors.email && (
+                  <p className="text-sm text-red-500 mt-1">{errors.email}</p>
+                )}
+              </div>
+
+              {/* Phone Number Field */}
+              <div>
+                <label
+                  htmlFor="phoneNumber"
+                  className="block text-sm font-medium text-black"
+                >
+                  Phone Number *
+                </label>
+                <input
+                  type="text"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  placeholder="Your phone number"
+                  className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  value={contactFormData.phoneNumber}
+                  onChange={handleContactChange}
+                  required
+                />
+                {errors.phoneNumber && (
+                  <p className="text-sm text-red-500 mt-1">{errors.phoneNumber}</p>
+                )}
+              </div>
+
+              {/* Message Field */}
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-black"
+                >
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Your message"
+                  className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  rows="4"
+                  value={contactFormData.message}
+                  onChange={handleContactChange}
+                  required
+                ></textarea>
+                {errors.message && (
+                  <p className="text-sm text-red-500 mt-1">{errors.message}</p>
+                )}
+              </div>
+
+              {/* Submit Button */}
+              <button
+            type="submit"
+            className="w-full bg-[#f76c6c] text-white py-3 rounded-md text-lg font-semibold hover:bg-[#f55c5c] transition flex items-center justify-center"
+            disabled={loading}
+          >
+            {loading ? (
+              <>
+                <svg
+                  className="animate-spin h-5 w-5 text-white mr-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4a4 4 0 000 8v4a8 8 0 01-8-8z"
+                  ></path>
+                </svg>
+                Submitting...
+              </>
+            ) : (
+              "Send Message"
+            )}
+          </button>
+            </form>
+          </motion.div>
+        </div>
+      )}
 </div>
+
 
          <section className="py-12 px-6 md:px-16 lg:px-24 bg-gray-50">
       <motion.div
@@ -530,7 +757,7 @@ const router = useRouter();
         ))}
       </div>
       </section>
-      <section className="py-12 px-6 md:px-16 lg:px-24 bg-gray-50 flex flex-col lg:flex-row items-center">
+      <section  id="about" className="py-12 px-6 md:px-16 lg:px-24 bg-gray-50 flex flex-col lg:flex-row items-center">
       {/* Image Section */}
       <motion.div
         className="w-full lg:w-1/2 relative mb-8 lg:mb-0"
@@ -547,12 +774,14 @@ const router = useRouter();
         </div>
       </motion.div>
 
-      {/* Text Content Section */}
+        {/* Text Content Section */}
+        
       <motion.div
         className="w-full lg:w-1/2 lg:pl-10 text-center lg:text-left"
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8 }}
+         
       >
         <h3 className="text-indigo-600 text-sm font-semibold uppercase mb-2">
           Welcome to Glassfrog
@@ -739,7 +968,9 @@ Our portfolio of organic, digital PR, paid and web services allow you to reach y
         ))}
       </motion.div>
       </section>
-      <Footer/>
+      <Footer />
+            <ToastContainer position="top-right" autoClose={5000} hideProgressBar newestOnTop />
+
       </>
   );
 }

@@ -13,14 +13,14 @@ export default function Footer() {
         >
           {/* Contact Info */}
           <div>
-            <p className="text-xl font-bold">0800 292 2410</p>
+            <p className="text-xl font-bold">+91 9084712335, +91 9084712325</p>
             <p>Monday to Friday:</p>
             <p>8:30AM - 6PM</p>
           </div>
 
           {/* Email Info */}
           <div>
-            <p className="text-xl font-bold">info@seoworks.co.uk</p>
+            <p className="text-xl font-bold">support@glassfrog.design</p>
             <p>Our expert SEO team will reply as soon as possible.</p>
           </div>
 
@@ -40,13 +40,13 @@ export default function Footer() {
             <h4 className="font-bold mb-4">Get in touch</h4>
             <ul>
               <li>London</li>
-              <li>Sheffield</li>
-              <li>Leeds</li>
-              <li>Manchester</li>
-              <li>Birmingham</li>
+              <li>
+                ​27 OLD Gloucester Street, London,<br></br> United Kingdom WC1N
+                3AX
+              </li>
             </ul>
             {/* Social Icons */}
-            <div className="flex space-x-4 mt-4">
+            {/* <div className="flex space-x-4 mt-4">
               <a href="#" className="text-white hover:text-green-400">
                 <i className="fab fa-linkedin"></i>
               </a>
@@ -59,7 +59,7 @@ export default function Footer() {
               <a href="#" className="text-white hover:text-green-400">
                 <i className="fab fa-twitter"></i>
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* More Than SEO */}

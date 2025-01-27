@@ -5,6 +5,7 @@ import { FiArrowLeft } from "react-icons/fi";
 import GaugeChart from "react-gauge-chart";
 import Head from "next/head";
 import Header from "@/components/header/Header";
+import Footer from "@/components/footer/footer";
 
 const questions = [
   {
@@ -207,9 +208,12 @@ Congratulations on completing The Sales Growth Scorecard!        </h1>
 
 
 
-Your results highlight key growth opportunities for your business. Focus on areas with lower scores to drive strategic improvement.
+Congratulations on completing the The Sales Growth Scorecard, which has been designed to optimise lead generation, marketing and sales results for your business.
 
-If your score isn't where you'd like, this report offers actionable insights to boost each area. You can implement these yourself or fast-track progress with our Business Training Programs.         </p></div>
+These results will open your eyes to your biggest areas of potential for growth. Pay close attention to the areas you achieved the lowest scores. By focusing on these areas, you’ll be able to grow your business in a strategic way.
+
+If your Score is below where you'd like it to be, don’t worry. This report will give you insights on what you can do to boost each area.
+You can do this yourself or we can accelerate this for you and your business via our Business Training Programs.</p></div>
           <div className="mx-auto w-[50%]">
             <GaugeChart
               id="gauge-chart"
@@ -237,7 +241,10 @@ If your score isn't where you'd like, this report offers actionable insights to 
           </p>
         </div>
       )}
-    </div></>
+            </div>
+        <Footer/>
+        </>
+        
   );
 };
 
