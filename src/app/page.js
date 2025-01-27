@@ -102,21 +102,21 @@ const seo = [
 ];
 
 const seoservices = [
-    { title: "SEO Services", icon: "🖱️" },
-    { title: "SEO Strategy", icon: "📈" },
-    { title: "Link Building", icon: "🔗" },
-    { title: "UX & CRO", icon: "🎨" },
-    { title: "Technical & Audits", icon: "📋" },
-    { title: "Website Design", icon: "💻" },
-    { title: "Content Marketing", icon: "📄" },
-    { title: "PPC & Paid Media", icon: "💰" },
-    { title: "Website Migrations", icon: "📦" },
-    { title: "Digital PR", icon: "📚" },
-    { title: "Reputation Management", icon: "⭐" },
-    { title: "Crisis Communications", icon: "💬" },
-    { title: "SEO Consultancy", icon: "📝" },
-    { title: "Local SEO", icon: "📍" },
-  ];
+  { title: "SEO Services", icon: "🖱️", description: "Comprehensive SEO services to boost your rankings." },
+  { title: "SEO Strategy", icon: "📈", description: "Customized SEO strategies for long-term success." },
+  { title: "Link Building", icon: "🔗", description: "Building high-quality links to improve authority." },
+  { title: "UX & CRO", icon: "🎨", description: "Improving user experience and conversion rates." },
+  { title: "Technical & Audits", icon: "📋", description: "In-depth audits for better website performance." },
+  { title: "Website Design", icon: "💻", description: "Creating responsive and user-friendly websites." },
+  { title: "Content Marketing", icon: "📄", description: "Content creation and marketing strategies." },
+  { title: "PPC & Paid Media", icon: "💰", description: "Paid media campaigns for instant traffic." },
+  { title: "Website Migrations", icon: "📦", description: "Seamless website migration without losing SEO value." },
+  { title: "Digital PR", icon: "📚", description: "Improving online reputation and brand visibility." },
+  { title: "Reputation Management", icon: "⭐", description: "Protecting and managing your online reputation." },
+  { title: "Crisis Communications", icon: "💬", description: "Managing communication during critical situations." },
+  { title: "SEO Consultancy", icon: "📝", description: "Expert consultation to improve SEO strategy." },
+  { title: "Local SEO", icon: "📍", description: "Optimizing for local search results and customers." },
+];
 
 export default function HowItWorksPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -936,37 +936,51 @@ Our portfolio of organic, digital PR, paid and web services allow you to reach y
           Our best-in-class SEO services
         </motion.h2>
       </div>
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0, scale: 0.9 },
-          visible: {
-            opacity: 1,
-            scale: 1,
-            transition: {
-              delayChildren: 0.2,
-              staggerChildren: 0.1,
-            },
+       <motion.div
+      className="grid grid-cols-1 text-left md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 0, scale: 0.9 },
+        visible: {
+          opacity: 1,
+          scale: 1,
+          transition: {
+            delayChildren: 0.2,
+            staggerChildren: 0.1,
           },
-        }}
-      >
-        {seoservices.map((service, index) => (
-          <motion.div
-            key={index}
-            className="flex items-center justify-between p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
-            whileHover={{ scale: 1.05 }}
-          >
-            <h3 className="text-lg font-semibold text-gray-800">
-              {service.title}
-            </h3>
+        },
+      }}
+    >
+      {seoservices.map((service, index) => (
+        <motion.div
+          key={index}
+          className="flex flex-col text-left items-center justify-between p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+          whileHover={{ scale: 1.05 }}
+        >
+          <div className="flex items-center justify-between w-full">
+            <h3 className="text-lg font-semibold text-gray-800">{service.title}</h3>
             <span className="text-2xl bg-yellow-300 text-white p-2 rounded-full">
               {service.icon}
             </span>
+          </div>
+
+          {/* Description Box */}
+          <motion.div
+            className="mt-4 text-sm text-gray-600 text-left"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{
+              opacity: 1,
+              height: "auto",
+              transition: { duration: 0.3 },
+            }}
+            whileHover={{ opacity: 1 }}
+          >
+            {service.description}
           </motion.div>
-        ))}
-      </motion.div>
+        </motion.div>
+      ))}
+    </motion.div>
       </section>
       <Footer />
             <ToastContainer position="top-right" autoClose={5000} hideProgressBar newestOnTop />
