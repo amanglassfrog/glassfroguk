@@ -299,9 +299,9 @@ const router = useRouter();
 
   return (
     <>
-   <div className="relative min-h-screen py-16 px-6 md:px-12 bg-gray-100">
+   <div className="relative min-h-screen py-16 px-6 md:px-12 bg-gray-100 ">
   {/* Content */}
-        <div className="max-w-7xl mx-auto h-screen flex items-center justify-between text-center md:text-left">
+        <div className="max-w-7xl mx-auto h-full md:h-screen  flex items-center justify-between text-center md:text-left">
           <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "w-full bg-[#f3f8fc] " : "w-full"
@@ -333,20 +333,21 @@ const router = useRouter();
             About
           </a>
            <motion.button
-            className="ml-4 bg-[#f76c6c] text-white py-3 px-6 rounded-md  transition"
+            className="ml-4 bg-[#f76c6c] text-white py-1 md:py-3 px-2 md:px-6 rounded-md  transition"
             onClick={toggleContactModal}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Contact Us
+            Contact 
           </motion.button>
         </nav>
       </div>
     </motion.header>
-    {/* Text Section */}
+          {/* Text Section */}
+          <div className="flex flex-col md:flex-row gap-4">
     <div className="flex-1 h-[70vh] flex flex-col items-center md:items-start  justify-center">
       <motion.h2
-        className="text-6xl font-bold text-gray-800 mb-4"
+        className="text-3xl md:text-6xl mt-16 md:mt-0 font-bold text-gray-800 mb-4"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -379,14 +380,14 @@ const router = useRouter();
     {/* Image Section */}
     <div className="flex-1 h-[70vh] flex justify-center items-center">
       <motion.img
-        src="/newbg1.png"  // Replace with your image path
+        src="/3d11.png"  // Replace with your image path
         alt="Illustration"
-        className="max-w-full h-96 object-cover"
+        className="max-w-full h-72 md:h-96 object-cover"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
       />
-    </div>
+    </div></div>
   </div>
 
   {/* Modal (if applicable) */}
