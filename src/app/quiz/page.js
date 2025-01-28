@@ -1,6 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { toast, ToastContainer } from "react-toastify"; // Importing toastify
+import "react-toastify/dist/ReactToastify.css"; // Importing the required CSS
 import { FiArrowLeft } from "react-icons/fi";
 import GaugeChart from "react-gauge-chart";
 import Head from "next/head";
@@ -18,104 +20,62 @@ const questions = [
     question:
       "Do competitors in your industry rank higher than your website for key local search terms?",
   },
+  
+  
   {
-    section: "Website Performance and Rankings (UK Market)",
+    section: "Local SEO",
     question:
-      "Is your website's organic traffic from the UK lower than expected?",
+      "Is your business missing from Google My Business (now called Google Business Profile) or not optimized (e.g., incomplete profile, no reviews)?",
   },
-//   {
-//     section: "Website Performance and Rankings (UK Market)",
-//     question:
-//       "Have you struggled to attract customers from specific regions in the UK where you operate?",
-//   },
-//   {
-//     section: "Local SEO",
-//     question:
-//       "Is your business missing from Google My Business (now called Google Business Profile) or not optimized (e.g., incomplete profile, no reviews)?",
-//   },
-//   {
-//     section: "Local SEO",
-//     question:
-//       "Are you failing to rank in the Google Local Pack (the top three local results with a map) for your area?",
-//   },
-//   {
-//     section: "Local SEO",
-//     question:
-//       "Have you neglected to list your business in UK-specific directories like Yell, Scoot, or 192.com?",
-//   },
-//   {
-//     section: "Local SEO",
-//     question: "Do you have few or no online reviews from UK customers?",
-//   },
-//   {
-//     section: "Content and On-Page SEO",
-//     question:
-//       "Is your website content not tailored to UK customers (e.g., local terminology, region-specific details)?",
-//   },
-//   {
-//     section: "Content and On-Page SEO",
-//     question:
-//       "Do you lack targeted landing pages for the specific cities or regions where you operate (e.g., 'Plumber in Manchester' or 'London-based solicitor')?",
-//   },
-//   {
-//     section: "Content and On-Page SEO",
-//     question:
-//       "Are your meta titles and descriptions missing, poorly written, or not optimized for UK-specific keywords?",
-//   },
-//   {
-//     section: "Content and On-Page SEO",
-//     question:
-//       "Is your website failing to rank for long-tail keywords that include UK-specific phrases or regions?",
-//   },
-//   {
-//     section: "Technical SEO",
-//     question: "Does your website take too long to load for users in the UK?",
-//   },
-//   {
-//     section: "Technical SEO",
-//     question:
-//       "Is your website not optimized for mobile users, who account for a large portion of UK internet traffic?",
-//   },
-//   {
-//     section: "Technical SEO",
-//     question:
-//       "Are you unaware of whether your site complies with Google’s Core Web Vitals standards?",
-//   },
-//   {
-//     section: "Technical SEO",
-//     question:
-//       "Do you have outdated technical elements such as no SSL certificate (HTTPS) or broken links?",
-//   },
-//   {
-//     section: "Backlinks and Competitor Analysis",
-//     question:
-//       "Does your website have fewer backlinks from UK-based websites compared to competitors?",
-//   },
-//   {
-//     section: "Backlinks and Competitor Analysis",
-//     question:
-//       "Have you missed opportunities to build partnerships or gain links from UK-based institutions, blogs, or local organisations?",
-//   },
-//   {
-//     section: "Backlinks and Competitor Analysis",
-//     question:
-//       "Are you unsure of how your competitors are outranking you and where their backlinks are coming from?",
-//   },
-//   {
-//     section: "Time, Tools, and Expertise",
-//     question:
-//       "Do you lack the time, knowledge, or team resources to manage SEO in-house?",
-//   },
-//   {
-//     section: "Time, Tools, and Expertise",
-//     question:
-//       "Are you unfamiliar with or unable to use advanced SEO tools like SEMrush, Ahrefs, or Google Analytics effectively?",
-//   },
-//   {
-//     section: "Time, Tools, and Expertise",
-//     question:
-//       "Do you feel overwhelmed by trying to keep up with the constant changes in Google’s algorithms and UK-specific SEO trends?",
-//   },
+  {
+    section: "Local SEO",
+    question:
+      "Are you failing to rank in the Google Local Pack (the top three local results with a map) for your area?",
+  },
+  
+  {
+    section: "Local SEO",
+    question: "Do you have few or no online reviews from UK customers?",
+  },
+  {
+    section: "Content and On-Page SEO",
+    question:
+      "Is your website content not tailored to UK customers (e.g., local terminology, region-specific details)?",
+  },
+ 
+  {
+    section: "Content and On-Page SEO",
+    question:
+      "Are your meta titles and descriptions missing, poorly written, or not optimized for UK-specific keywords?",
+  },
+  
+  {
+    section: "Technical SEO",
+    question: "Does your website take too long to load for users in the UK?",
+  },
+  
+  {
+    section: "Technical SEO",
+    question:
+      "Are you unaware of whether your site complies with Google’s Core Web Vitals standards?",
+  },
+  {
+    section: "Technical SEO",
+    question:
+      "Do you have outdated technical elements such as no SSL certificate (HTTPS) or broken links?",
+  },
+  {
+    section: "Backlinks and Competitor Analysis",
+    question:
+      "Does your website have fewer backlinks from UK-based websites compared to competitors?",
+  },
+  {
+    section: "Backlinks and Competitor Analysis",
+    question:
+      "Have you missed opportunities to build partnerships or gain links from UK-based institutions, blogs, or local organisations?",
+  },
+  
+  
 ];
 
 const Questionnaire = () => {
@@ -123,6 +83,19 @@ const Questionnaire = () => {
   const [responses, setResponses] = useState({});
     const [showResults, setShowResults] = useState(false);
     const [progress, setProgress] = useState(0);
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+      const [isScrolled, setIsScrolled] = useState(false);
+    
+      const [contactFormData, setContactFormData] = useState({
+        name: "",
+        email: "",
+        phoneNumber: "",
+        message: "",
+      });
+      const [errors, setErrors] = useState({});
+      const [loading, setLoading] = useState(false);
+    
+     
 
   const handleAnswer = (answer) => {
     setResponses({ ...responses, [currentQuestion]: answer });
@@ -147,7 +120,92 @@ const Questionnaire = () => {
   const yesCount = Object.values(responses).filter((res) => res === "Yes")
     .length;
   const completionRate = yesCount / questions.length;
-
+ const handleContactChange = (e) => {
+        const { name, value } = e.target;
+        setContactFormData((prevData) => ({ ...prevData, [name]: value }));
+      };
+      const validateContactForm = async () => {
+        const newErrors = {};
+    
+        // Validate Name
+        if (!contactFormData.name.trim()) {
+          newErrors.name = "Full name is required.";
+        }
+    
+        // Validate Email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!contactFormData.email.trim()) {
+          newErrors.email = "Email is required.";
+        } else if (!emailRegex.test(contactFormData.email)) {
+          newErrors.email = "Please enter a valid email address.";
+        }
+    
+        // Validate Phone Number
+        const phoneRegex = /^[0-9]{10}$/;
+        if (!contactFormData.phoneNumber.trim()) {
+          newErrors.phoneNumber = "Phone number is required.";
+        } else if (!phoneRegex.test(contactFormData.phoneNumber)) {
+          newErrors.phoneNumber = "Phone number must be 10 digits.";
+        }
+    
+        // Validate Message
+        if (!contactFormData.message.trim()) {
+          newErrors.message = "Message is required.";
+        }
+    
+        setErrors(newErrors);
+    
+        if (Object.keys(newErrors).length === 0) {
+          setLoading(true); // Set loading to true during submission
+    
+          try {
+            const response = await fetch("/api/csend", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(contactFormData),
+            });
+    
+            if (response.ok) {
+              console.log("Contact form submitted successfully");
+              setContactFormData({
+                name: "",
+                email: "",
+                phoneNumber: "",
+                message: "",
+              }); // Clear form fields
+              setErrors({});
+              toast.success("Contact form submitted successfully!");
+              setIsContactModalOpen(false); // Close the contact modal after success
+            } else {
+              const result = await response.json();
+              toast.error("Error submitting contact form");
+              console.error("Error:", result.error);
+            }
+          } catch (error) {
+            console.error("Error submitting contact form:", error);
+          } finally {
+            setLoading(false);
+          }
+        }
+      };
+      useEffect(() => {
+        const handleScroll = () => {
+          if (window.scrollY > 50) {
+            setIsScrolled(true);
+          } else {
+            setIsScrolled(false);
+          }
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
+    
+      const toggleContactModal = () => setIsContactModalOpen(!isContactModalOpen);
     return (
         <>
             <Header />
@@ -200,30 +258,217 @@ const Questionnaire = () => {
                   <div className="w-full flex max-w-7xl  p-8 text-center">
                       <div className="w-[50%]">
           <h1 className="text-2xl font-bold text-gray-800 mb-4">
-Thank you for taking the
-Congratulations on completing The Sales Growth Scorecard!        </h1>
+Here's Your Website's SEO Performance Scorecard!       </h1>
           <p className="text-gray-600 mb-6">
 
+Congratulations, your website's SEO performance has been analyzed. Your website's performance on the SEO metrics is here. This scorecard represents how well your website is bound to perform on the Search Engine Result Pages SERPs. The lower your score, the higher the scope of improvement.
 
+A lot of factors impact a website's SEO performance. These include technical performance, user experience ease, quality of content, backlinks, and more. To know better about the reasons for your website's low SEO score, get your website audited by us. Find out in detail about the key areas to focus on while improving your website's SEO performance.
 
+<br></br>Contact Us Now! 
+                                </p>
+                                <motion.button
+              className="ml-4 bg-[#f76c6c] text-white py-3 px-6 rounded-md  transition"
+              onClick={toggleContactModal}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Contact Us
+                                </motion.button>
+                                
+                                {isContactModalOpen && (
+        <div className="fixed w-full inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <motion.div
+            className="bg-white rounded-lg p-8 shadow-lg w-[50%] mx-4 relative"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Close Button */}
+            <button
+              onClick={toggleContactModal}
+              className="absolute top-4 right-4 text-black hover:text-gray-600"
+            >
+              &#x2715;
+            </button>
 
+            <h2 className="text-2xl font-bold mb-4 text-center text-black">
+              Contact Us
+            </h2>
 
-Congratulations on completing the The Sales Growth Scorecard, which has been designed to optimise lead generation, marketing and sales results for your business.
+            <form
+              className="space-y-4"
+              onSubmit={(e) => {
+                e.preventDefault();
+                validateContactForm();
+              }}
+            >
+              {/* Name Field */}
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-black"
+                >
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  value={contactFormData.name}
+                  onChange={handleContactChange}
+                  required
+                />
+                {errors.name && (
+                  <p className="text-sm text-red-500 mt-1">{errors.name}</p>
+                )}
+              </div>
 
-These results will open your eyes to your biggest areas of potential for growth. Pay close attention to the areas you achieved the lowest scores. By focusing on these areas, you’ll be able to grow your business in a strategic way.
+              {/* Email Field */}
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-black"
+                >
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your email"
+                  className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  value={contactFormData.email}
+                  onChange={handleContactChange}
+                  required
+                />
+                {errors.email && (
+                  <p className="text-sm text-red-500 mt-1">{errors.email}</p>
+                )}
+              </div>
 
-If your Score is below where you'd like it to be, don’t worry. This report will give you insights on what you can do to boost each area.
-You can do this yourself or we can accelerate this for you and your business via our Business Training Programs.</p></div>
+              {/* Phone Number Field */}
+              <div>
+                <label
+                  htmlFor="phoneNumber"
+                  className="block text-sm font-medium text-black"
+                >
+                  Phone Number *
+                </label>
+                <input
+                  type="text"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  placeholder="Your phone number"
+                  className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  value={contactFormData.phoneNumber}
+                  onChange={handleContactChange}
+                  required
+                />
+                {errors.phoneNumber && (
+                  <p className="text-sm text-red-500 mt-1">
+                    {errors.phoneNumber}
+                  </p>
+                )}
+              </div>
+
+              {/* Message Field */}
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-black"
+                >
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Your message"
+                  className="mt-1 block w-full p-3 border text-black border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  rows="4"
+                  value={contactFormData.message}
+                  onChange={handleContactChange}
+                  required
+                ></textarea>
+                {errors.message && (
+                  <p className="text-sm text-red-500 mt-1">{errors.message}</p>
+                )}
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="w-full bg-[#f76c6c] text-white py-3 rounded-md text-lg font-semibold hover:bg-[#f55c5c] transition flex items-center justify-center"
+                disabled={loading}
+              >
+                {loading ? (
+                  <>
+                    <svg
+                      className="animate-spin h-5 w-5 text-white mr-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v4a4 4 0 000 8v4a8 8 0 01-8-8z"
+                      ></path>
+                    </svg>
+                    Submitting...
+                  </>
+                ) : (
+                  "Send Message"
+                )}
+              </button>
+            </form>
+          </motion.div>
+        </div>
+      )}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop
+      />
+                            
+                            </div>
           <div className="mx-auto w-[50%]">
-            <GaugeChart
-              id="gauge-chart"
-              nrOfLevels={20}
-              colors={["#FF5F6D", "#FFC371"]}
-              percent={completionRate}
-              arcPadding={0.02}
-              textColor="#fff"
-            />
-          </div>
+  <GaugeChart
+    id="gauge-chart"
+    nrOfLevels={20}
+    colors={["#FF5F6D", "#FFC371"]}
+    percent={completionRate}
+    arcPadding={0.02}
+    textColor="#000" // Set text color to black (or any other suitable color)
+    needleColor="#000" // Set needle color to black or any suitable color
+    textFontSize={30} // Adjust font size as per your requirement
+    style={{ position: "relative" }}
+  />
+  <div style={{
+    position: "absolute", 
+    top: "-40px", // Adjust top positioning to place text above the gauge chart
+    left: "50%", 
+    transform: "translateX(-50%)", 
+    fontSize: "20px", 
+    color: "#000", // Text color
+    fontWeight: "bold"
+  }}>
+    {completionRate}% {/* Display percentage at the top of the chart */}
+  </div>
+</div>
+
           
          
         </div>

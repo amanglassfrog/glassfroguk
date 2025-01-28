@@ -7,115 +7,115 @@ import Footer from "@/components/footer/footer";
 import { toast,ToastContainer  } from "react-toastify"; // Importing toastify
 import "react-toastify/dist/ReactToastify.css"; // Importing the required CSS
 
+
 const services = [
   {
     id: 1,
     title: "Local SEO",
-    description: "Porta semper lacus cursus feugiat and primis ultrice",
+    description: "We put you on the map! Get your Website’s rankings soaring in the local charts for an improved business outreach with local SEO services. ",
     icon: "📍", // Replace with an icon component if needed
   },
   {
     id: 2,
     title: "E-Commerce SEO",
-    description: "Porta semper lacus cursus feugiat and primis ultrice",
+    description: "Need your e-commerce business to thrive? Our specialized SEO services, custom to your business model, are what you need.",
     icon: "🛒",
   },
   {
     id: 3,
-    title: "Advanced Analytics",
-    description: "Porta semper lacus cursus feugiat and primis ultrice",
+    title: "SEO Strategy",
+    description: "We understand that every website and webpage has a different purpose. As an SEO expert, we strategize for your benefit. ",
     icon: "🔍",
   },
   {
     id: 4,
-    title: "PPC Management",
-    description: "Porta semper lacus cursus feugiat and primis ultrice",
+    title: "SEO Content Marketing",
+    description: "Your unique ideas and plans deserve a unique voice. As one of the premium SEO companies, we help you with optimized content that represents you rightly. ",
     icon: "💰",
   },
 ];
 
  const cservices = [
-    { title: "SEO Services", image: "/seoservice.jpg",description:"As a leading UK SEO Company, we have an established team of innovative SEO professionals experienced in providing award-winning search campaigns for a wide range of sectors including Healthcare and Ecommerce. Learn how we can grow your digital customer base. " },
-    { title: "Digital PR Services", image: "/digitalpr.jpg",description:"Backlinks are an important part of SEO, but getting them is increasingly difficult. That’s where Digital PR services can help. We approach Digital PR from a heavily SEO-focused perspective. Our goal is to improve your brand awareness and strengthen the authority of your site through gaining coverage and links." },
-    { title: "PPC Services", image: "/ppc.jpg", description: "Our PPC Services cover every aspect needed to run a successful paid search campaign. Our data-driven approach ensures your PPC campaigns deliver a tangible return on investment. We've won awards for our PPC Services, praised for our data-led approach backed by AI and strategic management." },
-    { title: "Web Design & Development", image: "/wdd.jpg",description:"Our team develop SEO friendly, responsive websites for both professional services and eCommerce. We can also develop intuitive apps that support business goals. Having a website which looks great is one thing, however we design and build websites that convert traffic to sales." },
-    { title: "Paid Social Media", image: "/pcm.png",description:"Whether you’re looking for reach, engagement, or sales, advertising on social media marketing channels can help you access more potential customers. The time spent on social media increases year on year. We’ll design a campaign that will help you take advantage of these opportunities." },
-    { title: "Local SEO", image: "/ls.webp",description:"If you are targeting local customers, we can put together a sustainable local strategy to win new customers. Local SEO works differently to national campaigns. Use a UK SEO Company to dominate the local search results and gain more traffic and new customers." },
+    { title: "Technical SEO ", image: "/seoservice.jpg",description:"The way your website performs in the technical forefront affects the rankings of your website. We focus on page speed, mobile friendliness, structured data, site security, and other technical aspects of your website to ease the user experience, which shall eventually help you rank better." },
+    { title: "Content SEO", image: "/digitalpr.jpg",description:"Content isn’t just meant for communication. It is also meant to reach out. When the content of your website is completely optimized with keywords and user-friendly content, the search engines put you up. Our SEO copywriting and content management techniques improve rankings organically. " },
+    { title: "Off-Page SEO ", image: "/ppc.jpg", description: "Out side of your website, how your website is vein perceived also affects its rankings. We work on link building, local citations, guest posting, social networking, blogging, and so much more to ensure that your website performs well in the Off-page search engine performance parameters. " },
+    { title: "International SEO ", image: "/wdd.jpg",description:"With the internet, the limitations across the borders have come down. When you build a website and get it crawled on search engine pages, you open the possibility of international traffic. With international SEO techniques, we help you reach out to international and multilingual audiences in a better way. " },
+    { title: "Retail SEO", image: "/pcm.png",description:"Many businesses build e-commerce websites. Our search engine optimization services can help you approach your customers easily. While there are various methods to reach out to your customers, e-commerce SEO is an underrated one. We target specific consumer traffic to ensure your organic sales growth. " },
+    { title: "Local Search Marketing ", image: "/ls.webp",description:"Healthy searches need you to focus on geography and demographics. Our analytical understanding of your business will help you focus on targeted users through keywords that are very relevant to the geographic location of your business. Our local SEO services are exactly what your business needs. " },
   ];
 const seo = [
   {
     id: 1,
-    title: "Advanced Analytics Review",
+    title: "Website Audit",
     description:
-      "Maecenas gravida nunc vehicula magna luctus tempor quisque laoreet turpis at augue.",
+      "Before starting with an action plan, we identify areas where your website needs improvement. To check out every important aspect of your website from an SEO perspective and accordingly find the scope is what our audits are focused on.",
     icon: "📊", // Replace with an appropriate icon or image
   },
   {
     id: 2,
-    title: "Email Marketing Campaigns",
+    title: "Keyword Research",
     description:
-      "Maecenas gravida nunc vehicula magna luctus tempor quisque laoreet turpis at augue.",
+      "The next step is to analyze what type of keywords will fit your audience. We filter out the best keywords for your website. This shall aid in improved outreach of your business. The keyword finalization process is extremely focused on the SEO goals.",
     icon: "✉️",
   },
   {
     id: 3,
-    title: "Video Marketing",
+    title: "Optimized Content Creation",
     description:
-      "Maecenas gravida nunc vehicula magna luctus tempor quisque laoreet turpis at augue.",
+      "Based on the keywords, we start working on creating optimized content, that is, website content, landing pages, blogs, and more. High-quality content that voices your website’s purpose while targeting users through keywords is all your website needs!",
     icon: "🎥",
   },
   {
     id: 4,
-    title: "Search Engine Optimization (SEO)",
+    title: "On-Page SEO",
     description:
-      "Maecenas gravida nunc vehicula magna luctus tempor quisque laoreet turpis at augue.",
+      "Once the keywords are sorted and the content is all set to go, the on-page optimization of your website intensifies. We create engaging meta titles, meta descriptions, and headers to optimize the content further for better results.",
     icon: "🔍",
   },
   {
     id: 5,
-    title: "Pay Per Click (PPC)",
+    title: "Technical SEO",
     description:
-      "Maecenas gravida nunc vehicula magna luctus tempor quisque laoreet turpis at augue, viverra et augue eget dictum tempor.",
+      "While we focus on the content and on-site SEO, the backend is balanced by technical SEO. We improve your website page loading time and site structure. Search engines also consider the mobile responsiveness of your site, which we enhance.",
     icon: "💰",
   },
   {
     id: 6,
-    title: "Strategy and Analytics Consulting",
+    title: "Backlinks Building ",
     description:
-      "Maecenas gravida nunc vehicula magna luctus tempor quisque laoreet turpis at augue, viverra et augue eget dictum tempor.",
+      "To further the rankings of your website, high quality and relevant backlinks are a must. However, it is often ignored. In order to improve the domain authority, your site needs a good link-building strategy and execution, which we dominantly focus on.",
     icon: "💬",
   },
   {
     id: 7,
-    title: "Content Marketing",
+    title: "Enhanced User Experience",
     description:
-      "Maecenas gravida nunc vehicula magna luctus tempor quisque laoreet turpis at augue, viverra et augue eget dictum tempor.",
+      "Search Engines are extremely cautious of the user experience on a website while ranking it. Hence, improving the website from a User’s point of view is a non-negotiable action. Thus, we ensure an easy user experience while working with your website.",
     icon: "🖥️",
   },
   {
     id: 8,
-    title: "Website Design Development",
+    title: "Analysis and Mitigation",
     description:
-      "Maecenas gravida nunc vehicula magna luctus tempor quisque laoreet turpis at augue, viverra et augue eget dictum tempor.",
+      "Our process involves constant tracking of your website performance. Therefore, we can better understand if the SEO strategies are working effectively. Accordingly, we plan and apply mitigation strategies to overcome any challenges to your SEO performance.",
     icon: "💻",
   },
 ];
 
 const seoservices = [
-  { title: "SEO Services", icon: "🖱️", description: "Comprehensive SEO services to boost your rankings." },
-  { title: "SEO Strategy", icon: "📈", description: "Customized SEO strategies for long-term success." },
-  { title: "Link Building", icon: "🔗", description: "Building high-quality links to improve authority." },
-  { title: "UX & CRO", icon: "🎨", description: "Improving user experience and conversion rates." },
-  { title: "Technical & Audits", icon: "📋", description: "In-depth audits for better website performance." },
-  { title: "Website Design", icon: "💻", description: "Creating responsive and user-friendly websites." },
-  { title: "Content Marketing", icon: "📄", description: "Content creation and marketing strategies." },
-  { title: "PPC & Paid Media", icon: "💰", description: "Paid media campaigns for instant traffic." },
-  { title: "Website Migrations", icon: "📦", description: "Seamless website migration without losing SEO value." },
-  { title: "Digital PR", icon: "📚", description: "Improving online reputation and brand visibility." },
-  { title: "Reputation Management", icon: "⭐", description: "Protecting and managing your online reputation." },
-  { title: "Crisis Communications", icon: "💬", description: "Managing communication during critical situations." },
-  { title: "SEO Consultancy", icon: "📝", description: "Expert consultation to improve SEO strategy." },
-  { title: "Local SEO", icon: "📍", description: "Optimizing for local search results and customers." },
+  { title: "Organic Traffic", icon: "🖱️", description: "With our constant efforts, our clients witnessed a general hike of 120% in organic traffic, leading to higher website engagement and reduced bounce rates." },
+  { title: "Domain Authority", icon: "📈", description: "Our SEO strategies impacted the domain authority for our clients by 30%, which improved their site’s credibility and built trust among its users. " },
+  { title: "Keyword Ranking", icon: "🔗", description: "We crafted SEO strategies that helped our clients get a 40% increase in visibility on the search engine results pages SERPs through better keyword rankings. " },
+  { title: "On-Page SEO", icon: "🎨", description: "With enhanced SEO strategies for on-page, we recorded a 50% improvement in the click-through rates CTRs across key website pages for our clients. " },
+  { title: "Technical SEO", icon: "📋", description: "Constant technical search engine optimization efforts resulted in a decrease of 35% in page load times. This helped in better user experience and rankings for websites. " },
+  { title: "Backlinking", icon: "💻", description: "With effective link-building strategies and high-quality backlinks creation, our clients witnessed a 25% growth in referral traffic across various websites. " },
+  { title: "Content Strategy", icon: "📄", description: "The User dwell time on the websites of our clients was recorded with a 45% increase. This resulted in decreased bounce rates, further improving the website ranking. " },
+  { title: "Targeted Keywords Ranking", icon: "💰", description: " As we effectively worked on targeted keywords, our clients commonly witnessed a 90% growth in featured snippets and position zero rankings." },
+  { title: "Local SEO", icon: "📦", description: "Our constant efforts in the direction of Local SEO resulted in increased visibility of 80% in local searches and map results for our clients on Search Engines. " },
+  { title: "Mobile SEO", icon: "📚", description: "With most websites being operated on mobile devices, the websites witnessed a 70% growth in mobile traffic and engagement through SEO. " },
+  { title: "Internal Linking", icon: "⭐", description: "Our clients have recorded a growth of 50% in page views and distributing link equity due to an improved internal linking structure in their SEO strategies." },
+  { title: "Website Crawlability", icon: "💬", description: "As we improvised our technical SEO strategies, our clients noticed a hike of 60% in the crawlability and indexation of websites on Search Engine Result Pages SERPs." },
+  
 ];
 
 export default function HowItWorksPage() {
@@ -353,11 +353,7 @@ const router = useRouter();
         transition={{ duration: 0.5 }}
         style={{ lineHeight: "1.4" }}
       >
-        Higher Rankings,
-       
-        Relevant Visitors,  
-        
-        More Customers
+       It will just take a minute to check your <span className="text-[#f55c5c]">Website’s SEO Score</span> 
       </motion.h2>
       <motion.p
         className="text-lg text-gray-700 mb-6"
@@ -365,7 +361,7 @@ const router = useRouter();
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Multiple award-winning search marketing with outstanding results.
+        Find out your website’s effectiveness and performance on Search Engines by answering a short series of questions.
       </motion.p>
       <motion.button
         className="bg-[#f76c6c] text-white py-3 px-6 rounded-md hover:bg-[#f55c5c] transition"
@@ -373,7 +369,7 @@ const router = useRouter();
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        Take the Scorecard
+        Get your SEO Scorecard 
       </motion.button>
     </div>
 
@@ -551,11 +547,11 @@ const router = useRouter();
           Your personalised results will be emailed to you along with relevant
           marketing tips. You can opt out at any time.
         </p>
-        <p className="text-sm text-center mt-2">
+        {/* <p className="text-sm text-center mt-2">
           <a href="#" className="text-pink-500 hover:underline">
             Privacy Policy
           </a>
-        </p>
+        </p> */}
       </motion.div>
     </div>
         )}
@@ -726,14 +722,12 @@ const router = useRouter();
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-      ><p>Knowledge Of The Market</p>
+      ><p>Your Website Ranking Sorted</p>
         <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
-          Custom SEO Services – Our Specialty
+          SEO Services tailored to your Website 
         </h2>
         <p className="text-gray-600 text-2xl md:text-base">
-          Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis
-          libero <br></br>tempus, blandit posuere and ligula varius magna a porta
-          elementum massa risus
+          We offer a range of services in the domain of Search Engine Optimisation. As one of the premium SEO agencies in the market,<br></br> we carefully devise search marketing strategies for your business as per the requirements of your business model. 
         </p>
       </motion.div>
 
@@ -785,17 +779,13 @@ const router = useRouter();
          
       >
         <h3 className="text-indigo-600 text-sm font-semibold uppercase mb-2">
-          Welcome to Glassfrog
+         We’re not a Search Engine Optimization company
         </h3>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-         Not just an
-SEO Company
+        We’re your SEO Marketing Agency 
         </h2>
         <p className="text-gray-600 text-sm md:text-base mb-6">
-          We believe that the future of marketing is digital, and we use a full range of digital marketing services to help maximise your online potential. Whether you sell to companies or consumers, more visibility means more leads and customers to your business.
-
-Our portfolio of organic, digital PR, paid and web services allow you to reach your target audiences wherever they are on the web.
-        </p>
+          Search engine optimization is often mistaken as a necessity while building a business in the digital sphere. But it is so much more than just that. Planning your website’s search engine optimization can help you with targeted marketing results. As a strategic SEO agency in the UK, we ensure that your ranking in search results helps you bring more engaging users to your website. Finding the right traffic, increasing conversion, reducing bounce rates, and increasing your domain authority is all we focus on. With us, you do not simply rank; you market yourself through the medium of your website on various search engines  </p>
        
         
       </motion.div>
@@ -850,7 +840,7 @@ Our portfolio of organic, digital PR, paid and web services allow you to reach y
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Achieving real results
+          Results that leave an impact
         </motion.h2>
         {/* Underline */}
         <motion.div
@@ -866,10 +856,8 @@ Our portfolio of organic, digital PR, paid and web services allow you to reach y
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          We work with leading brands and prospering SME’s across many sectors,{" "}
-          <span className="font-bold">delivering tangible business benefits</span> and a
-          great ROI. We understand the true value of a campaign comes from
-          building your brand and increasing leads and revenue to hit targets.
+          Just ranking ahead of your competitors and getting increased traffic will never solve your real SEO marketing purpose. As an agency, we will refine your traffic. This implies that the kind of users we will draw to your website will be highly specific to your geographic location, product type, service purpose, and business model. This results in improved results, further attracting better sales numbers for you!
+          <span className="font-bold">Check now if your present SEO status will help you draw improved results.</span> 
         </motion.p>
         {/* Button */}
         <motion.div
@@ -883,7 +871,7 @@ Our portfolio of organic, digital PR, paid and web services allow you to reach y
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          Take the Scorecard
+         Take SEO performance test 
         </motion.button>
         </motion.div>
       </motion.div>
@@ -896,12 +884,10 @@ Our portfolio of organic, digital PR, paid and web services allow you to reach y
         transition={{ duration: 0.6 }}
       >
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-          SEO Management Strategy Services
+          Our SEO service strategy
         </h2>
         <p className="text-gray-600 text-sm md:text-base">
-          Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis
-          libero tempus, blandit posuere and ligula varius magna a porta
-          elementum massa risus
+          We do not simply start working on your website to help you rank. We strategize and execute. Here’s how we structure your search engine optimization services to drive impactful results for your business through your website.
         </p>
       </motion.div>
 
@@ -934,8 +920,10 @@ Our portfolio of organic, digital PR, paid and web services allow you to reach y
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Our best-in-class SEO services
-        </motion.h2>
+         How We Impact
+          </motion.h2>
+            <p className="text-gray-600 text-sm md:text-base">
+We have worked with a variety of clients in a variety of domains. By closely working on our plan and applying expert SEO<br></br> strategies, we have produced impressive results. Here’s how we have left an impact on other businesses and websites like yours!         </p>
       </div>
        <motion.div
       className="grid grid-cols-1 text-left md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4"

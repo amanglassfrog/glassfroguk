@@ -21,13 +21,15 @@ export default function Footer() {
           {/* Email Info */}
           <div>
             <p className="text-xl font-bold">support@glassfrog.design</p>
-            <p>Our expert SEO team will reply as soon as possible.</p>
+            <p>
+              Write to us to get your website audit and SEO consultation now!{" "}
+            </p>
           </div>
 
           {/* Request Info */}
           <div>
             <p className="text-xl font-bold">Request a free quote</p>
-            <p>Let's discuss how to make your website visible online.</p>
+            <p>Let's connect and make your website visible.</p>
           </div>
         </motion.div>
       </div>
@@ -66,36 +68,29 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">More Than SEO</h4>
             <p>
-              The SEO Works is far more than an SEO Company. We have a
-              passionate team of online marketing experts delivering{" "}
-              <span className="text-green-400">award-winning PPC services</span>{" "}
-              and <span className="text-green-400">Web Design</span> year on
-              year.
+              Glassfrog Technologies works as a digital marketing and seo
+              agency. We aim to match the requirements of your business in this
+              age of digital marketing and artificial intelligence. Our
+              extensive services in Social Media Marketing and Management,
+              Search Engine Marketing, Paid Advertising, Content Marketing,
+              Graphic Designing, Influencer Marketing, and Website Development
+              will help you grow online.
             </p>
             <p>
-              We offer fully bespoke{" "}
-              <span className="text-green-400">digital marketing services</span>{" "}
-              designed to get your business more customers online.
+              Contact us now to grow your business online with expert SEO and
+              digital marketing in the UK.
             </p>
           </div>
 
           {/* Trust SEO Works */}
           <div>
-            <h4 className="font-bold mb-4">Trust SEO Works</h4>
+            <h4 className="font-bold mb-4">Your SEO Expert</h4>
             <p>
-              We are proud of our reputation as a{" "}
-              <span className="text-green-400">leading UK SEO Agency</span>,
-              earned through high-quality campaigns and strong client
-              relationships.
-            </p>
-            <p>
-              We are the preferred choice for{" "}
-              <span className="text-green-400">SEO services</span> of leading
-              companies in public & private sectors. View our{" "}
-              <a href="#" className="text-green-400 hover:underline">
-                Digital Marketing Case Studies
-              </a>{" "}
-              for more information.
+              As a leading Search Engine Optimization company, we have helped
+              our clients grow their business through their websites. We can
+              help you rank on Search Engine Rank Pages. We understand your
+              business to strategize and execute for you. We are eager to assist
+              you as you seek to grow your business with advanced SEO services.
             </p>
           </div>
         </div>
