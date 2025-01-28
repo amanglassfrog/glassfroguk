@@ -13,14 +13,14 @@ export default function Footer() {
         >
           {/* Contact Info */}
           <div>
-            <p className="text-xl font-bold">+91 9084712335, +91 9084712325</p>
+            {/* <p className="text-xl font-bold">+91 9084712335, +91 9084712325</p> */}
             <p>Monday to Friday:</p>
             <p>8:30AM - 6PM</p>
           </div>
 
           {/* Email Info */}
           <div>
-            <p className="text-xl font-bold">support@glassfrog.design</p>
+            <p className="text-xl font-bold">info@glassfrogtech.co.uk</p>
             <p>
               Write to us to get your website audit and SEO consultation now!{" "}
             </p>
