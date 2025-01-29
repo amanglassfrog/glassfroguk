@@ -209,7 +209,7 @@ const Questionnaire = () => {
     return (
         <>
             <Header />
-    <div className="flex flex-col justify-center items-center h-screen bg-white">
+    <div className="flex flex-col justify-center items-center pt-20 md:pt-0 h-full md:h-screen bg-white">
       {!showResults ? (
         <div className="w-full max-w-7xl   p-8 relative overflow-hidden">
           {currentQuestion > 0 && (
@@ -255,20 +255,20 @@ const Questionnaire = () => {
           </AnimatePresence>
         </div>
       ) : (
-                  <div className="w-full flex max-w-7xl  p-8 text-center">
-                      <div className="w-[50%]">
+                  <div className="w-full flex flex-col-reverse mt-12 md:mt-0 md:flex-row max-w-7xl  p-8 ">
+                      <div className="w-full md:w-[50%]">
           <h1 className="text-2xl font-bold text-gray-800 mb-4">
 Here's Your Website's SEO Performance Scorecard!       </h1>
           <p className="text-gray-600 mb-6">
 
 Congratulations, your website's SEO performance has been analyzed. Your website's performance on the SEO metrics is here. This scorecard represents how well your website is bound to perform on the Search Engine Result Pages SERPs. The lower your score, the higher the scope of improvement.
-
+<br></br><br></br>
 A lot of factors impact a website's SEO performance. These include technical performance, user experience ease, quality of content, backlinks, and more. To know better about the reasons for your website's low SEO score, get your website audited by us. Find out in detail about the key areas to focus on while improving your website's SEO performance.
 
-<br></br>Contact Us Now! 
+
                                 </p>
                                 <motion.button
-              className="ml-4 bg-[#f76c6c] text-white py-3 px-6 rounded-md  transition"
+              className=" bg-[#f76c6c] text-white py-3 px-6 rounded-md  transition"
               onClick={toggleContactModal}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -279,7 +279,7 @@ A lot of factors impact a website's SEO performance. These include technical per
                                 {isContactModalOpen && (
         <div className="fixed w-full inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <motion.div
-            className="bg-white rounded-lg p-8 shadow-lg w-[50%] mx-4 relative"
+            className="bg-white rounded-lg p-8 shadow-lg w-full md:w-[50%] mx-4 relative"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
@@ -444,7 +444,7 @@ A lot of factors impact a website's SEO performance. These include technical per
       />
                             
                             </div>
-          <div className="mx-auto w-[50%]">
+          <div className="mx-auto w-full md:w-[50%]">
   <GaugeChart
     id="gauge-chart"
     nrOfLevels={20}

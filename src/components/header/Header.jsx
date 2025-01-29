@@ -140,12 +140,12 @@ const Header = () => {
               About
             </a>
             <motion.button
-              className="ml-4 bg-[#f76c6c] text-white py-3 px-6 rounded-md  transition"
+              className="ml-4 bg-[#f76c6c] text-white py-1 md:py-3 px-2 md:px-6 rounded-md  transition"
               onClick={toggleContactModal}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Contact Us
+              Contact
             </motion.button>
           </nav>
         </div>
@@ -154,7 +154,7 @@ const Header = () => {
       {isContactModalOpen && (
         <div className="fixed w-full inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <motion.div
-            className="bg-white rounded-lg p-8 shadow-lg w-[50%] mx-4 relative"
+            className="bg-white rounded-lg p-8 shadow-lg w-full md:w-[50%] mx-4 relative"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}

@@ -299,9 +299,9 @@ const router = useRouter();
 
   return (
     <>
-   <div className="relative min-h-screen py-16 px-6 md:px-12 bg-gray-100 ">
+   <div className="relative  py-16 px-6 md:px-12 bg-gray-100 ">
   {/* Content */}
-        <div className="max-w-7xl mx-auto h-full md:h-screen  flex items-center justify-between text-center md:text-left">
+        <div className="max-w-7xl mx-auto h-full   flex items-center justify-between text-center md:text-left">
           <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "w-full bg-[#f3f8fc] " : "w-full"
@@ -344,8 +344,8 @@ const router = useRouter();
       </div>
     </motion.header>
           {/* Text Section */}
-          <div className="flex flex-col md:flex-row gap-4">
-    <div className="flex-1 h-[70vh] flex flex-col items-center md:items-start  justify-center">
+          <div className="flex flex-col md:flex-row gap-4 mx-auto">
+    <div className="flex-1 h-[80vh] flex flex-col items-center md:items-start  justify-center">
       <motion.h2
         className="text-3xl md:text-6xl mt-16 md:mt-0 font-bold text-gray-800 mb-4"
         initial={{ opacity: 0, y: 50 }}
@@ -374,11 +374,11 @@ const router = useRouter();
     </div>
 
     {/* Image Section */}
-    <div className="flex-1 h-[70vh] flex justify-center items-center">
+    <div className="flex-1 h-[80vh] flex justify-center md:justify-end items-center">
       <motion.img
         src="/3d11.png"  // Replace with your image path
         alt="Illustration"
-        className="max-w-full h-72 md:h-96 object-cover"
+        className="max-w-full h-72 md:h-[34rem] object-cover"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
@@ -726,7 +726,7 @@ const router = useRouter();
         <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
           SEO Services tailored to your Website 
         </h2>
-        <p className="text-gray-600 text-2xl md:text-base">
+        <p className="text-gray-600 md:text-2xl text-lg">
           We offer a range of services in the domain of Search Engine Optimisation. As one of the premium SEO agencies in the market,<br></br> we carefully devise search marketing strategies for your business as per the requirements of your business model. 
         </p>
       </motion.div>
@@ -807,7 +807,7 @@ const router = useRouter();
             <img
               src={service.image}
               alt={service.title}
-              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-64 group-hover:scale-105 transition-transform duration-300"
             />
             {/* <div
               className={`absolute inset-0 bg-green-500 bg-opacity-70 flex items-center justify-center text-white text-lg font-bold p-4 ${
@@ -921,7 +921,7 @@ We do not simply start working on your website to help you rank. We strategize a
         >
          How We Impact
           </motion.h2>
-            <p className="text-gray-600 text-sm md:text-base">
+            <p className="text-gray-600 text-sm md:text-base p-[0.8rem] md:p-0">
 We have worked with a variety of clients in a variety of domains. By closely working on our plan and applying expert SEO<br></br> strategies, we have produced impressive results. Here’s how we have left an impact on other businesses and websites like yours!         </p>
       </div>
        <motion.div

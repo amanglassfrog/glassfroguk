@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white">
       {/* Top Section */}
-      <div className="bg-[#d00578] py-6">
+      <div className="bg-[#f76c6c] py-6">
         <motion.div
           className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left"
           initial={{ opacity: 0 }}
