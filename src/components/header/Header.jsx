@@ -132,7 +132,7 @@ const Header = () => {
               Home
             </a>
             <a
-              href="/#about"
+              href="/about-us"
               className={`${
                 isScrolled ? "text-black" : "text-black"
               } hover:text-[#f76c6c] transition-colors`}

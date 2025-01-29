@@ -6,7 +6,10 @@ import { useRouter } from "next/navigation";
 import Footer from "@/components/footer/footer";
 import { toast,ToastContainer  } from "react-toastify"; // Importing toastify
 import "react-toastify/dist/ReactToastify.css"; // Importing the required CSS
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
 
 const services = [
   {
@@ -35,14 +38,7 @@ const services = [
   },
 ];
 
- const cservices = [
-    { title: "Technical SEO ", image: "/ts1.jpg",description:"The way your website performs in the technical forefront affects the rankings of your website. We focus on page speed, mobile friendliness, structured data, site security, and other technical aspects of your website to ease the user experience, which shall eventually help you rank better." },
-    { title: "Content SEO", image: "/cs.png",description:"Content isn’t just meant for communication. It is also meant to reach out. When the content of your website is completely optimized with keywords and user-friendly content, the search engines put you up. Our SEO copywriting and content management techniques improve rankings organically. " },
-    { title: "Off-Page SEO ", image: "/os.webp", description: "Outside of your website, how your website is being perceived also affects its rankings. We work on link building, local citations, guest posting, social networking, blogging, and so much more to ensure that your website performs well in the Off-page search engine performance parameters." },
-    { title: "International SEO ", image: "/is.jpg",description:"With the internet, the limitations across the borders have come down. When you build a website and get it crawled on search engine pages, you open the possibility of international traffic. With international SEO techniques, we help you reach out to international and multilingual audiences in a better way. " },
-    { title: "Retail SEO", image: "/rs.webp",description:"Many businesses build e-commerce websites. Our search engine optimization services can help you approach your customers easily. While there are various methods to reach out to your customers, e-commerce SEO is an underrated one. We target specific consumer traffic to ensure your organic sales growth. " },
-    { title: "Local Search Marketing ", image: "/lsm.jpg",description:"Healthy searches need you to focus on geography and demographics. Our analytical understanding of your business will help you focus on targeted users through keywords that are very relevant to the geographic location of your business. Our local SEO services are exactly what your business needs. " },
-  ];
+ 
 const seo = [
   {
     id: 1,
@@ -117,6 +113,31 @@ const seoservices = [
   { title: "Website Crawlability", icon: "💬", description: "As we improvised our technical SEO strategies, our clients noticed a hike of 60% in the crawlability and indexation of websites on Search Engine Result Pages SERPs." },
   
 ];
+const testimonials = [
+  {
+    name: "John Doe",
+    title: "CEO, Example Inc.",
+    feedback:
+      "This service changed the way we approach customer engagement. Highly recommended!",
+    image: "/cgs.webp", // Replace with an actual image path or URL
+  },
+  {
+    name: "Jane Smith",
+    title: "Lead Developer, Tech Solutions",
+    feedback:
+      "Incredible results! The attention to detail and customer support are unmatched.",
+    image: "/cgs.webp", // Replace with an actual image path or URL
+  },
+  {
+    name: "Alice Johnson",
+    title: "Designer, Creative Agency",
+    feedback:
+      "The best experience I've had. It helped streamline our design process significantly.",
+    image: "/cgs.webp", // Replace with an actual image path or URL
+  },
+  // Add more testimonials here
+];
+
 
 export default function HowItWorksPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -325,7 +346,7 @@ const router = useRouter();
             Home
           </a>
           <a
-            href="/#about"
+            href="/about-us"
             className={`${
               isScrolled ? "text-black" : "text-black"
             } hover:text-[#f76c6c] transition-colors`}
@@ -726,8 +747,8 @@ const router = useRouter();
         <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
           SEO Services tailored to your Website 
         </h2>
-        <p className="text-gray-600 md:text-2xl text-lg">
-          We offer a range of services in the domain of Search Engine Optimisation. As one of the premium SEO agencies in the market,<br></br> we carefully devise search marketing strategies for your business as per the requirements of your business model. 
+        <p className="text-gray-600 md:text-xl text-lg">
+          We offer a range of services in the domain of Search Engine Optimisation. As one of the premium SEO agencies in the market, we carefully devise search marketing strategies for your business as per the requirements of your business model. 
         </p>
       </motion.div>
 
@@ -752,80 +773,7 @@ const router = useRouter();
         ))}
       </div>
       </section>
-      <section  id="about" className="py-12 px-6 md:px-16 lg:px-24 bg-gray-50 flex flex-col lg:flex-row items-center">
-      {/* Image Section */}
-      <motion.div
-        className="w-full lg:w-1/2 relative mb-8 lg:mb-0"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="relative overflow-hidden ">
-          <img
-            src="/sec3.png" // Replace with your image path
-            alt="Team Collaboration"
-           
-          />
-        </div>
-      </motion.div>
-
-        {/* Text Content Section */}
-        
-      <motion.div
-        className="w-full lg:w-1/2 lg:pl-10 text-center lg:text-left"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-         
-      >
-        <h3 className="text-indigo-600 text-sm font-semibold uppercase mb-2">
-         We’re not a Search Engine Optimization company
-        </h3>
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-        We’re your SEO Marketing Agency 
-        </h2>
-        <p className="text-gray-600 text-sm md:text-base mb-6">
-          Search engine optimization is often mistaken as a necessity while building a business in the digital sphere. But it is so much more than just that. Planning your website’s search engine optimization can help you with targeted marketing results. As a strategic SEO agency in the UK, we ensure that your ranking in search results helps you bring more engaging users to your website. Finding the right traffic, increasing conversion, reducing bounce rates, and increasing your domain authority is all we focus on. With us, you do not simply rank; you market yourself through the medium of your website on various search engines.  </p>
-       
-        
-      </motion.div>
-      </section>
-      <div className="py-12 bg-gray-100">
-        <h2 className="text-3xl md:text-5xl text-center pb-4 font-bold text-gray-800 mb-4">
-          Our Services
-        </h2>
-        <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-           
-        {cservices.map((service, index) => (
-          <motion.div
-            key={index}
-            className="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.4 }}
-          >
-            <img
-              src={service.image}
-              alt={service.title}
-              className="w-full h-64 group-hover:scale-105 transition-transform duration-300"
-            />
-            {/* <div
-              className={`absolute inset-0 bg-green-500 bg-opacity-70 flex items-center justify-center text-white text-lg font-bold p-4 ${
-                service.description ? "group-hover:hidden" : ""
-              }`}
-            >
-              {service.title}
-            </div> */}
-            {service.description && (
-              <div className="absolute inset-0 bg-[#cb3188] bg-opacity-80 p-4 text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="font-bold mb-2 text-lg">{service.title}</h3>
-                <p>{service.description}</p>
-              </div>
-            )}
-          </motion.div>
-        ))}
-      </div>
-      </div>
+     
       <div className="bg-[#060f3c] text-white py-12">
       <motion.div
         className="max-w-4xl mx-auto text-center px-4"
@@ -948,7 +896,7 @@ We have worked with a variety of clients in a variety of domains. By closely wor
         >
           <div className="flex items-center justify-between w-full">
             <h3 className="text-lg font-semibold text-gray-800">{service.title}</h3>
-            <span className="text-2xl bg-yellow-300 text-white p-2 rounded-full">
+            <span className="text-2xl bg-[#f76c6c] text-white p-2 rounded-full">
               {service.icon}
             </span>
           </div>
@@ -970,6 +918,75 @@ We have worked with a variety of clients in a variety of domains. By closely wor
       ))}
     </motion.div>
       </section>
+      <div className="w-full py-16 bg-gray-100">
+      <div className="max-w-4xl mx-auto text-center">
+        <motion.h2
+          className="text-3xl font-bold mb-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          What Our Clients Say
+        </motion.h2>
+
+        <Swiper
+          modules={[Autoplay]}
+            spaceBetween={20}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: true,
+            }}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 1 },
+              1024: { slidesPerView: 1 },
+            }}
+            className="mySwiper"
+        >
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={index} className="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-lg">
+              
+               <motion.p
+                className="text-lg text-gray-500"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6, duration: 1 }}
+              >
+                "{testimonial.feedback}"
+              </motion.p>
+              <motion.p
+                className="text-xl font-semibold mb-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 1 }}
+              >
+                {testimonial.name}
+              </motion.p>
+              <div className="flex justify-center items-center gap-4">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className=" h-8 object-cover"
+                />
+<motion.p
+                className="text-sm text-gray-600 mb-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 1 }}
+              > 
+                {testimonial.title}
+              </motion.p>
+
+              </div>
+              
+              
+             
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
       <Footer />
             <ToastContainer position="top-right" autoClose={5000} hideProgressBar newestOnTop />
 
