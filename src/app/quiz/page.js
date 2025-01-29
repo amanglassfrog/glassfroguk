@@ -254,7 +254,8 @@ const Questionnaire = () => {
             </motion.div>
           </AnimatePresence>
         </div>
-      ) : (
+                ) : (
+                        <>
                   <div className="w-full flex flex-col-reverse mt-12 md:mt-0 md:flex-row max-w-7xl  p-8 ">
                       <div className="w-full md:w-[50%]">
           <h1 className="text-2xl font-bold text-gray-800 mb-4">
@@ -471,7 +472,34 @@ A lot of factors impact a website's SEO performance. These include technical per
 
           
          
-        </div>
+                            </div>
+                        <div className=" flex flex-col items-center justify-center  p-4">
+      {/* Heading with Animation */}
+      <motion.h4
+        className="text-2xl font-bold mb-4"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        We'll contact you shortly
+      </motion.h4>
+
+                                {/* Back to Homepage Button */}
+                                <a href="/">
+      <motion.button
+        
+        className="mt-4 flex items-center space-x-2 px-6 py-2 bg-[#f76c6c] text-white rounded-lg  transition duration-300"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        
+        <span>Back to Homepage</span>
+      </motion.button></a>
+    </div>
+                        
+                        </>
+                        
           )}
           {!showResults && (
         <div className="w-full max-w-2xl mt-6 px-4">
@@ -487,6 +515,9 @@ A lot of factors impact a website's SEO performance. These include technical per
         </div>
       )}
             </div>
+
+            
+            
         <Footer/>
         </>
         

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FiLinkedin, FiInstagram, FiFacebook, FiTwitter } from "react-icons/fi";
 
 export default function Footer() {
   return (
@@ -41,10 +42,15 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Get in touch</h4>
             <ul>
-              <li>London</li>
               <li>
+                <strong>London :-</strong>
                 ​27 OLD Gloucester Street, London,<br></br> United Kingdom WC1N
                 3AX
+              </li>
+              <li>
+                <strong>India:-</strong> ​​Jumpstart Tower, 2nd floor, Haridwar
+                Bypass Rd, opp. Nilaya Hills, Saraswati Vihar, Ajabpur Kalan,
+                Dehradun, Uttarakhand 248001.
               </li>
             </ul>
             {/* Social Icons */}
@@ -66,7 +72,7 @@ export default function Footer() {
 
           {/* More Than SEO */}
           <div>
-            <h4 className="font-bold mb-4">More Than SEO</h4>
+            <h4 className="font-bold mb-4">Our Vision</h4>
             <p>
               Glassfrog Technologies works as a digital marketing and seo
               agency. We aim to match the requirements of your business in this
@@ -84,14 +90,37 @@ export default function Footer() {
 
           {/* Trust SEO Works */}
           <div>
-            <h4 className="font-bold mb-4">Your SEO Expert</h4>
-            <p>
-              As a leading Search Engine Optimization company, we have helped
-              our clients grow their business through their websites. We can
-              help you rank on Search Engine Rank Pages. We understand your
-              business to strategize and execute for you. We are eager to assist
-              you as you seek to grow your business with advanced SEO services.
-            </p>
+            <h4 className="text-xl font-bold mb-4">Follow Us</h4>
+            <div className="flex  space-x-12">
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/company/glassfrog-technologies/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-yellow-500"
+              >
+                <FiLinkedin size={30} />
+              </a>
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/glassfrog_technologies/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-yellow-500"
+              >
+                <FiInstagram size={30} />
+              </a>
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/GlassfrogTechnologies"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-yellow-500"
+              >
+                <FiFacebook size={30} />
+              </a>
+              {/* Twitter */}
+            </div>
           </div>
         </div>
       </div>

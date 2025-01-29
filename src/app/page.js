@@ -24,12 +24,7 @@ const services = [
     description: "Need your e-commerce business to thrive? Our specialized SEO services, custom to your business model, are what you need.",
     icon: "🛒",
   },
-  {
-    id: 3,
-    title: "SEO Strategy",
-    description: "We understand that every website and webpage has a different purpose. As an SEO expert, we strategize for your benefit. ",
-    icon: "🔍",
-  },
+  
   {
     id: 4,
     title: "SEO Content Marketing",
@@ -752,7 +747,7 @@ const router = useRouter();
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6 pt-4">
         {services.map((service, index) => (
           <motion.div
             key={service.id}
