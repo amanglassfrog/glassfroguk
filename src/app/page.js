@@ -15,20 +15,20 @@ const services = [
   {
     id: 1,
     title: "Local SEO",
-    description: "We put you on the map! Get your Website’s rankings soaring in the local charts for an improved business outreach with local SEO services. ",
+    description: "We put you on the map! Get your Website’s rankings soaring in the local charts for an improved business outreach with local SEO services. We help you target users through keywords relevant to your business location. Our local SEO expert services will help you rank in the healthy searches. ",
     icon: "📍", // Replace with an icon component if needed
   },
   {
     id: 2,
     title: "E-Commerce SEO",
-    description: "Need your e-commerce business to thrive? Our specialized SEO services, custom to your business model, are what you need.",
+    description: "Need your e-commerce business to thrive? Our search engine optimization services can help you approach your customers easily. There are various methods to reach out to your customers. E-commerce SEO is one of them. By targeting users in your product type, we ensure organic sales growth.",
     icon: "🛒",
   },
   
   {
     id: 4,
-    title: "SEO Content Marketing",
-    description: "Your unique ideas and plans deserve a unique voice. As one of the premium SEO companies, we help you with optimized content that represents you rightly. ",
+    title: "SEO Content ",
+    description: "Your unique brand deserves a unique voice. But can it help you reach your customers? Yes! Search engines promote optimized and user-friendly content. Our SEO copywriting will not only communicate your product's unique selling points (USPs) but also help you rank on Search Engine Rank Pages (SERPs).",
     icon: "💰",
   },
 ];
@@ -39,7 +39,7 @@ const seo = [
     id: 1,
     title: "Website Audit",
     description:
-      "Before starting with an action plan, we identify areas where your website needs improvement. To check out every important aspect of your website from an SEO perspective and accordingly find the scope is what our audits are focused on.",
+      "Initially, we identify areas where the website needs improvement. Therefore, we conduct a complete website audit. We check the performance of your website on technical and user ease aspects. Hence, we find out what needs maximum improvement.",
     icon: "📊", // Replace with an appropriate icon or image
   },
   {
@@ -60,7 +60,7 @@ const seo = [
     id: 4,
     title: "On-Page SEO",
     description:
-      "Once the keywords are sorted and the content is all set to go, the on-page optimization of your website intensifies. We create engaging meta titles, meta descriptions, and headers to optimize the content further for better results.",
+      "As we create a keyword optimized content, we create engaging meta titles. Moreover, we help you with descriptions and headers. This makes your website more optimized and user friendly. As an SEO agency, this is our main goal.",
     icon: "🔍",
   },
   {
@@ -74,38 +74,38 @@ const seo = [
     id: 6,
     title: "Backlinks Building ",
     description:
-      "To further the rankings of your website, high quality and relevant backlinks are a must. However, it is often ignored. In order to improve the domain authority, your site needs a good link-building strategy and execution, which we dominantly focus on.",
+      "To increase the rankings of your website, high quality, and relevant backlinks are necessary. We create good backlinks for your website. This can help your rankings by enhancing the domain authority. Our link building strategy is personlized.",
     icon: "💬",
   },
   {
     id: 7,
-    title: "Enhanced User Experience",
+    title: "Improved UI/UX ",
     description:
-      "Search Engines are extremely cautious of the user experience on a website while ranking it. Hence, improving the website from a User’s point of view is a non-negotiable action. Thus, we ensure an easy user experience while working with your website.",
+      "User experience on a website affects the rankings. Hence, it is important that while working on SEO, UI/UX is user friendly. While working on SEO, we work on the ease of navigation. This shall enhance the rankings of the website.",
     icon: "🖥️",
   },
   {
     id: 8,
     title: "Analysis and Mitigation",
     description:
-      "Our process involves constant tracking of your website performance. Therefore, we can better understand if the SEO strategies are working effectively. Accordingly, we plan and apply mitigation strategies to overcome any challenges to your SEO performance.",
+      "As we execute SEO plans, we constantly track website performances. In case a strategy does not perform as expected, we run a thorough analysis. This helps us create relevant plans to maintain and enhance website SEO. ",
     icon: "💻",
   },
 ];
 
 const seoservices = [
   { title: "Organic Traffic", icon: "🖱️", description: "With our constant efforts, our clients witnessed a general hike of 120% in organic traffic, leading to higher website engagement and reduced bounce rates." },
-  { title: "Domain Authority", icon: "📈", description: "Our SEO strategies impacted the domain authority for our clients by 30%, which improved their site’s credibility and built trust among its users. " },
+  { title: "Domain Authority", icon: "📈", description: "Our SEO strategies helped the domain authority of the websites. There was a hike of 30%, which improved their site’s credibility and built trust among its users. " },
   { title: "Keyword Ranking", icon: "🔗", description: "We crafted SEO strategies that helped our clients get a 40% increase in visibility on the search engine results pages SERPs through better keyword rankings. " },
-  { title: "On-Page SEO", icon: "🎨", description: "With enhanced SEO strategies for on-page, we recorded a 50% improvement in the click-through rates CTRs across key website pages for our clients. " },
-  { title: "Technical SEO", icon: "📋", description: "Constant technical search engine optimization efforts resulted in a decrease of 35% in page load times. This helped in better user experience and rankings for websites. " },
-  { title: "Backlinking", icon: "💻", description: "With effective link-building strategies and high-quality backlinks creation, our clients witnessed a 25% growth in referral traffic across various websites. " },
-  { title: "Content Strategy", icon: "📄", description: "The User dwell time on the websites of our clients was recorded with a 45% increase. This resulted in decreased bounce rates, further improving the website ranking. " },
-  { title: "Targeted Keywords Ranking", icon: "💰", description: " As we effectively worked on targeted keywords, our clients commonly witnessed a 90% growth in featured snippets and position zero rankings." },
-  { title: "Local SEO", icon: "📦", description: "Our constant efforts in the direction of Local SEO resulted in increased visibility of 80% in local searches and map results for our clients on Search Engines. " },
-  { title: "Mobile SEO", icon: "📚", description: "With most websites being operated on mobile devices, the websites witnessed a 70% growth in mobile traffic and engagement through SEO. " },
-  { title: "Internal Linking", icon: "⭐", description: "Our clients have recorded a growth of 50% in page views and distributing link equity due to an improved internal linking structure in their SEO strategies." },
-  { title: "Website Crawlability", icon: "💬", description: "As we improvised our technical SEO strategies, our clients noticed a hike of 60% in the crawlability and indexation of websites on Search Engine Result Pages SERPs." },
+  { title: "On-Page SEO", icon: "🎨", description: "With enhanced SEO strategies for on-page, we recorded a 50% improvement in the click-through rates CTRs across key website pages for our clients." },
+  { title: "Technical SEO", icon: "📋", description: "Our constant efforts in SEO resulted in a decrease of 35% in page load times. This helped in better user experience and increased rankings for websites.  " },
+  { title: "Backlinking", icon: "💻", description: "Traffic through links grew by 25% for our client's websites after high quality backlinks creation. We ensure increased traffic through link building. " },
+  { title: "Content Strategy", icon: "📄", description: "The User dwell time on the websites of our clients was recorded with a 45% increase. This resulted in decreased bounce rates, improving the website ranking." },
+  { title: "Targeted Keywords Ranking", icon: "💰", description: " A 90% growth was observed in snippets and position zero rankings with the help of keyword targeting. This SEO measure improved rankings. " },
+  { title: "Local SEO", icon: "📦", description: "Our constant efforts in Local SEO hiked visibility by 80% in local searches and map results for our clients on Search Engines Results Pages SERPs " },
+  { title: "Mobile SEO", icon: "📚", description: "Most websites are operated on mobile devices. Hence, Mobile SEO is important. Our clients recorded a 70% growth in traffic and engagement. " },
+  { title: "Internal Linking", icon: "⭐", description: "Our clients recorded a growth of 50% in page views and distributing link equity. Due to an improved internal linking structure in their SEO." },
+  { title: "Website Crawlability", icon: "💬", description: "Our client's websites crawled 60% better with technical SEO services. As an SEO company, we helped them achieve better SEO rankings." },
   
 ];
 const testimonials = [
@@ -377,7 +377,7 @@ const router = useRouter();
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Find out your website’s effectiveness and performance on Search Engines by answering a short series of questions.
+        Find out your website’s effectiveness and performance on Search Engines by answering a short series of questions on SEO Services.
       </motion.p>
       <motion.button
         className="bg-[#f76c6c] text-white py-3 px-6 rounded-md hover:bg-[#f55c5c] transition"
@@ -740,11 +740,10 @@ const router = useRouter();
         transition={{ duration: 0.6 }}
       ><p>Your Website Ranking Sorted</p>
         <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
-          SEO Services tailored to your Website 
+          SEO Services tailored to your Website
         </h2>
         <p className="text-gray-600 md:text-xl text-lg">
-          We offer a range of services in the domain of Search Engine Optimisation. As one of the premium SEO agencies in the market, we carefully devise search marketing strategies for your business as per the requirements of your business model. 
-        </p>
+We offer a range of Search Engine Optimization (SEO) services. As one of the best SEO agencies in the UK, we carefully plan search marketing strategies for you. While doing so, we consider the requirements of your business goals. This helps us create the perfect plan as an SEO company.        </p>
       </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6 pt-4">
@@ -799,7 +798,7 @@ const router = useRouter();
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Just ranking ahead of your competitors and getting increased traffic will never solve your real SEO marketing purpose. As an agency, we will refine your traffic. This implies that the kind of users we will draw to your website will be highly specific to your geographic location, product type, service purpose, and business model. This results in improved results, further attracting better sales numbers for you!
+          Just ranking ahead of your competitors and getting increased traffic will never solve your real SEO marketing purpose. As an SEO marketing agency, we will refine your traffic. This implies that the kind of users we will draw to your website will be highly specific to your geographic location, product type, service purpose, and business model. This results in improved results, further attracting better sales numbers for you!
           <br></br><span className="font-bold">Check now if your present SEO status will help you draw improved results.</span> 
         </motion.p>
         {/* Button */}
@@ -830,7 +829,8 @@ const router = useRouter();
           Our SEO service strategy
         </h2>
         <p className="text-gray-600 text-sm md:text-base">
-We do not simply start working on your website to help you rank. We strategize and execute. Here’s how we structure our search engine optimization services to drive impactful results for your business through your website.        </p>
+We do not just start working on your website in order to help you rank. We strategize and execute. Here’s how we plan your search engine optimization services to drive impactful results for your business through your website. 
+          </p>
       </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -862,10 +862,12 @@ We do not simply start working on your website to help you rank. We strategize a
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-         How We Impact
+         
+How our SEO services worked out for our clients
+
           </motion.h2>
             <p className="text-gray-600 text-sm md:text-base p-[0.8rem] md:p-0">
-We have worked with a variety of clients in a variety of domains. By closely working on our plan and applying expert SEO<br></br> strategies, we have produced impressive results. Here’s how we have left an impact on other businesses and websites like yours!         </p>
+As the best SEO company in the UK, we have worked with a variety of clients in a variety of domains. By closely working on our plan and applying SEO services,<br></br> we have produced impressive results. Here’s how we have left an impact on other businesses and websites like yours!</p>
       </div>
        <motion.div
       className="grid grid-cols-1 text-left md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4"
