@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
+import { ChevronDown } from "lucide-react";
 
 const services = [
   {
@@ -139,6 +140,29 @@ const testimonials = [
   },
   // Add more testimonials here
 ];
+const faqs = [
+  {
+    question: "What SEO services can help my website rank better in my city?",
+    answer:
+      "For location specific rankings, local SEO services work the best. If you want your website to rank better in your city, we can target keywords that appeal to the searches based on location. With this, you approach a specific audience easily through search results.",
+  },
+  {
+    question: "How can I find an SEO agency near me?",
+    answer:
+      "To find an SEO agency, you need to figure out what type of SEO service you want. If you want a full fledged SEO company that can help you achieve multiple goals, an SEO expert company is the best option. They can help you with many SEO services and gain increased traffic for better leads.",
+  },
+  {
+    question: "What is the best SEO service for getting high traffic on my website?",
+    answer:
+      "To get high traffic on your website, you can rely on a number of SEO services. These include local SEO services, SEO copywriting, and many others. To choose the best one, you can contact an SEO company or an SEO expert.",
+  },
+  {
+    question: "What is an SEO marketing agency?",
+    answer:
+      "An SEO marketing agency can help you get more leads and gain high traffic through SEO services. They use SEO and market business with a proper plan. It is different from an SEO company that focuses on your website rankings. ",
+  },
+];
+
 
 
 export default function HowItWorksPage() {
@@ -159,6 +183,11 @@ export default function HowItWorksPage() {
   }); 
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 const router = useRouter();
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -991,7 +1020,36 @@ As the best SEO company in the UK, we have worked with a variety of clients in a
           ))}
         </Swiper>
       </div>
-    </div>
+      </div>
+       <section className="max-w-2xl mx-auto p-6">
+      <h2 className="text-3xl font-bold text-center mb-6">Frequently Asked Questions</h2>
+      <div className="space-y-4">
+        {faqs.map((faq, index) => (
+          <div key={index} className="border-b border-gray-300">
+            <button
+              className="flex justify-between items-center w-full py-3 text-lg font-medium"
+              onClick={() => toggleFAQ(index)}
+            >
+              {faq.question}
+              <motion.span
+                animate={{ rotate: openIndex === index ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ChevronDown size={20} />
+              </motion.span>
+            </button>
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: openIndex === index ? "auto" : 0, opacity: openIndex === index ? 1 : 0 }}
+              transition={{ duration: 0.3 }}
+              className="overflow-hidden"
+            >
+              <p className="text-gray-600 p-2">{faq.answer}</p>
+            </motion.div>
+          </div>
+        ))}
+      </div>
+    </section>
       <Footer />
             <ToastContainer position="top-right" autoClose={5000} hideProgressBar newestOnTop />
 
