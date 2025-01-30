@@ -8,12 +8,12 @@ import React from 'react'
 
 
 const cservices = [
-    { title: "Technical SEO ", image: "/ts1.jpg",description:"The way your website performs in the technical forefront affects the rankings of your website. We focus on page speed, mobile friendliness, structured data, site security, and other technical aspects of your website to ease the user experience, which shall eventually help you rank better." },
-    { title: "Content SEO", image: "/cs.png",description:"Content isn’t just meant for communication. It is also meant to reach out. When the content of your website is completely optimized with keywords and user-friendly content, the search engines put you up. Our SEO copywriting and content management techniques improve rankings organically. " },
-    { title: "Off-Page SEO ", image: "/os.webp", description: "Outside of your website, how your website is being perceived also affects its rankings. We work on link building, local citations, guest posting, social networking, blogging, and so much more to ensure that your website performs well in the Off-page search engine performance parameters." },
-    { title: "International SEO ", image: "/is.jpg",description:"With the internet, the limitations across the borders have come down. When you build a website and get it crawled on search engine pages, you open the possibility of international traffic. With international SEO techniques, we help you reach out to international and multilingual audiences in a better way. " },
-    { title: "Retail SEO", image: "/rs.webp",description:"Many businesses build e-commerce websites. Our search engine optimization services can help you approach your customers easily. While there are various methods to reach out to your customers, e-commerce SEO is an underrated one. We target specific consumer traffic to ensure your organic sales growth. " },
-    { title: "Local Search Marketing ", image: "/lsm.jpg",description:"Healthy searches need you to focus on geography and demographics. Our analytical understanding of your business will help you focus on targeted users through keywords that are very relevant to the geographic location of your business. Our local SEO services are exactly what your business needs. " },
+    { title: "Paid Advertising ", image: "/pa.jpg",description:"Organic growth takes time. Get high quality leads for your product with paid ads and outreach. Drive users to your website quickly with targeted ad campaigns." },
+    { title: "Graphic Designing", image: "/gd.jpg",description:"The look and feel of your business defines it. Good visuals brand your product better and help the audience connect with it. We sort your graphics and brand you better." },
+    { title: "Content Marketing ", image: "/cm.jpg", description: "Content is the king! It can voice you and your product. Give your brand a voice with content marketing. Our user specific content strategy will boost your business growth." },
+    { title: "Social Media Marketing ", image: "/sm.jpg",description:"The boom of social media is real. But what's impactful is how it can help your business grow. Find an audience for your business with our planned social media strategy. " },
+    { title: "Influencer Marketing", image: "/im.jpg",description:"Find the right face for your business with our strategic influencer marketing. We find the passionate social media faces for your product who can help you reach your audience!" },
+    { title: "Email Marketing ", image: "/em.jpg",description:"Want to reach your customer's inbox and connect? Communicate your business with stunning newsletters and quick emailing. Build smooth customer relationships rapidly. " },
   ];
 
 const page = () => {
@@ -47,20 +47,26 @@ const page = () => {
                    
                 >
                   <h3 className="text-indigo-600 text-sm font-semibold uppercase mb-2">
-                   We’re not a Search Engine Optimization company
+                   We’re not a Search Engine Optimization Company
                   </h3>
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                   We’re your SEO Marketing Agency 
                   </h2>
                   <p className="text-gray-600 text-sm md:text-base mb-6">
-                    Search engine optimization is often mistaken as a necessity while building a business in the digital sphere. But it is so much more than just that. Planning your website’s search engine optimization can help you with targeted marketing results. As a strategic SEO agency in the UK, we ensure that your ranking in search results helps you bring more engaging users to your website. Finding the right traffic, increasing conversion, reducing bounce rates, and increasing your domain authority is all we focus on. With us, you do not simply rank; you market yourself through the medium of your website on various search engines.  </p>
+                   
+          Search Engine Optimization is more than a necessity. It is a marketing strategy that can help your business grow. With SEO services and search engine marketing, you can get targeted results. As a strategic SEO agency in the UK, we ensure that your search results ranking helps you with more engaging users on your website.<br></br><br></br>
+Finding the right traffic, increasing conversion, reducing bounce rates, and increasing your domain authority is all we focus on. With us, you do not simply rank; you market yourself through the medium of your website on various search engines.<br></br>
+We club the SEO services with other digital marketing plans. This helps your business grow in different directions. Moreover, you get high quality leads and increased conversion. Our strategy has worked for all of your clients, and it can help you grow, too.
+
+          
+          </p>
                  
                   
                 </motion.div>
                 </section>
                 <div className="py-12 bg-gray-100">
                   <h2 className="text-3xl md:text-5xl text-center pb-4 font-bold text-gray-800 mb-4">
-                    Our Services
+                    Turn your business into a brand with Us!
                   </h2>
                   <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                      
@@ -85,7 +91,7 @@ const page = () => {
                         {service.title}
                       </div> */}
                       {service.description && (
-                        <div className="absolute inset-0 bg-[#cb3188] bg-opacity-80 p-4 text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute inset-0 bg-[#f76c6c] bg-opacity-80 p-4 text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <h3 className="font-bold mb-2 text-lg">{service.title}</h3>
                           <p>{service.description}</p>
                         </div>

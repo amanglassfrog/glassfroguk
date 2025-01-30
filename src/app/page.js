@@ -110,25 +110,32 @@ const seoservices = [
 ];
 const testimonials = [
   {
-    name: "John Doe",
+    name: "Beezap",
     title: "CEO, Example Inc.",
     feedback:
-      "This service changed the way we approach customer engagement. Highly recommended!",
-    image: "/cgs.webp", // Replace with an actual image path or URL
+      "Glassfrog is definitely the best SEO company. Their SEO services boosted our website rankings and helped us with increased business over time.",
+    image: "/bp.webp", // Replace with an actual image path or URL
   },
   {
     name: "Jane Smith",
-    title: "Lead Developer, Tech Solutions",
+    title: "Ginies Career hub",
     feedback:
-      "Incredible results! The attention to detail and customer support are unmatched.",
+      "I was looking for a reliable London SEO agency and then came across Glassfrog. Their local SEO efforts branded me better in my location. I am very happy with their SEO efforts.",
     image: "/cgs.webp", // Replace with an actual image path or URL
   },
   {
-    name: "Alice Johnson",
+    name: "Unbox Basics",
     title: "Designer, Creative Agency",
     feedback:
-      "The best experience I've had. It helped streamline our design process significantly.",
-    image: "/cgs.webp", // Replace with an actual image path or URL
+      "I am so glad to have contacted an SEO company for my website. They helped me so much with ranking high. My business works so much better after high Google rankings.",
+    image: "/Unbox.webp", // Replace with an actual image path or URL
+  },
+  {
+    name: "The Field Sports",
+    title: "Designer, Creative Agency",
+    feedback:
+      "We were looking for a good SEO agency UK and I came across Glassfrog. Their SEO copywriting really helped me connect with my users. It also helped me rank better on Google. ",
+    image: "/tf.png", // Replace with an actual image path or URL
   },
   // Add more testimonials here
 ];
@@ -923,7 +930,7 @@ As the best SEO company in the UK, we have worked with a variety of clients in a
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          What Our Clients Say
+         "What Our Clients Say"
         </motion.h2>
 
         <Swiper
@@ -945,7 +952,8 @@ As the best SEO company in the UK, we have worked with a variety of clients in a
             <SwiperSlide key={index} className="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-lg">
               
                <motion.p
-                className="text-lg text-gray-500"
+                className="text-lg md:text-4xl text-gray-500"
+                style={{lineHeight: 1.5}}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6, duration: 1 }}
@@ -966,14 +974,14 @@ As the best SEO company in the UK, we have worked with a variety of clients in a
                   alt={testimonial.name}
                   className=" h-8 object-cover"
                 />
-<motion.p
+{/* <motion.p
                 className="text-sm text-gray-600 mb-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 1 }}
               > 
                 {testimonial.title}
-              </motion.p>
+              </motion.p> */}
 
               </div>
               
