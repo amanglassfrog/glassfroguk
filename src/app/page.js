@@ -398,7 +398,7 @@ const router = useRouter();
           {/* Text Section */}
           <div className="flex flex-col md:flex-row gap-4 mx-auto">
     <div className="flex-1 h-[80vh] flex flex-col items-center md:items-start  justify-center">
-      <motion.h2
+      <motion.h1
         className="text-3xl md:text-6xl mt-16 md:mt-0 font-bold text-gray-800 mb-4"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -406,7 +406,7 @@ const router = useRouter();
         style={{ lineHeight: "1.4" }}
       >
        It will just take a minute to check your <span className="text-[#f55c5c]">Website’s SEO Score</span> 
-      </motion.h2>
+      </motion.h1>
       <motion.p
         className="text-lg text-gray-700 mb-6"
         initial={{ opacity: 0, y: 50 }}
