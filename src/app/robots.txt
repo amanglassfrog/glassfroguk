@@ -1,4 +1,4 @@
 User-Agent: *
 Disallow:
 
-Sitemap: https://glassfrogtech.co.uk/sitemap.xml
+Sitemap: https://www.glassfrogtech.co.uk/sitemap.xml
