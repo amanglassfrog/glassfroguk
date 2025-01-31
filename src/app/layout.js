@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: " Best SEO Agency London | Premium SEO Services",
+  title: " Best SEO Agency London | Premium SEO Services & Strategy",
   description: "Get a hold of premium SEO services from the best SEO company in London. Market your business with local SEO services, website SEO audit, and much more.",
 };
 
@@ -23,14 +23,14 @@ export default function RootLayout({ children }) {
         <link rel="canonical" href="http://glassfrogtech.co.uk/" />
         <meta property="og:url" content="https://glassfrogtech.co.uk/"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content=" Best SEO Agency London | Premium SEO Services"/>
+<meta property="og:title" content=" Best SEO Agency London | Premium SEO Services & Strategy"/>
 <meta property="og:description" content="Get a hold of premium SEO services from the best SEO company in London. Market your business with local SEO services, website SEO audit, and much more."/>
 <meta property="og:image" content="https://opengraph.b-cdn.net/production/images/bfcef52c-0d5b-4bab-9ceb-58e7a36db5d0.jpg?token=uRXPuhpPu_LtN1-DMGyzw6NQTC-Utl05sDZVYr-WC-U&height=1080&width=1080&expires=33274315420"/>
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta property="twitter:domain" content="glassfrogtech.co.uk"/>
 <meta property="twitter:url" content="https://glassfrogtech.co.uk/"/>
-<meta name="twitter:title" content=" Best SEO Agency London | Premium SEO Services"/>
+<meta name="twitter:title" content=" Best SEO Agency London | Premium SEO Services & Strategy"/>
 <meta name="twitter:description" content="Get a hold of premium SEO services from the best SEO company in London. Market your business with local SEO services, website SEO audit, and much more."/>
 <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/bfcef52c-0d5b-4bab-9ceb-58e7a36db5d0.jpg?token=uRXPuhpPu_LtN1-DMGyzw6NQTC-Utl05sDZVYr-WC-U&height=1080&width=1080&expires=33274315420"/>
 
