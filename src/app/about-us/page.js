@@ -64,9 +64,9 @@ const page = () => {
                     transition={{ duration: 0.8 }}
                    
                 >
-                  <h3 className="text-indigo-600 text-sm font-semibold uppercase mb-2">
+                  <h1 className="text-indigo-600 text-sm font-semibold uppercase mb-2">
                    We’re not a Search Engine Optimization Company
-                  </h3>
+                  </h1>
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                   We’re your SEO Marketing Agency 
                   </h2>
