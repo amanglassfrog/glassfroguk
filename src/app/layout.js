@@ -21,6 +21,19 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="canonical" href="http://glassfrogtech.co.uk/" />
+        <meta property="og:url" content="https://glassfrogtech.co.uk/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content=" Best SEO Agency London | Premium SEO Services"/>
+<meta property="og:description" content="Get a hold of premium SEO services from the best SEO company in London. Market your business with local SEO services, website SEO audit, and much more."/>
+<meta property="og:image" content="https://opengraph.b-cdn.net/production/images/bfcef52c-0d5b-4bab-9ceb-58e7a36db5d0.jpg?token=uRXPuhpPu_LtN1-DMGyzw6NQTC-Utl05sDZVYr-WC-U&height=1080&width=1080&expires=33274315420"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="twitter:domain" content="glassfrogtech.co.uk"/>
+<meta property="twitter:url" content="https://glassfrogtech.co.uk/"/>
+<meta name="twitter:title" content=" Best SEO Agency London | Premium SEO Services"/>
+<meta name="twitter:description" content="Get a hold of premium SEO services from the best SEO company in London. Market your business with local SEO services, website SEO audit, and much more."/>
+<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/bfcef52c-0d5b-4bab-9ceb-58e7a36db5d0.jpg?token=uRXPuhpPu_LtN1-DMGyzw6NQTC-Utl05sDZVYr-WC-U&height=1080&width=1080&expires=33274315420"/>
+
         <script type="application/ld+json">
           {`
             {
@@ -109,6 +122,78 @@ export default function RootLayout({ children }) {
                     "text": "An SEO marketing agency can help you get more leads and gain high traffic through SEO services. They use SEO and market business with a proper plan. It is different from an SEO company that focuses on your website rankings."
                   }
                 }
+              ]
+            }
+          `}
+        </script>
+         <script type="application/ld+json">
+          {`
+            {
+              "@type": "WebSite",
+              "@id": "http://glassfrogtech.co.uk/#website",
+              "url": "http://glassfrogtech.co.uk/",
+              "name": "SEO Services - Glassfrog Technologies",
+              "description": "",
+              "publisher": {
+                "@id": "http://glassfrogtech.co.uk/#organization"
+              },
+              "potentialAction": [
+                {
+                  "@type": "SearchAction",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "http://glassfrogtech.co.uk/?s={search_term_string}"
+                  },
+                  "query-input": {
+                    "@type": "PropertyValueSpecification",
+                    "valueRequired": true,
+                    "valueName": "search_term_string"
+                  }
+                }
+              ],
+              "inLanguage": "en-UK"
+            }
+          `}
+        </script>
+
+        <script type="application/ld+json">
+          {`
+            {
+              "@type": "ImageObject",
+              "inLanguage": "en-UK",
+              "@id": "https://glassfrogtech.co.uk/#primaryimage",
+              "url": "https://glassfrogtech.co.uk/logo.svg",
+              "contentUrl": "https://glassfrogtech.co.uk/logo.svg",
+              "width": 87,
+              "height": 83
+            }
+          `}
+        </script>
+
+        <script type="application/ld+json">
+          {`
+            {
+              "@type": "Organization",
+              "@id": "https://glassfrogtech.co.uk/#organization",
+              "name": "SEO Services -  Glassfrog Technologies",
+              "url": "https://glassfrogtech.co.uk/",
+              "logo": {
+                "@type": "ImageObject",
+                "inLanguage": "en-UK",
+                "@id": "https://glassfrogtech.co.uk/#/schema/logo/image/",
+                "url": "https://glassfrogtech.co.uk/logo.svg",
+                "contentUrl": "https://glassfrogtech.co.uk/logo.svg",
+                "width": 237,
+                "height": 61,
+                "caption": "SEO Services -  Glassfrog Technologies"
+              },
+              "image": {
+                "@id": "https://glassfrogtech.co.uk/#/schema/logo/image/"
+              },
+              "sameAs": [
+                "https://www.facebook.com/GlassfrogTechnologies",
+                "https://www.instagram.com/glassfrog_technologies/",
+                "https://www.linkedin.com/company/glassfrog-technologies/"
               ]
             }
           `}
