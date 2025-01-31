@@ -47,11 +47,6 @@ export default function Footer() {
                 ​27 OLD Gloucester Street, London,<br></br> United Kingdom WC1N
                 3AX
               </li>
-              <li>
-                <strong>India:-</strong> ​​Jumpstart Tower, 2nd floor, Haridwar
-                Bypass Rd, opp. Nilaya Hills, Saraswati Vihar, Ajabpur Kalan,
-                Dehradun, Uttarakhand 248001.
-              </li>
             </ul>
             {/* Social Icons */}
             {/* <div className="flex space-x-4 mt-4">
