@@ -96,19 +96,23 @@ const seo = [
 
 const seoservices = [
   { title: "Organic Traffic", icon: "🖱️", description: "With our constant efforts, our clients witnessed a general hike of 120% in organic traffic, leading to higher website engagement and reduced bounce rates." },
-  { title: "Domain Authority", icon: "📈", description: "Our SEO strategies helped the domain authority of the websites. There was a hike of 30%, which improved their site’s credibility and built trust among its users. " },
-  { title: "Keyword Ranking", icon: "🔗", description: "We crafted SEO strategies that helped our clients get a 40% increase in visibility on the search engine results pages SERPs through better keyword rankings. " },
+  { title: "Domain Authority", icon: "📈", description: "Our SEO strategies helped the domain authority of the websites. There was a hike of 30%, which improved their site’s credibility and built trust among its users." },
+  { title: "Keyword Ranking", icon: "🔗", description: "We crafted SEO strategies that helped our clients get a 40% increase in visibility on the search engine results pages SERPs through better keyword rankings." },
   { title: "On-Page SEO", icon: "🎨", description: "With enhanced SEO strategies for on-page, we recorded a 50% improvement in the click-through rates CTRs across key website pages for our clients." },
-  { title: "Technical SEO", icon: "📋", description: "Our constant efforts in SEO resulted in a decrease of 35% in page load times. This helped in better user experience and increased rankings for websites.  " },
-  { title: "Backlinking", icon: "💻", description: "Traffic through links grew by 25% for our client's websites after high quality backlinks creation. We ensure increased traffic through link building. " },
+  { title: "Technical SEO", icon: "📋", description: "Our constant efforts in SEO resulted in a decrease of 35% in page load times. This helped in better user experience and increased rankings for websites." },
+  { title: "Backlinking", icon: "💻", description: "Traffic through links grew by 25% for our client's websites after high-quality backlinks creation. We ensure increased traffic through link building." },
   { title: "Content Strategy", icon: "📄", description: "The User dwell time on the websites of our clients was recorded with a 45% increase. This resulted in decreased bounce rates, improving the website ranking." },
-  { title: "Targeted Keywords Ranking", icon: "💰", description: " A 90% growth was observed in snippets and position zero rankings with the help of keyword targeting. This SEO measure improved rankings. " },
-  { title: "Local SEO", icon: "📦", description: "Our constant efforts in Local SEO hiked visibility by 80% in local searches and map results for our clients on Search Engines Results Pages SERPs " },
-  { title: "Mobile SEO", icon: "📚", description: "Most websites are operated on mobile devices. Hence, Mobile SEO is important. Our clients recorded a 70% growth in traffic and engagement. " },
+  { title: "Targeted Keywords Ranking", icon: "💰", description: "A 90% growth was observed in snippets and position zero rankings with the help of keyword targeting. This SEO measure improved rankings." },
+  { title: "Local SEO", icon: "📦", description: "Our constant efforts in Local SEO hiked visibility by 80% in local searches and map results for our clients on Search Engines Results Pages SERPs." },
+  { title: "Mobile SEO", icon: "📚", description: "Most websites are operated on mobile devices. Hence, Mobile SEO is important. Our clients recorded a 70% growth in traffic and engagement." },
   { title: "Internal Linking", icon: "⭐", description: "Our clients recorded a growth of 50% in page views and distributing link equity. Due to an improved internal linking structure in their SEO." },
   { title: "Website Crawlability", icon: "💬", description: "Our client's websites crawled 60% better with technical SEO services. As an SEO company, we helped them achieve better SEO rankings." },
-  
 ];
+
+const highlightPercentage = (text) => {
+  // Regular expression to find percentage numbers (e.g., 120%, 30%)
+  return text.replace(/(\d+%)/g, (match) => `<span class="text-blue-500 font-bold">${match}</span>`);
+};
 const testimonials = [
   {
     name: "Beezap",
@@ -1123,7 +1127,7 @@ As the best SEO company in the UK, we have worked with a variety of clients in a
         },
       }}
     >
-      {seoservices.map((service, index) => (
+    {seoservices.map((service, index) => (
         <motion.div
           key={index}
           className="flex flex-col text-left items-center justify-between p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
@@ -1146,9 +1150,10 @@ As the best SEO company in the UK, we have worked with a variety of clients in a
               transition: { duration: 0.3 },
             }}
             whileHover={{ opacity: 1 }}
-          >
-            {service.description}
-          </motion.div>
+            dangerouslySetInnerHTML={{
+              __html: highlightPercentage(service.description),
+            }}
+          />
         </motion.div>
       ))}
     </motion.div>
