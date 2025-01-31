@@ -69,17 +69,15 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Our Vision</h4>
             <p>
-              Glassfrog Technologies works as a digital marketing and seo
-              agency. We aim to match the requirements of your business in this
-              age of digital marketing and artificial intelligence. Our
-              extensive services in Social Media Marketing and Management,
-              Search Engine Marketing, Paid Advertising, Content Marketing,
-              Graphic Designing, Influencer Marketing, and Website Development
-              will help you grow online.
+              Our vision as an SEO agency and digital marketing company is
+              simple. We want to brand your business. We use our experience and
+              expertise to help you grow and find your audience better and
+              quicker. Our aim is to put you on the digital map and get your
+              increased leads and sales.
             </p>
             <p>
-              Contact us now to grow your business online with expert SEO and
-              digital marketing in the UK.
+              Contact us now and grow your business with expert SEO and digital
+              marketing in the UK.
             </p>
           </div>
 

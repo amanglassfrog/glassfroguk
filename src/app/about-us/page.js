@@ -18,7 +18,25 @@ const cservices = [
 
 const page = () => {
   return (
-      <>
+    <>
+      <head>
+      
+        <link rel="canonical" href="http://www.glassfrogtech.co.uk/about-us" />
+        
+<meta property="og:url" content="https://www.glassfrogtech.co.uk/about-us"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="About Us - Glassfrog Technologies"/>
+<meta property="og:description" content="Glassfrog offers specialised solutions in Website Development, Mobile Application, Digital Marketing, SEO, SMM, and more. Learn everything about us here"/>
+<meta property="og:image" content="https://opengraph.b-cdn.net/production/images/bfcef52c-0d5b-4bab-9ceb-58e7a36db5d0.jpg?token=uRXPuhpPu_LtN1-DMGyzw6NQTC-Utl05sDZVYr-WC-U&height=1080&width=1080&expires=33274315420"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="twitter:domain" content="glassfrogtech.co.uk"/>
+<meta property="twitter:url" content="https://www.glassfrogtech.co.uk/about-us"/>
+<meta name="twitter:title" content="About Us - Glassfrog Technologies"/>
+<meta name="twitter:description" content="Glassfrog offers specialised solutions in Website Development, Mobile Application, Digital Marketing, SEO, SMM, and more. Learn everything about us here"/>
+<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/bfcef52c-0d5b-4bab-9ceb-58e7a36db5d0.jpg?token=uRXPuhpPu_LtN1-DMGyzw6NQTC-Utl05sDZVYr-WC-U&height=1080&width=1080&expires=33274315420"></meta>
+      </head>
           <Header />
            <section  id="about" className="py-16 px-6 md:px-16 lg:px-24 bg-gray-50 flex flex-col lg:flex-row items-center">
                 {/* Image Section */}
