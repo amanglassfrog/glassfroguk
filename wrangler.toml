@@ -1,12 +1,10 @@
 name = "glassfroguk"
 compatibility_date = "2024-02-04"
 compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
 
 [build]
 command = "npx @cloudflare/next-on-pages@1"
-
-[pages_build_output_dir]
-value = ".vercel/output/static"
 
 [build.environment]
 NODE_VERSION = "20.0.0"
