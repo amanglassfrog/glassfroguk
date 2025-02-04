@@ -1,4 +1,4 @@
-import { next } from '@cloudflare/next-on-pages/handlers'
+import { next } from '@cloudflare/next-on-pages'
 
 // Export a default object containing the Cloudflare Pages Functions configuration
 export const onRequest = next({
@@ -7,4 +7,11 @@ export const onRequest = next({
     compatibility_date: "2024-02-04",
     compatibility_flags: ["nodejs_compat"]
   }
-}); 
+});
+
+export default {
+  async fetch(request, env, ctx) {
+    const nextjsHandler = next.fetch(request, env, ctx);
+    return nextjsHandler;
+  }
+}; 
