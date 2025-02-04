@@ -6,7 +6,6 @@ import Footer from '@/components/footer/footer'
 import Header from '@/components/header/Header'
 import React from 'react'
 
-
 const cservices = [
     { title: "Paid Advertising ", image: "/pa.jpg",description:"Organic growth takes time. Get high quality leads for your product with paid ads and outreach. Drive users to your website quickly with targeted ad campaigns." },
     { title: "Graphic Designing", image: "/gd.jpg",description:"The look and feel of your business defines it. Good visuals brand your product better and help the audience connect with it. We sort your graphics and brand you better." },
@@ -14,113 +13,87 @@ const cservices = [
     { title: "Social Media Marketing ", image: "/sm.jpg",description:"The boom of social media is real. But what's impactful is how it can help your business grow. Find an audience for your business with our planned social media strategy. " },
     { title: "Influencer Marketing", image: "/im.jpg",description:"Find the right face for your business with our strategic influencer marketing. We find the passionate social media faces for your product who can help you reach your audience!" },
     { title: "Email Marketing ", image: "/em.jpg",description:"Want to reach your customer's inbox and connect? Communicate your business with stunning newsletters and quick emailing. Build smooth customer relationships rapidly. " },
-  ];
+];
 
-const page = () => {
+export default function AboutPage() {
   return (
-    <>
-      <head>
-      
-        <link rel="canonical" href="http://www.glassfrogtech.co.uk/about-us" />
-        
-<meta property="og:url" content="https://www.glassfrogtech.co.uk/about-us"/>
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="About Us - Glassfrog Technologies"/>
-<meta property="og:description" content="Glassfrog offers specialised solutions in Website Development, Mobile Application, Digital Marketing, SEO, SMM, and more. Learn everything about us here"/>
-<meta property="og:image" content="https://opengraph.b-cdn.net/production/images/bfcef52c-0d5b-4bab-9ceb-58e7a36db5d0.jpg?token=uRXPuhpPu_LtN1-DMGyzw6NQTC-Utl05sDZVYr-WC-U&height=1080&width=1080&expires=33274315420"/>
+    <div className="min-h-screen bg-white">
+      <Header />
+      <main>
+        <section id="about" className="py-16 px-6 md:px-16 lg:px-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+            <motion.div
+              className="w-full lg:w-1/2"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="relative overflow-hidden rounded-lg shadow-xl">
+                <img
+                  src="/sec3.png"
+                  alt="Team Collaboration"
+                  className="w-full h-auto"
+                />
+              </div>
+            </motion.div>
 
+            <motion.div
+              className="w-full lg:w-1/2 space-y-6 text-center lg:text-left"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-indigo-600 text-sm font-semibold uppercase">
+                We're not a Search Engine Optimization Company
+              </h1>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+                We're your SEO Marketing Agency
+              </h2>
+              <div className="text-gray-600 text-sm md:text-base space-y-4">
+                <p>
+                  Search Engine Optimization is more than a necessity. It is a marketing strategy that can help your business grow. With SEO services and search engine marketing, you can get targeted results. As a strategic SEO agency in the UK, we ensure that your search results ranking helps you with more engaging users on your website.
+                </p>
+                <p>
+                  Finding the right traffic, increasing conversion, reducing bounce rates, and increasing your domain authority is all we focus on. With us, you do not simply rank; you market yourself through the medium of your website on various search engines.
+                </p>
+                <p>
+                  We club the SEO services with other digital marketing plans. This helps your business grow in different directions. Moreover, you get high quality leads and increased conversion. Our strategy has worked for all of your clients, and it can help you grow, too.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta property="twitter:domain" content="glassfrogtech.co.uk"/>
-<meta property="twitter:url" content="https://www.glassfrogtech.co.uk/about-us"/>
-<meta name="twitter:title" content="About Us - Glassfrog Technologies"/>
-<meta name="twitter:description" content="Glassfrog offers specialised solutions in Website Development, Mobile Application, Digital Marketing, SEO, SMM, and more. Learn everything about us here"/>
-<meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/bfcef52c-0d5b-4bab-9ceb-58e7a36db5d0.jpg?token=uRXPuhpPu_LtN1-DMGyzw6NQTC-Utl05sDZVYr-WC-U&height=1080&width=1080&expires=33274315420"></meta>
-      </head>
-          <Header />
-           <section  id="about" className="py-16 px-6 md:px-16 lg:px-24 bg-gray-50 flex flex-col lg:flex-row items-center">
-                {/* Image Section */}
+        <section className="py-16 bg-gray-100">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-3xl md:text-5xl text-center font-bold text-gray-800 mb-12">
+              Turn your business into a brand with Us!
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {cservices.map((service, index) => (
                 <motion.div
-                  className="w-full lg:w-1/2 relative mb-8 lg:mb-0"
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
+                  key={index}
+                  className="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.4 }}
                 >
-                  <div className="relative overflow-hidden ">
-                    <img
-                      src="/sec3.png" // Replace with your image path
-                      alt="Team Collaboration"
-                     
-                    />
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-[#f76c6c] bg-opacity-80 p-6 flex flex-col justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="font-bold text-xl mb-3">{service.title}</h3>
+                    <p className="text-sm">{service.description}</p>
                   </div>
                 </motion.div>
-          
-                  {/* Text Content Section */}
-                  
-                <motion.div
-                  className="w-full lg:w-1/2 lg:pl-10 text-center lg:text-left"
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                   
-                >
-                  <h1 className="text-indigo-600 text-sm font-semibold uppercase mb-2">
-                   We’re not a Search Engine Optimization Company
-                  </h1>
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                  We’re your SEO Marketing Agency 
-                  </h2>
-                  <p className="text-gray-600 text-sm md:text-base mb-6">
-                   
-          Search Engine Optimization is more than a necessity. It is a marketing strategy that can help your business grow. With SEO services and search engine marketing, you can get targeted results. As a strategic SEO agency in the UK, we ensure that your search results ranking helps you with more engaging users on your website.<br></br><br></br>
-Finding the right traffic, increasing conversion, reducing bounce rates, and increasing your domain authority is all we focus on. With us, you do not simply rank; you market yourself through the medium of your website on various search engines.<br></br>
-We club the SEO services with other digital marketing plans. This helps your business grow in different directions. Moreover, you get high quality leads and increased conversion. Our strategy has worked for all of your clients, and it can help you grow, too.
-
-          
-          </p>
-                 
-                  
-                </motion.div>
-                </section>
-                <div className="py-12 bg-gray-100">
-                  <h2 className="text-3xl md:text-5xl text-center pb-4 font-bold text-gray-800 mb-4">
-                    Turn your business into a brand with Us!
-                  </h2>
-                  <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                     
-                  {cservices.map((service, index) => (
-                    <motion.div
-                      key={index}
-                      className="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1, duration: 0.4 }}
-                    >
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-64 group-hover:scale-105 transition-transform duration-300"
-                      />
-                      {/* <div
-                        className={`absolute inset-0 bg-green-500 bg-opacity-70 flex items-center justify-center text-white text-lg font-bold p-4 ${
-                          service.description ? "group-hover:hidden" : ""
-                        }`}
-                      >
-                        {service.title}
-                      </div> */}
-                      {service.description && (
-                        <div className="absolute inset-0 bg-[#f76c6c] bg-opacity-80 p-4 text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <h3 className="font-bold mb-2 text-lg">{service.title}</h3>
-                          <p>{service.description}</p>
-                        </div>
-                      )}
-                    </motion.div>
-                  ))}
-                </div>
-                </div>
-          <Footer/>
-      </>
-  )
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
 }
-
-export default page
