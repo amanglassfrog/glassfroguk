@@ -5,4 +5,4 @@ command = "npx @cloudflare/next-on-pages@1"
 NODE_VERSION = "20.0.0"
 
 [build_output_directory]
-value = ".vercel/output/static" 
+value = ".vercel/output/static"
