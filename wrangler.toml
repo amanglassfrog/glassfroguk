@@ -13,3 +13,9 @@ NODE_VERSION = "20.0.0"
 format = "service-worker"
 dir = ".vercel/output/static"
 main = ".vercel/output/static/_worker.js"
+
+[env.production]
+name = "glassfroguk-production"
+
+[env.preview]
+name = "glassfroguk-preview"
