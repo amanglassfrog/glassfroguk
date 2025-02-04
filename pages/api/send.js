@@ -1,17 +1,15 @@
-// Remove the edge runtime directive since we need Node.js features
-// export const runtime = 'edge';
+export const runtime = 'edge';
 
-import nodemailer from 'nodemailer';
-
-export default async function handler(req, res) {
+export default async function handler(req) {
   if (req.method === 'POST') {
-    const { fullName, websiteLink, email, phoneNumber } = req.body;
+    const { fullName, websiteLink, email, phoneNumber } = await req.json();
 
     // Validate required fields
     if (!fullName || !websiteLink || !email || !phoneNumber) {
-      return res.status(400).json({ 
-        error: "Missing required fields: fullName, websiteLink, email, or phoneNumber." 
-      });
+      return new Response(
+        JSON.stringify({ error: "Missing required fields: fullName, websiteLink, email, or phoneNumber." }),
+        { status: 400 }
+      );
     }
 
     const emailHTML = `
@@ -45,50 +43,84 @@ export default async function handler(req, res) {
     </html>
   `;
 
-    // Create a transporter using your email service
-    const transporter = nodemailer.createTransport({
-      service: 'Gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    // Email to Admin
-    const adminMailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.RECEIVER_EMAIL,
-      subject: 'New Form Submission for Glassfrog',
-      text: `
-        New form submission:
-        Name: ${fullName} 
-        Website Link: ${websiteLink}
-        Email: ${email}
-        Phone Number: ${phoneNumber}
-      `,
-    };
-
-    // Email to User
-    const userMailOptions = {
-      from: process.env.EMAIL_USER,
-      to: email,
-      subject: 'Form Submission Confirmation',
-      html: emailHTML,
-    };
-
     try {
-      // Send email to Admin
-      await transporter.sendMail(adminMailOptions);
+      // Send email to Admin using Cloudflare Workers
+      const adminEmailResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          personalizations: [
+            {
+              to: [{ email: process.env.RECEIVER_EMAIL }],
+            },
+          ],
+          from: {
+            email: process.env.SENDER_EMAIL,
+            name: 'Glassfrog Technologies',
+          },
+          subject: 'New Form Submission for Glassfrog',
+          content: [
+            {
+              type: 'text/plain',
+              value: `
+                New form submission:
+                Name: ${fullName} 
+                Website Link: ${websiteLink}
+                Email: ${email}
+                Phone Number: ${phoneNumber}
+              `,
+            },
+          ],
+        }),
+      });
 
-      // Send email to User
-      await transporter.sendMail(userMailOptions);
+      // Send email to User using Cloudflare Workers
+      const userEmailResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          personalizations: [
+            {
+              to: [{ email: email }],
+            },
+          ],
+          from: {
+            email: process.env.SENDER_EMAIL,
+            name: 'Glassfrog Technologies',
+          },
+          subject: 'Form Submission Confirmation',
+          content: [
+            {
+              type: 'text/html',
+              value: emailHTML,
+            },
+          ],
+        }),
+      });
 
-      res.status(200).json({ message: 'Confirmation emails sent successfully' });
+      if (!adminEmailResponse.ok || !userEmailResponse.ok) {
+        throw new Error('Failed to send one or more emails');
+      }
+
+      return new Response(
+        JSON.stringify({ message: 'Confirmation emails sent successfully' }),
+        { status: 200 }
+      );
     } catch (error) {
       console.error('Error sending email:', error);
-      res.status(500).json({ error: 'Failed to send confirmation emails' });
+      return new Response(
+        JSON.stringify({ error: 'Failed to send confirmation emails' }),
+        { status: 500 }
+      );
     }
-  } else {
-    res.status(405).json({ message: 'Method Not Allowed' });
   }
+
+  return new Response(
+    JSON.stringify({ message: 'Method Not Allowed' }),
+    { status: 405 }
+  );
 }
