@@ -4,5 +4,8 @@ command = "npx @cloudflare/next-on-pages@1"
 [build.environment]
 NODE_VERSION = "20.0.0"
 
-[compatibility]
+[functions]
+# This section configures Pages Functions
+[functions.options]
+compatibility_date = "2024-02-04"
 compatibility_flags = ["nodejs_compat"] 
