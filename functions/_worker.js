@@ -1,6 +1,6 @@
 import { next } from '@cloudflare/next-on-pages'
 
-// Export a default object containing the Cloudflare Pages Functions configuration
+// Export the Pages Functions configuration
 export const onRequest = next({
   // Optional: Provide custom configuration
   config: {

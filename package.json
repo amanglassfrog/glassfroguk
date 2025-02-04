@@ -5,14 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "pages:build": "npx @cloudflare/next-on-pages",
-    "preview": "npm run pages:build && wrangler pages dev .vercel/output/static",
-    "deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static",
+    "pages:build": "next build && npx @cloudflare/next-on-pages",
+    "preview": "wrangler pages dev .vercel/output/static",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@cloudflare/next-on-pages": "^1.8.0",
     "@heroicons/react": "^2.2.0",
     "@sendgrid/mail": "^8.1.4",
     "chart.js": "^4.4.7",
@@ -34,6 +32,7 @@
     "swiper": "^11.2.1"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.8.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
