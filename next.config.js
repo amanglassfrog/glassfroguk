@@ -1,12 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Your existing config here
   experimental: {
-    serverActions: true,
+    serverActions: {
+      allowedOrigins: ['*.pages.dev', '*.glassfroguk.pages.dev']
+    }
   },
-  // Configure for Cloudflare Pages
-  env: {
-    NEXT_RUNTIME: 'edge'
+  // Cloudflare Pages specific settings
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    return config;
   }
 }
 
