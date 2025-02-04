@@ -12,108 +12,33 @@ export default async function handler(req) {
       );
     }
 
-    const emailHTML = `
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        body { font-family: Arial, sans-serif; }
-        .container { max-width: 600px; margin: auto; padding: 20px; background: #f9f9f9; }
-        h1 { color: #f76c6c; text-align: center; }
-        p { text-align: center; color: #333; }
-        .cta-button { display: block; width: 180px; margin: auto; padding: 12px; background: #f76c6c; color: #fff; text-align: center; text-decoration: none; font-weight: bold; border-radius: 5px; }
-        .footer { text-align: center; font-size: 12px; color: #666; padding: 20px; }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <h1>Thank You for Your Submission!</h1>
-        <p>Dear ${fullName},</p>
-        <p>We have received your details. Here's a summary:</p>
-        <p><strong>Name:</strong> ${fullName}</p>
-        <p><strong>Website:</strong> <a href="${websiteLink}">${websiteLink}</a></p>
-        <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-        <p><strong>Phone:</strong> ${phoneNumber}</p>
-        <a href="https://glassfrogtech.co.uk" class="cta-button">Read More</a>
-        <div class="footer">
-          <p>Glassfrog Technologies Private Limited</p>
-        </div>
-      </div>
-    </body>
-    </html>
-  `;
-
     try {
-      // Send email to Admin using Cloudflare Workers
-      const adminEmailResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
+      // Send email using Digital Ocean API
+      const emailResponse = await fetch('https://sea-turtle-app-sm5l4.ondigitalocean.app/api/sendMail/glassfrog', {
         method: 'POST',
         headers: {
-          'content-type': 'application/json',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          personalizations: [
-            {
-              to: [{ email: process.env.RECEIVER_EMAIL }],
-            },
-          ],
-          from: {
-            email: process.env.SENDER_EMAIL,
-            name: 'Glassfrog Technologies',
-          },
-          subject: 'New Form Submission for Glassfrog',
-          content: [
-            {
-              type: 'text/plain',
-              value: `
-                New form submission:
-                Name: ${fullName} 
-                Website Link: ${websiteLink}
-                Email: ${email}
-                Phone Number: ${phoneNumber}
-              `,
-            },
-          ],
+          name: fullName,
+          email: email,
+          phone: phoneNumber,
+          message: `Website Link: ${websiteLink}\n\nThis is a submission from the website form.`,
         }),
       });
 
-      // Send email to User using Cloudflare Workers
-      const userEmailResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          personalizations: [
-            {
-              to: [{ email: email }],
-            },
-          ],
-          from: {
-            email: process.env.SENDER_EMAIL,
-            name: 'Glassfrog Technologies',
-          },
-          subject: 'Form Submission Confirmation',
-          content: [
-            {
-              type: 'text/html',
-              value: emailHTML,
-            },
-          ],
-        }),
-      });
-
-      if (!adminEmailResponse.ok || !userEmailResponse.ok) {
-        throw new Error('Failed to send one or more emails');
+      if (!emailResponse.ok) {
+        throw new Error('Failed to send email');
       }
 
       return new Response(
-        JSON.stringify({ message: 'Confirmation emails sent successfully' }),
+        JSON.stringify({ message: 'Confirmation email sent successfully' }),
         { status: 200 }
       );
     } catch (error) {
       console.error('Error sending email:', error);
       return new Response(
-        JSON.stringify({ error: 'Failed to send confirmation emails' }),
+        JSON.stringify({ error: 'Failed to send confirmation email' }),
         { status: 500 }
       );
     }
