@@ -1,45 +1,39 @@
-import { NextResponse } from 'next/server';
-
-const API_URL = process.env.API_URL; // Remove NEXT_PUBLIC_ prefix
+export const runtime = 'edge';
 
 export async function POST(request) {
   try {
-    const body = await request.json();
-
-    // Validate required fields
-    const requiredFields = ['name', 'email', 'phone', 'message'];
-    for (const field of requiredFields) {
-      if (!body[field]) {
-        return NextResponse.json(
-          { error: `${field} is required` },
-          { status: 400 }
-        );
-      }
-    }
-
-    // Forward the request to the actual API
-    const response = await fetch(API_URL, {
+    const data = await request.json();
+    
+    const response = await fetch('https://sea-turtle-app-sm5l4.ondigitalocean.app/api/sendMail/glassfrog', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        ...body,
-        timestamp: new Date().toISOString(),
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        source: data.source
       }),
     });
 
     if (!response.ok) {
-      throw new Error(`API responded with status: ${response.status}`);
+      const error = await response.json();
+      return new Response(JSON.stringify({ error: error.message || 'Failed to send email' }), {
+        status: response.status,
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
 
-    const data = await response.json();
-    return NextResponse.json(data);
+    return new Response(JSON.stringify({ message: 'Email sent successfully' }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
   } catch (error) {
-    console.error('Error in contact API route:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    return new Response(JSON.stringify({ error: 'Internal server error' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 } 
