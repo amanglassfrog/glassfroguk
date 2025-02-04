@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@sendgrid/mail": "^8.1.4",
     "chart.js": "^4.4.7",
     "framer-motion": "^12.0.3",
     "lodash": "^4.17.21",

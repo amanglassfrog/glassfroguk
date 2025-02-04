@@ -1,3 +1,6 @@
+// Remove the edge runtime directive since we need Node.js features
+// export const runtime = 'edge';
+
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
@@ -6,11 +9,12 @@ export default async function handler(req, res) {
 
     // Validate required fields
     if (!fullName || !websiteLink || !email || !phoneNumber) {
-      return res
-        .status(400)
-        .json({ error: "Missing required fields: fullName, websiteLink, email, or phoneNumber." });
+      return res.status(400).json({ 
+        error: "Missing required fields: fullName, websiteLink, email, or phoneNumber." 
+      });
     }
-const emailHTML = `
+
+    const emailHTML = `
     <!DOCTYPE html>
     <html>
     <head>
@@ -27,7 +31,7 @@ const emailHTML = `
       <div class="container">
         <h1>Thank You for Your Submission!</h1>
         <p>Dear ${fullName},</p>
-        <p>We have received your details. Here’s a summary:</p>
+        <p>We have received your details. Here's a summary:</p>
         <p><strong>Name:</strong> ${fullName}</p>
         <p><strong>Website:</strong> <a href="${websiteLink}">${websiteLink}</a></p>
         <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
@@ -40,20 +44,21 @@ const emailHTML = `
     </body>
     </html>
   `;
+
     // Create a transporter using your email service
     const transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
-        user: process.env.EMAIL_USER, // Your email address
-        pass: process.env.EMAIL_PASS, // Your email password or app password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
     // Email to Admin
     const adminMailOptions = {
-      from: process.env.EMAIL_USER, // Sender address
-      to: process.env.RECEIVER_EMAIL, // Admin email address
-      subject: 'New Form Submission for Glassfrog', // Email subject
+      from: process.env.EMAIL_USER,
+      to: process.env.RECEIVER_EMAIL,
+      subject: 'New Form Submission for Glassfrog',
       text: `
         New form submission:
         Name: ${fullName} 
@@ -65,10 +70,10 @@ const emailHTML = `
 
     // Email to User
     const userMailOptions = {
-      from: process.env.EMAIL_USER, // Sender address
-      to: email, // User's email address
-      subject: 'Form Submission Confirmation', // Email subject
-       html: emailHTML,
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: 'Form Submission Confirmation',
+      html: emailHTML,
     };
 
     try {
