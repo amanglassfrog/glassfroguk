@@ -1,6 +1,7 @@
-import { Inter } from 'next/font/google';
 import "./globals.css";
+import { Inter } from 'next/font/google';
 import { Metadata } from 'next';
+import { ToastProvider } from '@/components/ui/ToastContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -32,7 +33,9 @@ export const metadata = {
     title: 'Best SEO Agency London | Premium SEO Services & Strategy',
     description: 'Get a hold of premium SEO services from the best SEO company in London. Market your business with local SEO services, website SEO audit, and much more.',
     images: ['https://opengraph.b-cdn.net/production/images/bfcef52c-0d5b-4bab-9ceb-58e7a36db5d0.jpg'],
-  }
+  },
+  title: 'Best SEO Agency London | Premium SEO Services & Strategy',
+  description: 'Get a hold of premium SEO services from the best SEO company in London. Market your business with local SEO services, website SEO audit, and much more.',
 };
 
 // Define the JSON-LD data
@@ -132,7 +135,7 @@ const jsonLdData = [
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head>
         <script
           type="application/ld+json"
@@ -167,8 +170,10 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${inter.className} antialiased`}>
-        {children}
+      <body className="antialiased">
+        <ToastProvider>
+          {children}
+        </ToastProvider>
       </body>
     </html>
   );

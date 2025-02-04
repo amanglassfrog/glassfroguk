@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Footer from "@/components/footer/footer";
-import { toast,ToastContainer  } from "react-toastify"; // Importing toastify
-import "react-toastify/dist/ReactToastify.css"; // Importing the required CSS
+import { useToast } from "@/components/ui/ToastContext";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -170,6 +169,7 @@ const faqs = [
 
 
 export default function HowItWorksPage() {
+  const { showToast } = useToast();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false); 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -229,7 +229,7 @@ const router = useRouter();
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      setLoading(true); // Set loading to true during submission
+      setLoading(true);
 
       try {
         const response = await fetch('/api/contact', {
@@ -251,7 +251,7 @@ const router = useRouter();
           throw new Error(error.error || 'Failed to submit form');
         }
 
-        toast.success("Form submitted successfully!");
+        showToast("Form submitted successfully!", "success");
         setFormData({
           fullName: "",
           websiteLink: "",
@@ -262,7 +262,7 @@ const router = useRouter();
         router.push("/quiz");
       } catch (error) {
         console.error("Error submitting form:", error);
-        toast.error("Error submitting form");
+        showToast("Error submitting form", "error");
       } finally {
         setLoading(false);
       }
@@ -322,7 +322,7 @@ const router = useRouter();
           throw new Error(error.error || 'Failed to submit form');
         }
 
-        toast.success("Contact form submitted successfully!");
+        showToast("Contact form submitted successfully!", "success");
         setContactFormData({
           name: "",
           email: "",
@@ -333,7 +333,7 @@ const router = useRouter();
         setIsContactModalOpen(false);
       } catch (error) {
         console.error("Error submitting contact form:", error);
-        toast.error("Error submitting contact form");
+        showToast("Error submitting contact form", "error");
       } finally {
         setLoading(false);
       }
@@ -1032,7 +1032,6 @@ As the best SEO company in the UK, we have worked with a variety of clients in a
       </div>
     </section>
       <Footer />
-            <ToastContainer position="top-right" autoClose={5000} hideProgressBar newestOnTop />
 
       </>
   );
