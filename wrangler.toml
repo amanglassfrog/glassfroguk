@@ -1,7 +1,8 @@
 [build]
 command = "npx @cloudflare/next-on-pages@1"
-[build.environment]
-NODE_VERSION = "18.17.1"
 
-[pages_build_output_dir]
+[build.environment]
+NODE_VERSION = "20.0.0"
+
+[build_output_directory]
 value = ".vercel/output/static" 
