@@ -1,4 +1,8 @@
 [build]
-command = "npm run build"
+command = "npx @cloudflare/next-on-pages@1"
+
 [build.environment]
-NODE_VERSION = "18.17.1" 
+NODE_VERSION = "20.0.0"
+
+[compatibility]
+compatibility_flags = ["nodejs_compat"] 
