@@ -16,7 +16,7 @@ const services = [
   {
     id: 1,
     title: "Local SEO",
-    description: "We put you on the map! Get your Website’s rankings soaring in the local charts for an improved business outreach with local SEO services. We help you target users through keywords relevant to your business location. Our local SEO expert services will help you rank in the healthy searches. ",
+    description: "We put you on the map! Get your Website's rankings soaring in the local charts for an improved business outreach with local SEO services. We help you target users through keywords relevant to your business location. Our local SEO expert services will help you rank in the healthy searches. ",
     icon: "📍", // Replace with an icon component if needed
   },
   {
@@ -54,7 +54,7 @@ const seo = [
     id: 3,
     title: "Optimized Content Creation",
     description:
-      "Based on the keywords, we start working on creating optimized content, that is, website content, landing pages, blogs, and more. High-quality content that voices your website’s purpose while targeting users through keywords is all your website needs!",
+      "Based on the keywords, we start working on creating optimized content, that is, website content, landing pages, blogs, and more. High-quality content that voices your website's purpose while targeting users through keywords is all your website needs!",
     icon: "🎥",
   },
   {
@@ -96,7 +96,7 @@ const seo = [
 
 const seoservices = [
   { title: "Organic Traffic", icon: "🖱️", description: "With our constant efforts, our clients witnessed a general hike of 120% in organic traffic, leading to higher website engagement and reduced bounce rates." },
-  { title: "Domain Authority", icon: "📈", description: "Our SEO strategies helped the domain authority of the websites. There was a hike of 30%, which improved their site’s credibility and built trust among its users." },
+  { title: "Domain Authority", icon: "📈", description: "Our SEO strategies helped the domain authority of the websites. There was a hike of 30%, which improved their site's credibility and built trust among its users." },
   { title: "Keyword Ranking", icon: "🔗", description: "We crafted SEO strategies that helped our clients get a 40% increase in visibility on the search engine results pages SERPs through better keyword rankings." },
   { title: "On-Page SEO", icon: "🎨", description: "With enhanced SEO strategies for on-page, we recorded a 50% improvement in the click-through rates CTRs across key website pages for our clients." },
   { title: "Technical SEO", icon: "📋", description: "Our constant efforts in SEO resulted in a decrease of 35% in page load times. This helped in better user experience and increased rankings for websites." },
@@ -232,34 +232,39 @@ const router = useRouter();
       setLoading(true); // Set loading to true during submission
 
       try {
-        const response = await fetch("/api/send", {
+        const response = await fetch('/api/contact', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({
+            name: formData.fullName,
+            email: formData.email,
+            phone: formData.phoneNumber,
+            message: `Website Link: ${formData.websiteLink}\n\nThis is a submission from the website form.`,
+            source: "website_form"
+          }),
         });
 
-        if (response.ok) {
-          // Success
-          setFormData({
-            fullName: "",
-            websiteLink: "",
-            email: "",
-            phoneNumber: "",
-          }); // Clear form fields
-          setErrors({});
- toast.success("Contact form submitted successfully!");            
-        } else {
-          const result = await response.json();
-          toast.error("Error submitting contact form");
-          console.error("Error:", result.error);
+        if (!response.ok) {
+          const error = await response.json();
+          throw new Error(error.error || 'Failed to submit form');
         }
+
+        toast.success("Form submitted successfully!");
+        setFormData({
+          fullName: "",
+          websiteLink: "",
+          email: "",
+          phoneNumber: "",
+        });
+        setErrors({});
+        router.push("/quiz");
       } catch (error) {
         console.error("Error submitting form:", error);
+        toast.error("Error submitting form");
       } finally {
-        setLoading(false); // Set loading to false after submission
-        router.push("/quiz");
+        setLoading(false);
       }
     }
   };
@@ -298,31 +303,37 @@ const router = useRouter();
       setLoading(true); // Set loading to true during submission
 
       try {
-        const response = await fetch("/api/csend", {
+        const response = await fetch('/api/contact', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(contactFormData),
+          body: JSON.stringify({
+            name: contactFormData.name,
+            email: contactFormData.email,
+            phone: contactFormData.phoneNumber,
+            message: contactFormData.message,
+            source: "contact_modal"
+          }),
         });
 
-        if (response.ok) {
-          console.log("Contact form submitted successfully");
-          setContactFormData({
-            name: "",
-            email: "",
-            phoneNumber: "",
-            message: "",
-          }); // Clear form fields
-          setErrors({});
- toast.success("Contact form submitted successfully!");           setIsContactModalOpen(false); // Close the contact modal after success
-        } else {
-          const result = await response.json();
-          toast.error("Error submitting contact form");
-          console.error("Error:", result.error);
+        if (!response.ok) {
+          const error = await response.json();
+          throw new Error(error.error || 'Failed to submit form');
         }
+
+        toast.success("Contact form submitted successfully!");
+        setContactFormData({
+          name: "",
+          email: "",
+          phoneNumber: "",
+          message: "",
+        });
+        setErrors({});
+        setIsContactModalOpen(false);
       } catch (error) {
         console.error("Error submitting contact form:", error);
+        toast.error("Error submitting contact form");
       } finally {
         setLoading(false);
       }
@@ -355,210 +366,7 @@ const router = useRouter();
 
   return (
     <>
-      <head>
-        <link rel="canonical" href="http://www.glassfrogtech.co.uk/" />
-        <meta property="og:url" content="https://www.glassfrogtech.co.uk/" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content=" Best SEO Agency London | Premium SEO Services & Strategy"
-        />
-        <meta
-          property="og:description"
-          content="Get a hold of premium SEO services from the best SEO company in London. Market your business with local SEO services, website SEO audit, and much more."
-        />
-        <meta
-          property="og:image"
-          content="https://opengraph.b-cdn.net/production/images/bfcef52c-0d5b-4bab-9ceb-58e7a36db5d0.jpg?token=uRXPuhpPu_LtN1-DMGyzw6NQTC-Utl05sDZVYr-WC-U&height=1080&width=1080&expires=33274315420"
-        />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="glassfrogtech.co.uk" />
-        <meta
-          property="twitter:url"
-          content="https://www.glassfrogtech.co.uk/"
-        />
-        <meta
-          name="twitter:title"
-          content=" Best SEO Agency London | Premium SEO Services & Strategy"
-        />
-        <meta
-          name="twitter:description"
-          content="Get a hold of premium SEO services from the best SEO company in London. Market your business with local SEO services, website SEO audit, and much more."
-        />
-        <meta
-          name="twitter:image"
-          content="https://opengraph.b-cdn.net/production/images/bfcef52c-0d5b-4bab-9ceb-58e7a36db5d0.jpg?token=uRXPuhpPu_LtN1-DMGyzw6NQTC-Utl05sDZVYr-WC-U&height=1080&width=1080&expires=33274315420"
-        />
-
-        <script type="application/ld+json">
-          {`
-            {
-              "@type": "WebSite",
-              "@id": "http://www.glassfrogtech.co.uk/#website",
-              "url": "http://www.glassfrogtech.co.uk/",
-              "name": "SEO Services - Glassfrog Technologies",
-              "description": "",
-              "publisher": {
-                "@id": "http://www.glassfrogtech.co.uk/#organization"
-              },
-              "potentialAction": [
-                {
-                  "@type": "SearchAction",
-                  "target": {
-                    "@type": "EntryPoint",
-                    "urlTemplate": "http://www.glassfrogtech.co.uk/?s={search_term_string}"
-                  },
-                  "query-input": {
-                    "@type": "PropertyValueSpecification",
-                    "valueRequired": true,
-                    "valueName": "search_term_string"
-                  }
-                }
-              ],
-              "inLanguage": "en-UK"
-            }
-          `}
-        </script>
-        <script type="application/ld+json">
-          {`
-            {
-              "@type": "BreadcrumbList",
-              "@id": "http://www.glassfrogtech.co.uk/#breadcrumb",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "SEO Services",
-                  "item": "http://www.glassfrogtech.co.uk/"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "SEO Agency London"
-                }
-              ]
-            }
-          `}
-        </script>
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What SEO services can help my website rank better in my city?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "For location specific rankings, local SEO services work the best. If you want your website to rank better in your city, we can target keywords that appeal to the searches based on location. With this, you approach a specific audience easily through search results."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How can I find an SEO agency near me?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "To find an SEO agency, you need to figure out what type of SEO service you want. If you want a full fledged SEO company that can help you achieve multiple goals, an SEO expert company is the best option. They can help you with many SEO services and gain increased traffic for better leads."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is the best SEO service for getting high traffic on my website?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "To get high traffic on your website, you can rely on a number of SEO services. These include local SEO services, SEO copywriting, and many others. To choose the best one, you can contact an SEO company or an SEO expert."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is an SEO marketing agency?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "An SEO marketing agency can help you get more leads and gain high traffic through SEO services. They use SEO and market business with a proper plan. It is different from an SEO company that focuses on your website rankings."
-                  }
-                }
-              ]
-            }
-          `}
-        </script>
-        <script type="application/ld+json">
-          {`
-            {
-              "@type": "WebSite",
-              "@id": "http://www.glassfrogtech.co.uk/#website",
-              "url": "http://www.glassfrogtech.co.uk/",
-              "name": "SEO Services - Glassfrog Technologies",
-              "description": "",
-              "publisher": {
-                "@id": "http://www.glassfrogtech.co.uk/#organization"
-              },
-              "potentialAction": [
-                {
-                  "@type": "SearchAction",
-                  "target": {
-                    "@type": "EntryPoint",
-                    "urlTemplate": "http://www.glassfrogtech.co.uk/?s={search_term_string}"
-                  },
-                  "query-input": {
-                    "@type": "PropertyValueSpecification",
-                    "valueRequired": true,
-                    "valueName": "search_term_string"
-                  }
-                }
-              ],
-              "inLanguage": "en-UK"
-            }
-          `}
-        </script>
-
-        <script type="application/ld+json">
-          {`
-            {
-              "@type": "ImageObject",
-              "inLanguage": "en-UK",
-              "@id": "https://glassfrogtech.co.uk/#primaryimage",
-              "url": "https://glassfrogtech.co.uk/logo.svg",
-              "contentUrl": "https://glassfrogtech.co.uk/logo.svg",
-              "width": 87,
-              "height": 83
-            }
-          `}
-        </script>
-
-        <script type="application/ld+json">
-          {`
-            {
-              "@type": "Organization",
-              "@id": "https://glassfrogtech.co.uk/#organization",
-              "name": "SEO Services -  Glassfrog Technologies",
-              "url": "https://glassfrogtech.co.uk/",
-              "logo": {
-                "@type": "ImageObject",
-                "inLanguage": "en-UK",
-                "@id": "https://glassfrogtech.co.uk/#/schema/logo/image/",
-                "url": "https://glassfrogtech.co.uk/logo.svg",
-                "contentUrl": "https://glassfrogtech.co.uk/logo.svg",
-                "width": 237,
-                "height": 61,
-                "caption": "SEO Services -  Glassfrog Technologies"
-              },
-              "image": {
-                "@id": "https://glassfrogtech.co.uk/#/schema/logo/image/"
-              },
-              "sameAs": [
-                "https://www.facebook.com/GlassfrogTechnologies",
-                "https://www.instagram.com/glassfrog_technologies/",
-                "https://www.linkedin.com/company/glassfrog-technologies/"
-              ]
-            }
-          `}
-        </script>
-      </head>
-     
-   <div className="relative  py-16 px-6 md:px-12 bg-gray-100 ">
-  {/* Content */}
+      <div className="relative py-16 px-6 md:px-12 bg-gray-100">
         <div className="max-w-7xl mx-auto h-full   flex items-center justify-between text-center md:text-left">
           <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -601,7 +409,6 @@ const router = useRouter();
         </nav>
       </div>
     </motion.header>
-          {/* Text Section */}
           <div className="flex flex-col md:flex-row gap-4 mx-auto">
     <div className="flex-1 h-[80vh] flex flex-col items-center md:items-start  justify-center">
       <motion.h1
@@ -611,7 +418,7 @@ const router = useRouter();
         transition={{ duration: 0.5 }}
         style={{ lineHeight: "1.4" }}
       >
-       It will just take a minute to check your <span className="text-[#f55c5c]">Website’s SEO Score</span> 
+       It will just take a minute to check your <span className="text-[#f55c5c]">Website's SEO Score</span> 
       </motion.h1>
       <motion.p
         className="text-lg text-gray-700 mb-6"
@@ -619,7 +426,7 @@ const router = useRouter();
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Find out your website’s effectiveness and performance on Search Engines by answering a short series of questions on SEO Services.
+        Find out your website's effectiveness and performance on Search Engines by answering a short series of questions on SEO Services.
       </motion.p>
       <motion.button
         className="bg-[#f76c6c] text-white py-3 px-6 rounded-md hover:bg-[#f55c5c] transition"
@@ -631,7 +438,6 @@ const router = useRouter();
       </motion.button>
     </div>
 
-    {/* Image Section */}
     <div className="flex-1 h-[80vh] flex justify-center md:justify-end items-center">
       <motion.img
         src="/3d11.png"  // Replace with your image path
@@ -644,7 +450,6 @@ const router = useRouter();
     </div></div>
   </div>
 
-  {/* Modal (if applicable) */}
   {isModalOpen && (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <motion.div
@@ -654,7 +459,6 @@ const router = useRouter();
         exit={{ opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.3 }}
       >
-        {/* Close Button */}
         <button
           onClick={toggleModal}
           className="absolute top-4 right-4 text-black hover:text-gray-600"
@@ -673,7 +477,6 @@ const router = useRouter();
             validateForm();
           }}
         >
-          {/* Name Fields */}
           <div className="flex gap-4">
             <div className="w-full">
               <label
@@ -698,7 +501,6 @@ const router = useRouter();
             </div>
           </div>
 
-          {/* Email Field */}
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-black">
               Email *
@@ -718,7 +520,6 @@ const router = useRouter();
             )}
           </div>
 
-          {/* Phone Number Field */}
           <div>
             <label
               htmlFor="phoneNumber"
@@ -741,7 +542,6 @@ const router = useRouter();
             )}
           </div>
 
-          {/* Website Link */}
           <div className="w-full">
             <label
               htmlFor="websiteLink"
@@ -764,7 +564,6 @@ const router = useRouter();
             )}
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-[#f76c6c] text-white py-3 rounded-md text-lg font-semibold hover:bg-[#f55c5c] transition flex items-center justify-center"
@@ -800,16 +599,10 @@ const router = useRouter();
           </button>
         </form>
 
-        {/* Footer Note */}
         <p className="text-sm text-black mt-4 text-center">
           Your personalised results will be emailed to you along with relevant
           marketing tips. You can opt out at any time.
         </p>
-        {/* <p className="text-sm text-center mt-2">
-          <a href="#" className="text-pink-500 hover:underline">
-            Privacy Policy
-          </a>
-        </p> */}
       </motion.div>
     </div>
         )}
@@ -822,7 +615,6 @@ const router = useRouter();
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.3 }}
           >
-            {/* Close Button */}
             <button
               onClick={toggleContactModal}
               className="absolute top-4 right-4 text-black hover:text-gray-600"
@@ -841,7 +633,6 @@ const router = useRouter();
                 validateContactForm();
               }}
             >
-              {/* Name Field */}
               <div>
                 <label
                   htmlFor="name"
@@ -864,7 +655,6 @@ const router = useRouter();
                 )}
               </div>
 
-              {/* Email Field */}
               <div>
                 <label
                   htmlFor="email"
@@ -887,7 +677,6 @@ const router = useRouter();
                 )}
               </div>
 
-              {/* Phone Number Field */}
               <div>
                 <label
                   htmlFor="phoneNumber"
@@ -910,7 +699,6 @@ const router = useRouter();
                 )}
               </div>
 
-              {/* Message Field */}
               <div>
                 <label
                   htmlFor="message"
@@ -933,7 +721,6 @@ const router = useRouter();
                 )}
               </div>
 
-              {/* Submit Button */}
               <button
             type="submit"
             className="w-full bg-[#f76c6c] text-white py-3 rounded-md text-lg font-semibold hover:bg-[#f55c5c] transition flex items-center justify-center"
@@ -1017,7 +804,6 @@ We offer a range of Search Engine Optimization (SEO) services. As one of the bes
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        {/* Heading */}
         <motion.h2
           className="text-4xl font-bold mb-4"
           initial={{ opacity: 0, y: -20 }}
@@ -1026,14 +812,12 @@ We offer a range of Search Engine Optimization (SEO) services. As one of the bes
         >
           Results that leave an impact
         </motion.h2>
-        {/* Underline */}
         <motion.div
           className="w-16 h-1 bg-white mx-auto mb-6"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.6 }}
         ></motion.div>
-        {/* Description */}
         <motion.p
           className="text-lg mb-6"
           initial={{ opacity: 0, y: 20 }}
@@ -1043,7 +827,6 @@ We offer a range of Search Engine Optimization (SEO) services. As one of the bes
           Just ranking ahead of your competitors and getting increased traffic will never solve your real SEO marketing purpose. As an SEO marketing agency, we will refine your traffic. This implies that the kind of users we will draw to your website will be highly specific to your geographic location, product type, service purpose, and business model. This results in improved results, further attracting better sales numbers for you!
           <br></br><span className="font-bold">Check now if your present SEO status will help you draw improved results.</span> 
         </motion.p>
-        {/* Button */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -1071,7 +854,7 @@ We offer a range of Search Engine Optimization (SEO) services. As one of the bes
           Our SEO service strategy
         </h2>
         <p className="text-gray-600 text-sm md:text-base">
-We do not just start working on your website in order to help you rank. We strategize and execute. Here’s how we plan your search engine optimization services to drive impactful results for your business through your website. 
+We do not just start working on your website in order to help you rank. We strategize and execute. Here's how we plan your search engine optimization services to drive impactful results for your business through your website. 
           </p>
       </motion.div>
 
@@ -1109,7 +892,7 @@ How our SEO services worked out for our clients
 
           </motion.h2>
             <p className="text-gray-600 text-sm md:text-base p-[0.8rem] md:p-0">
-As the best SEO company in the UK, we have worked with a variety of clients in a variety of domains. By closely working on our plan and applying SEO services,<br></br> we have produced impressive results. Here’s how we have left an impact on other businesses and websites like yours!</p>
+As the best SEO company in the UK, we have worked with a variety of clients in a variety of domains. By closely working on our plan and applying SEO services,<br></br> we have produced impressive results. Here's how we have left an impact on other businesses and websites like yours!</p>
       </div>
        <motion.div
       className="grid grid-cols-1 text-left md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4"
@@ -1140,7 +923,6 @@ As the best SEO company in the UK, we have worked with a variety of clients in a
             </span>
           </div>
 
-          {/* Description Box */}
           <motion.div
             className="mt-4 text-sm text-gray-600 text-left"
             initial={{ opacity: 0, height: 0 }}
@@ -1210,14 +992,6 @@ As the best SEO company in the UK, we have worked with a variety of clients in a
                   alt={testimonial.name}
                   className=" h-8 object-cover"
                 />
-{/* <motion.p
-                className="text-sm text-gray-600 mb-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, duration: 1 }}
-              > 
-                {testimonial.title}
-              </motion.p> */}
 
               </div>
               

@@ -57,7 +57,7 @@ const questions = [
   {
     section: "Technical SEO",
     question:
-      "Are you unaware of whether your site complies with Google’s Core Web Vitals standards?",
+      "Are you unaware of whether your site complies with Google's Core Web Vitals standards?",
   },
   {
     section: "Technical SEO",
@@ -159,32 +159,37 @@ const Questionnaire = () => {
           setLoading(true); // Set loading to true during submission
     
           try {
-            const response = await fetch("/api/csend", {
+            const response = await fetch('/api/contact', {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
               },
-              body: JSON.stringify(contactFormData),
+              body: JSON.stringify({
+                name: contactFormData.name,
+                email: contactFormData.email,
+                phone: contactFormData.phoneNumber,
+                message: contactFormData.message,
+                source: "quiz_contact"
+              }),
             });
-    
-            if (response.ok) {
-              console.log("Contact form submitted successfully");
-              setContactFormData({
-                name: "",
-                email: "",
-                phoneNumber: "",
-                message: "",
-              }); // Clear form fields
-              setErrors({});
-              toast.success("Contact form submitted successfully!");
-              setIsContactModalOpen(false); // Close the contact modal after success
-            } else {
-              const result = await response.json();
-              toast.error("Error submitting contact form");
-              console.error("Error:", result.error);
+
+            if (!response.ok) {
+              const error = await response.json();
+              throw new Error(error.error || 'Failed to submit form');
             }
+
+            toast.success("Contact form submitted successfully!");
+            setContactFormData({
+              name: "",
+              email: "",
+              phoneNumber: "",
+              message: "",
+            });
+            setErrors({});
+            setIsContactModalOpen(false);
           } catch (error) {
             console.error("Error submitting contact form:", error);
+            toast.error("Error submitting contact form");
           } finally {
             setLoading(false);
           }
