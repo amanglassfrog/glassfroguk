@@ -1,10 +1,10 @@
-export default {
-  async fetch(request, env, ctx) {
-    return new Response('Hello World!');
-  },
-};
+import { next } from '@cloudflare/next-on-pages';
 
-export const config = {
-  compatibility_date: "2024-02-04",
-  compatibility_flags: ["nodejs_compat"]
+// Export a default object containing the Cloudflare Pages Functions configuration
+export default {
+  ...next,
+  config: {
+    compatibility_date: "2024-02-04",
+    compatibility_flags: ["nodejs_compat"]
+  }
 }; 

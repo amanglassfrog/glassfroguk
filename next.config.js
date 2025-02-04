@@ -2,10 +2,12 @@
 const nextConfig = {
   // Your existing config here
   experimental: {
-    runtime: 'edge',
-    // This enables the edge runtime for all pages
-    // You can also enable it per-page basis
+    serverActions: true,
   },
+  // Configure for Cloudflare Pages
+  env: {
+    NEXT_RUNTIME: 'edge'
+  }
 }
 
 module.exports = nextConfig 
