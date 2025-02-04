@@ -1,13 +1,7 @@
 import { next } from '@cloudflare/next-on-pages'
 
 // Export the Pages Functions configuration
-export const onRequest = next({
-  // Optional: Provide custom configuration
-  config: {
-    compatibility_date: "2024-02-04",
-    compatibility_flags: ["nodejs_compat"]
-  }
-});
+export const onRequest = next();
 
 export default {
   async fetch(request, env, ctx) {
