@@ -2,23 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --foreground: #000000;
-    --background: #ffffff;
-  }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --foreground: #ffffff;
-      --background: #000000;
-    }
-  }
-
-  body {
-    @apply text-foreground bg-background min-h-screen antialiased;
-  }
-}
 
 @layer components {
   .container {
