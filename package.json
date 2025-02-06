@@ -10,7 +10,7 @@
     "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static",
     "start": "next start",
     "lint": "next lint"
-  },
+  }, 
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@sendgrid/mail": "^8.1.4",
