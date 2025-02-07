@@ -15,7 +15,7 @@ const services = [
   {
     id: 1,
     title: "Local SEO",
-    description: "We put you on the map! Get your Website's rankings soaring in the local charts for an improved business outreach with local SEO services. We help you target users through keywords relevant to your business location. Our local SEO expert services will help you rank in the healthy searches. ",
+    description: "We put you on the map! Get your Website's rankings soaring in the local charts for an improved business outreach with local <a href='https://www.glassfrogtech.co.uk/'>SEO Services</a>. We help you target users through keywords relevant to your business location. Our local SEO expert services will help you rank in the healthy searches. ",
     icon: "📍", // Replace with an icon component if needed
   },
   {
@@ -60,7 +60,7 @@ const seo = [
     id: 4,
     title: "On-Page SEO",
     description:
-      "As we create a keyword optimized content, we create engaging meta titles. Moreover, we help you with descriptions and headers. This makes your website more optimized and user friendly. As an SEO agency, this is our main goal.",
+      "As we create a keyword optimized content, we create engaging meta titles. Moreover, we help you with descriptions and headers. This makes your website more optimized and user friendly. As an  <a href='https://www.glassfrogtech.co.uk/'>SEO agency </a>, this is our main goal.",
     icon: "🔍",
   },
   {
@@ -105,7 +105,7 @@ const seoservices = [
   { title: "Local SEO", icon: "📦", description: "Our constant efforts in Local SEO hiked visibility by 80% in local searches and map results for our clients on Search Engines Results Pages SERPs." },
   { title: "Mobile SEO", icon: "📚", description: "Most websites are operated on mobile devices. Hence, Mobile SEO is important. Our clients recorded a 70% growth in traffic and engagement." },
   { title: "Internal Linking", icon: "⭐", description: "Our clients recorded a growth of 50% in page views and distributing link equity. Due to an improved internal linking structure in their SEO." },
-  { title: "Website Crawlability", icon: "💬", description: "Our client's websites crawled 60% better with technical SEO services. As an SEO company, we helped them achieve better SEO rankings." },
+  { title: "Website Crawlability", icon: "💬", description: "Our client's websites crawled 60% better with technical  <a href='https://www.glassfrogtech.co.uk/'>SEO Services</a>. As an <a href='https://www.glassfrogtech.co.uk/'>SEO company</a>, we helped them achieve better SEO rankings." },
 ];
 
 const highlightPercentage = (text) => {
@@ -117,28 +117,28 @@ const testimonials = [
     name: "Beezap",
     title: "CEO, Example Inc.",
     feedback:
-      "Glassfrog is definitely the best SEO company. Their SEO services boosted our website rankings and helped us with increased business over time.",
+      "Glassfrog is definitely the best <a href='https://www.glassfrogtech.co.uk/'>SEO company</a>. Their <a href='https://www.glassfrogtech.co.uk/'>SEO Services</a> boosted our website rankings and helped us with increased business over time.",
     image: "/bp.webp", // Replace with an actual image path or URL
   },
   {
     name: "Jane Smith",
     title: "Ginies Career hub",
     feedback:
-      "I was looking for a reliable London SEO agency and then came across Glassfrog. Their local SEO efforts branded me better in my location. I am very happy with their SEO efforts.",
+      "I was looking for a reliable London <a href='https://www.glassfrogtech.co.uk/'>SEO agency </a> and then came across Glassfrog. Their local SEO efforts branded me better in my location. I am very happy with their SEO efforts.",
     image: "/cgs.webp", // Replace with an actual image path or URL
   },
   {
     name: "Unbox Basics",
     title: "Designer, Creative Agency",
     feedback:
-      "I am so glad to have contacted an SEO company for my website. They helped me so much with ranking high. My business works so much better after high Google rankings.",
+      "I am so glad to have contacted an <a href='https://www.glassfrogtech.co.uk/'>SEO company</a> for my website. They helped me so much with ranking high. My business works so much better after high Google rankings.",
     image: "/Unbox.webp", // Replace with an actual image path or URL
   },
   {
     name: "The Field Sports",
     title: "Designer, Creative Agency",
     feedback:
-      "We were looking for a good SEO agency UK and I came across Glassfrog. Their SEO copywriting really helped me connect with my users. It also helped me rank better on Google. ",
+      "We were looking for a good <a href='https://www.glassfrogtech.co.uk/'>SEO agency </a> UK and I came across Glassfrog. Their SEO copywriting really helped me connect with my users. It also helped me rank better on Google. ",
     image: "/tf.png", // Replace with an actual image path or URL
   },
   // Add more testimonials here
@@ -147,22 +147,22 @@ const faqs = [
   {
     question: "What SEO services can help my website rank better in my city?",
     answer:
-      "For location specific rankings, local SEO services work the best. If you want your website to rank better in your city, we can target keywords that appeal to the searches based on location. With this, you approach a specific audience easily through search results.",
+      "For location specific rankings, local <a href='https://www.glassfrogtech.co.uk/'>SEO Services</a> work the best. If you want your website to rank better in your city, we can target keywords that appeal to the searches based on location. With this, you approach a specific audience easily through search results.",
   },
   {
-    question: "How can I find an SEO agency near me?",
+    question: "How can I find an <a href='https://www.glassfrogtech.co.uk/'>SEO agency </a> near me?",
     answer:
-      "To find an SEO agency, you need to figure out what type of SEO service you want. If you want a full fledged SEO company that can help you achieve multiple goals, an SEO expert company is the best option. They can help you with many SEO services and gain increased traffic for better leads.",
+      "To find an <a href='https://www.glassfrogtech.co.uk/'>SEO agency </a>, you need to figure out what type of SEO service you want. If you want a full fledged <a href='https://www.glassfrogtech.co.uk/'>SEO company</a> that can help you achieve multiple goals, an SEO expert company is the best option. They can help you with many <a href='https://www.glassfrogtech.co.uk/'>SEO Services</a> and gain increased traffic for better leads.",
   },
   {
     question: "What is the best SEO service for getting high traffic on my website?",
     answer:
-      "To get high traffic on your website, you can rely on a number of SEO services. These include local SEO services, SEO copywriting, and many others. To choose the best one, you can contact an SEO company or an SEO expert.",
+      "To get high traffic on your website, you can rely on a number of <a href='https://www.glassfrogtech.co.uk/'>SEO Services</a>. These include local <a href='https://www.glassfrogtech.co.uk/'>SEO Services</a>, SEO copywriting, and many others. To choose the best one, you can contact an <a href='https://www.glassfrogtech.co.uk/'>SEO company</a> or an SEO expert.",
   },
   {
     question: "What is an SEO marketing agency?",
     answer:
-      "An SEO marketing agency can help you get more leads and gain high traffic through SEO services. They use SEO and market business with a proper plan. It is different from an SEO company that focuses on your website rankings. ",
+      "An SEO marketing agency can help you get more leads and gain high traffic through <a href='https://www.glassfrogtech.co.uk/'>SEO Services</a>. They use SEO and market business with a proper plan. It is different from an <a href='https://www.glassfrogtech.co.uk/'>SEO company</a> that focuses on your website rankings. ",
   },
 ];
 
@@ -426,7 +426,7 @@ const router = useRouter();
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Find out your website's effectiveness and performance on Search Engines by answering a short series of questions on SEO Services.
+        Find out your website's effectiveness and performance on Search Engines by answering a short series of questions on <a href="https://www.glassfrogtech.co.uk/">SEO Services</a>.
       </motion.p>
       <motion.button
         className="bg-[#f76c6c] text-white py-3 px-6 rounded-md hover:bg-[#f55c5c] transition"
@@ -769,10 +769,10 @@ const router = useRouter();
         transition={{ duration: 0.6 }}
       ><p>Your Website Ranking Sorted</p>
         <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
-          SEO Services tailored to your Website
+         <a href="https://www.glassfrogtech.co.uk/">SEO Services</a> tailored to your Website
         </h2>
         <p className="text-gray-600 md:text-xl text-lg">
-We offer a range of Search Engine Optimization (SEO) services. As one of the best SEO agencies in the UK, we carefully plan search marketing strategies for you. While doing so, we consider the requirements of your business goals. This helps us create the perfect plan as an SEO company.        </p>
+We offer a range of Search Engine Optimization (SEO) services. As one of the best SEO agencies in the UK, we carefully plan search marketing strategies for you. While doing so, we consider the requirements of your business goals. This helps us create the perfect plan as an <a href='https://www.glassfrogtech.co.uk/'>SEO company</a>.        </p>
       </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6 pt-4">
@@ -789,9 +789,8 @@ We offer a range of Search Engine Optimization (SEO) services. As one of the bes
             <h3 className="text-xl font-semibold text-gray-800 mb-2">
               {service.title}
             </h3>
-            <p className="text-gray-600 text-sm">
-              {service.description}
-            </p>
+                      <p className="text-gray-600 text-sm" dangerouslySetInnerHTML={{ __html: service.description }}></p>
+
           </motion.div>
         ))}
       </div>
@@ -872,9 +871,10 @@ We do not just start working on your website in order to help you rank. We strat
            <div><h3 className="text-xl font-semibold text-gray-800 mb-2">
               {service.title}
             </h3>
-            <p className="text-gray-600 text-sm">
-              {service.description}
-            </p></div> 
+            <p
+      className="text-gray-600 text-sm"
+      dangerouslySetInnerHTML={{ __html: service.description }}
+    /></div> 
           </motion.div>
         ))}
       </div>
@@ -888,11 +888,11 @@ We do not just start working on your website in order to help you rank. We strat
           transition={{ duration: 0.5 }}
         >
          
-How our SEO services worked out for our clients
+How our <a href="https://www.glassfrogtech.co.uk/">SEO Services</a>worked out for our clients
 
           </motion.h2>
             <p className="text-gray-600 text-sm md:text-base p-[0.8rem] md:p-0">
-As the best SEO company in the UK, we have worked with a variety of clients in a variety of domains. By closely working on our plan and applying SEO services,<br></br> we have produced impressive results. Here's how we have left an impact on other businesses and websites like yours!</p>
+As the best <a href='https://www.glassfrogtech.co.uk/'>SEO company</a> in the UK, we have worked with a variety of clients in a variety of domains. By closely working on our plan and applying <a href="https://www.glassfrogtech.co.uk/">SEO Services</a>,<br></br> we have produced impressive results. Here's how we have left an impact on other businesses and websites like yours!</p>
       </div>
        <motion.div
       className="grid grid-cols-1 text-left md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4"
@@ -969,15 +969,14 @@ As the best SEO company in the UK, we have worked with a variety of clients in a
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index} className="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-lg">
               
-               <motion.p
-                className="text-lg md:text-4xl text-gray-500"
-                style={{lineHeight: 1.5}}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6, duration: 1 }}
-              >
-                "{testimonial.feedback}"
-              </motion.p>
+                <motion.p
+      className="text-lg md:text-4xl text-gray-500"
+      style={{ lineHeight: 1.5 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.6, duration: 1 }}
+      dangerouslySetInnerHTML={{ __html: testimonial.feedback }}
+    />
               <motion.p
                 className="text-xl font-semibold mb-2"
                 initial={{ opacity: 0 }}
@@ -1003,7 +1002,8 @@ As the best SEO company in the UK, we have worked with a variety of clients in a
       </div>
       </div>
        <section className="max-w-2xl mx-auto p-6">
-      <h2 className="text-3xl font-bold text-center mb-6">Frequently Asked Questions</h2>
+        <h2 className="text-3xl font-bold text-center mb-6">Frequently Asked Questions</h2>
+        <p>We understand that the process of finding the best <a href="https://www.glassfrogtech.co.uk/">SEO Agency London</a> can be tough. There can be many questions about how to get started with your <a href="https://www.glassfrogtech.co.uk/"> London SEO</a>. To help you better on how to find a good <a href="https://www.glassfrogtech.co.uk/">search engine optimization company london</a>, we have tried answering the common questions. Check out the most frequently asked questions about <a href="https://www.glassfrogtech.co.uk/">SEO providers London</a> that we have answered for you. If you have more questions about <a href="https://www.glassfrogtech.co.uk/">SEO Agency in the UK</a>, connect with us for a quick session!</p>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
           <div key={index} className="border-b border-gray-300">
@@ -1025,7 +1025,10 @@ As the best SEO company in the UK, we have worked with a variety of clients in a
               transition={{ duration: 0.3 }}
               className="overflow-hidden"
             >
-              <p className="text-gray-600 p-2">{faq.answer}</p>
+              <p
+      className="text-gray-600 p-2"
+      dangerouslySetInnerHTML={{ __html: faq.answer }}
+    />
             </motion.div>
           </div>
         ))}

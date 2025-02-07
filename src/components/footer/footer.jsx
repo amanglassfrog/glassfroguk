@@ -69,11 +69,12 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Our Vision</h4>
             <p>
-              Our vision as an SEO agency and digital marketing company is
-              simple. We want to brand your business. We use our experience and
-              expertise to help you grow and find your audience better and
-              quicker. Our aim is to put you on the digital map and get your
-              increased leads and sales.
+              Our vision as an{" "}
+              <a href="https://www.glassfrogtech.co.uk/">SEO agency </a> and
+              digital marketing company is simple. We want to brand your
+              business. We use our experience and expertise to help you grow and
+              find your audience better and quicker. Our aim is to put you on
+              the digital map and get your increased leads and sales.
             </p>
             <p>
               Contact us now and grow your business with expert SEO and digital

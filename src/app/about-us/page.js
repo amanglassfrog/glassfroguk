@@ -51,13 +51,13 @@ export default function AboutPage() {
               </h2>
               <div className="text-gray-600 text-sm md:text-base space-y-4">
                 <p>
-                  Search Engine Optimization is more than a necessity. It is a marketing strategy that can help your business grow. With SEO services and search engine marketing, you can get targeted results. As a strategic SEO agency in the UK, we ensure that your search results ranking helps you with more engaging users on your website.
+                  Search Engine Optimization is more than a necessity. It is a marketing strategy that can help your business grow. With <a href="https://www.glassfrogtech.co.uk/">SEO Services</a> and search engine marketing, you can get targeted results. As a strategic <a href="https://www.glassfrogtech.co.uk/">SEO agency</a>  in the UK, we ensure that your search results ranking helps you with more engaging users on your website.
                 </p>
                 <p>
                   Finding the right traffic, increasing conversion, reducing bounce rates, and increasing your domain authority is all we focus on. With us, you do not simply rank; you market yourself through the medium of your website on various search engines.
                 </p>
                 <p>
-                  We club the SEO services with other digital marketing plans. This helps your business grow in different directions. Moreover, you get high quality leads and increased conversion. Our strategy has worked for all of your clients, and it can help you grow, too.
+                  We club the <a href="https://www.glassfrogtech.co.uk/">SEO Services</a> with other digital marketing plans. This helps your business grow in different directions. Moreover, you get high quality leads and increased conversion. Our strategy has worked for all of your clients, and it can help you grow, too.
                 </p>
               </div>
             </motion.div>
