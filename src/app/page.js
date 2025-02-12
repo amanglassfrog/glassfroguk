@@ -150,7 +150,7 @@ const faqs = [
       "For location specific rankings, local <a href='https://www.glassfrogtech.co.uk/'>SEO Services</a> work the best. If you want your website to rank better in your city, we can target keywords that appeal to the searches based on location. With this, you approach a specific audience easily through search results.",
   },
   {
-    question: "How can I find an <a href='https://www.glassfrogtech.co.uk/'>SEO agency </a> near me?",
+    question: "How can I find an SEO agency near me?",
     answer:
       "To find an <a href='https://www.glassfrogtech.co.uk/'>SEO agency </a>, you need to figure out what type of SEO service you want. If you want a full fledged <a href='https://www.glassfrogtech.co.uk/'>SEO company</a> that can help you achieve multiple goals, an SEO expert company is the best option. They can help you with many <a href='https://www.glassfrogtech.co.uk/'>SEO Services</a> and gain increased traffic for better leads.",
   },
