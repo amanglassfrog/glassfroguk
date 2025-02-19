@@ -21,7 +21,7 @@ export default function Footer() {
 
           {/* Email Info */}
           <div>
-            <p className="text-xl font-bold">info@glassfrogtech.co.uk</p>
+            <p className="text-xl font-bold">inquiry@glassfrogtech.co.uk</p>
             <p>
               Write to us to get your website audit and SEO consultation now!{" "}
             </p>
