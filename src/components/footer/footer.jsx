@@ -16,7 +16,7 @@ export default function Footer() {
           <div>
             {/* <p className="text-xl font-bold">+91 9084712335, +91 9084712325</p> */}
             <p>Monday to Friday:</p>
-            <p>8:30AM - 6PM</p>
+            <p>8:30AM - 6:00PM</p>
           </div>
 
           {/* Email Info */}
@@ -37,7 +37,7 @@ export default function Footer() {
 
       {/* Bottom Section */}
       <div className="bg-[#060f3c] py-8">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Get in Touch */}
           <div>
             <h4 className="font-bold mb-4">Get in touch</h4>
@@ -49,22 +49,22 @@ export default function Footer() {
               </li>
             </ul>
             {/* Social Icons */}
-            {/* <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-white hover:text-green-400">
-                <i className="fab fa-linkedin"></i>
-              </a>
-              <a href="#" className="text-white hover:text-green-400">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a href="#" className="text-white hover:text-green-400">
-                <i className="fab fa-facebook"></i>
-              </a>
-              <a href="#" className="text-white hover:text-green-400">
-                <i className="fab fa-twitter"></i>
-              </a>
-            </div> */}
           </div>
-
+          <div className="flex   flex-col">
+            <h4 className="font-bold mb-4">SEO(Search Engine Optimization) </h4>
+            <a
+              href="/seo-greater-manchester"
+              className="text-white hover:text-green-400"
+            >
+              Seo Manchester
+            </a>
+            <a
+              href="/seo-edinburgh"
+              className="text-white hover:text-green-400"
+            >
+              Seo Edinburgh
+            </a>
+          </div>
           {/* More Than SEO */}
           <div>
             <h4 className="font-bold mb-4">Our Vision</h4>
