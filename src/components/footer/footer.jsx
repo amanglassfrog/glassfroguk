@@ -59,7 +59,7 @@ export default function Footer() {
               Seo Manchester
             </a>
             <a
-              href="/seo-edinburgh"
+              href="/seo-in-edinburgh"
               className="text-white hover:text-green-400"
             >
               Seo Edinburgh
