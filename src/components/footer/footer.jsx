@@ -56,13 +56,16 @@ export default function Footer() {
               href="/seo-greater-manchester"
               className="text-white hover:text-green-400"
             >
-              Seo Manchester
+              SEo Manchester
             </a>
             <a
               href="/seo-in-edinburgh"
               className="text-white hover:text-green-400"
             >
-              Seo Edinburgh
+              SEO Edinburgh
+            </a>
+            <a href="/seo-in-leeds" className="text-white hover:text-green-400">
+              SEO Leeds
             </a>
           </div>
           {/* More Than SEO */}
