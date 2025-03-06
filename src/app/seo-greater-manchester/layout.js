@@ -1,8 +1,3 @@
-
-
-
-
-
 import React from "react";
 export const metadata = {
   title: "Get desired ranking with SEO in Greater Manchester",

@@ -367,7 +367,7 @@ const router = useRouter();
   return (
     <>
       <head>
-        <head>
+        
         <link rel="canonical" href="https://www.glassfrogtech.co.uk/" />
         <meta property="og:url" content="https://www.glassfrogtech.co.uk/" />
         <meta property="og:type" content="website" />
@@ -599,7 +599,7 @@ const router = useRouter();
           }}
         />
       </head>
-      </head>
+      
       <div className="relative py-16 px-6 md:px-12 bg-gray-100">
         <div className="max-w-7xl mx-auto h-full   flex items-center justify-between text-center md:text-left">
           <motion.header
