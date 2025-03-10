@@ -85,6 +85,12 @@ export default function Footer() {
             >
               SEO Bristol
             </a>
+            <a
+              href="/seo-in-southampton"
+              className="text-white hover:text-green-400"
+            >
+              SEO Southampton
+            </a>
           </div>
           {/* More Than SEO */}
           <div>
