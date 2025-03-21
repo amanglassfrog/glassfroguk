@@ -116,7 +116,23 @@ const page = () => {
         setFormData((prevData) => ({ ...prevData, [name]: value }));
       };
   return (
-      <>
+    <>
+      <head>
+<link rel="canonical" href="https://www.glassfrogtech.co.uk/seo-greater-manchester"/>
+        <meta property="og:url" content="https://www.glassfrogtech.co.uk/seo-greater-manchester"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Get desired ranking with SEO in Greater Manchester"/>
+<meta property="og:description" content="Glassfrog Technologies provides SEO services in Greater Manchester. Now you can get the desired ranking for your website in just some clicks. Contact us now! "/>
+<meta property="og:image" content="https://www.glassfrogtech.co.uk/logo.svg"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="twitter:domain" content="glassfrogtech.co.uk"/>
+<meta property="twitter:url" content="https://www.glassfrogtech.co.uk/seo-greater-manchester"/>
+<meta name="twitter:title" content="Get desired ranking with SEO in Greater Manchester"/>
+<meta name="twitter:description" content="Glassfrog Technologies provides SEO services in Greater Manchester. Now you can get the desired ranking for your website in just some clicks. Contact us now! "/>
+<meta name="twitter:image" content="https://www.glassfrogtech.co.uk/logo.svg"/>
+
+      </head>
           <Header />
           <div className="flex flex-col md:flex-row gap-4 mx-auto py-20 px-6 md:px-12">
     <div className="flex-1 h-[80vh] flex flex-col items-center md:items-start  justify-center">

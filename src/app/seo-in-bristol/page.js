@@ -116,7 +116,23 @@ const page = () => {
         setFormData((prevData) => ({ ...prevData, [name]: value }));
       };
   return (
-      <>
+    <>
+      <head>
+        <link rel="canonical" href="https://www.glassfrogtech.co.uk/seo-in-bristol"/>
+<meta property="og:url" content="https://www.glassfrogtech.co.uk/seo-in-bristol"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Best SEO Agency Bristol: Expert SEO Services Bristol  "/>
+<meta property="og:description" content="Pick from the top SEO Agencies in Bristol for the best SEO services Bristol and get top ranking with quick and easy Search Engine Optimisation Bristol. "/>
+<meta property="og:image" content="https://www.glassfrogtech.co.uk/logo.svg"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="twitter:domain" content="glassfrogtech.co.uk"/>
+<meta property="twitter:url" content="https://www.glassfrogtech.co.uk/seo-in-bristol"/>
+<meta name="twitter:title" content="Best SEO Agency Bristol: Expert SEO Services Bristol  "/>
+<meta name="twitter:description" content="Pick from the top SEO Agencies in Bristol for the best SEO services Bristol and get top ranking with quick and easy Search Engine Optimisation Bristol. "/>
+<meta name="twitter:image" content="https://www.glassfrogtech.co.uk/logo.svg"/>
+
+      </head>
           <Header />
           <div className="flex max-w-7xl mx-auto  flex-col md:flex-row gap-4 pt-28 md:h-screen">
     <div className="flex-1 h-[80vh] flex flex-col items-center md:items-start  justify-center">
