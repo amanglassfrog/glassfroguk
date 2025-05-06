@@ -299,14 +299,14 @@ The digital market is growing very rapidly. From Google to Instagram, every chan
           </div>
           <section className="pt-5 max-w-7xl mx-auto pb-10">
               
-<motion.h1
+<motion.h3
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           What is SEO Marketing?
-        </motion.h1>
+        </motion.h3>
         <p className="mt-4 text-lg ">
          SEO marketing is the process of website optimisation in order to improve the online presence in search engine results. This is a kind of organic marketing, which is often considered as an unpaid one. When the targeted customer search for important keywords relevant to your business, a number of results appear to them. These include your competitors. In a city, customers need location, specific results. Therefore, businesses go for <a href='https://www.glassfrogtech.co.uk/seo-in-birmingham'>SEO Birmingham</a>. 
 <br></br><br></br>

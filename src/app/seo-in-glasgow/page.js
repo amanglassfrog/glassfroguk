@@ -314,14 +314,14 @@ const page = () => {
           </div>
           <section className="pt-5 max-w-7xl mx-auto pb-10">
               
-<motion.h1
+<motion.h3
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           Good SEO Strategy = Great Interaction With The Target Audience
-        </motion.h1>
+        </motion.h3>
         <p className="mt-4 text-lg ">
          Yes, that's right! A good strategy is the best way to understand your target audience. Once you've understood your audience, you will know how to interact with them best, right?  </p>
           </section>

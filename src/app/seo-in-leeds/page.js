@@ -297,14 +297,14 @@ const page = () => {
           </div>
           <section className="pt-5 max-w-7xl mx-auto pb-10 text-center">
               
-<motion.h1
+<motion.h3
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           Doubtful about working with an <a href='https://www.glassfrogtech.co.uk/seo-in-leeds'>SEO company in Leeds</a>?
-        </motion.h1>
+        </motion.h3>
         <p className="mt-4 text-lg ">
          Don't think too much, and just keep scrolling!
         </p>
@@ -403,14 +403,14 @@ Every brand is unique, thus it deserves an SEO strategy planned especially for i
           
           <section className="pt-5 max-w-7xl mx-auto pb-10 text-center">
               
-<motion.h1
+<motion.h3
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           Glassfrog Technology: Your  <a href='https://www.glassfrogtech.co.uk/seo-in-leeds'>SEO Marketing Company in Leeds</a>
-        </motion.h1>
+        </motion.h3>
         <p className="mt-4 text-lg ">
          Glassfrog Technologies is an <a href='https://www.glassfrogtech.co.uk/seo-in-leeds'>SEO Company in Leeds</a>. We are determined to provide skilled SEO services to the brands who are willing to have an online presence. We have a team of experts who specialize in crafting SEO strategies, especially for your brand. We have a strong track record boasting about our successes. You can shake hands with Glassfrog Technologies to assist all kinds of businesses to stand out in the dense online economy and reach objective results.
         </p>

@@ -308,7 +308,7 @@ Looking to know more about <a href='https://www.glassfrogtech.co.uk/seo-in-liver
 
           <section className="pt-5 max-w-7xl mx-auto pb-10">
               
-<motion.h1
+<motion.h3
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -316,7 +316,7 @@ Looking to know more about <a href='https://www.glassfrogtech.co.uk/seo-in-liver
         >
           <a href='https://www.glassfrogtech.co.uk/seo-in-liverpool'>
 Liverpool SEO Services</a> that your business needs
-        </motion.h1>
+        </motion.h3>
         <p className="mt-4 text-lg ">
 If you are looking for an <a href='https://www.glassfrogtech.co.uk/seo-in-liverpool'>SEO Agency in Liverpool</a> that can help you market your business in the city organically, we are the right choice. Our services in SEO are based on a simple understanding of search engine optimisation. We do not simply use it to just enhance your website’s ranking. We also employ it to drive a good amount of organic traffic on your website. Good <a href='https://www.glassfrogtech.co.uk/seo-in-liverpool'>SEO services Liverpool</a> will help you get audience that is highly interested in your product and services. As a good <a href='https://www.glassfrogtech.co.uk/seo-in-liverpool'>SEO agency Liverpool</a>, we focus on that. Therefore, we offer the following <a href='https://www.glassfrogtech.co.uk/seo-in-liverpool'>SEO services in Liverpool</a> to help you out:  </p>
           </section>
@@ -356,14 +356,14 @@ If you are looking for an <a href='https://www.glassfrogtech.co.uk/seo-in-liverp
       
       {/* Call to Action */}
       <section className="text-center py-20 px-5">
-       <motion.h1
+       <motion.h3
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           Our <a href='https://www.glassfrogtech.co.uk/seo-in-liverpool'>Liverpool SEO</a> Process
-        </motion.h1>
+        </motion.h3>
         <p className="mt-4 text-lg">At Glassfrog, best <a href='https://www.glassfrogtech.co.uk/seo-in-liverpool'>SEO Agency Liverpool</a>, the process is simple. We understand your business, study your goals, strategise your marketing plans, and execute them. This helps us deliver the results. If you are looking for an <a href='https://www.glassfrogtech.co.uk/seo-in-liverpool'>SEO agency in Liverpool</a> which can carefully help you achieve your marketing goals through Search Engine Marketing, we are the right choice. 
 Connect with us now and change the way you approach your customers! 
 </p>

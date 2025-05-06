@@ -297,14 +297,14 @@ const page = () => {
           </div>
           <section className="pt-5 max-w-7xl mx-auto pb-10">
               
-<motion.h1
+<motion.h3
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           Let's first understand the steps you need to follow to be partners with<br></br> the top <a href='https://www.glassfrogtech.co.uk/seo-in-edinburgh'>SEO agency in Edinburgh</a>:
-        </motion.h1>
+        </motion.h3>
         <p className="mt-4 text-lg ">
          First of all, study and select the best <a href='https://www.glassfrogtech.co.uk/seo-in-edinburgh'>SEO services in Edinburgh</a>. It's easy; you just need to filter out the SEO companies according to their experience, reputation, & testimonials.
 <br></br><br></br>

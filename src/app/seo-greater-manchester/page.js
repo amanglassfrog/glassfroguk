@@ -299,14 +299,14 @@ const page = () => {
             <div className="bg-[#060f3c] text-white min-h-screen">
       {/* Hero Section */}
       <section className="flex flex-col items-center text-center pt-10 px-5">
-        <motion.h1
+        <motion.h4
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           Wondering why? We have answers to all your queries and confusions.<br></br> Just stick around!
-        </motion.h1>
+        </motion.h4>
         <p className="mt-4 text-lg max-w-2xl">
           As an <a href='/seo-greater-manchester' className='font-bold'>SEO consultant in Manchester</a>, GlassFrog Technologies creates SEO strategies that are dedicated to your industry niche, target audience, and business goals. We ensure that neither our strategies nor your hopes with them go in vain! We have a team of experts who keep their eyes on all the SEO trends leading the market to provide you with the best!
         </p>
@@ -350,14 +350,14 @@ const page = () => {
       <div>
       {/* Process Section */}
               <section className="py-20 px-5 bg-white">
-                  <motion.h2
+                  <motion.h4
           className="text-3xl font-bold text-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
          Now comes the question: why choose <br></br> Glassfrog Technologies?
-        </motion.h2>
+        </motion.h4>
                   <p className="mt-4 text-lg  text-center">
                       But do you know that we have helped businesses increase their ranking by 40% through <a href='/seo-greater-manchester' className='font-bold'>SEO services in Manchester?</a> We have a team of experts who specialize in crafting SEO strategies, especially for your brand. We have a strong track record boasting about our successes. You can shake hands with Glassfrog Technologies to assist all kinds of businesses to stand out in the dense online economy and reach objective results.
         </p>

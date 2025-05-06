@@ -309,14 +309,14 @@ A good <a href='https://www.glassfrogtech.co.uk/seo-in-southampton'>Southampton 
 
           <section className="pt-5 max-w-7xl mx-auto pb-10">
               
-<motion.h1
+<motion.h3
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           What is SEO Marketing, and Why Does Your Southampton Business Need It?
-        </motion.h1>
+        </motion.h3>
         <p className="mt-4 text-lg ">
 Using <a href='https://www.glassfrogtech.co.uk/seo-in-southampton'>SEO services Southampton</a> to grow your business in a way that increases its awareness as well as leads is everything SEO marketing is about. This is organic marketing which drives users to your website organically and naturally. This implies that in order to get increased traffic, you will not have to rely on ads or paid traffic. 
 In Southampton, you will wish to get local traffic better. A good <a href='https://www.glassfrogtech.co.uk/seo-in-southampton'>SEO agency in Southampton</a> will ensure that. A good SEO strategy can help you enhance your ranking on Google and other search engines. This can happen by making your website relevant, trustworthy, and user-friendly. With the search engine pages will recognise this, they will naturally rank higher.
@@ -328,14 +328,14 @@ For local businesses, <a href='https://www.glassfrogtech.co.uk/seo-in-southampto
           </section>
           <section className="pt-5 max-w-7xl mx-auto pb-10">
               
-<motion.h1
+<motion.h3
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
            A Step-by-Step Guide to Southampton Success  
-        </motion.h1>
+        </motion.h3>
               <p className="mt-4 text-lg pb-4">
 When you are looking for the best Southampton SEO Services, there are several factors you must consider. One of the most important factors is the methodology of the <a href='https://www.glassfrogtech.co.uk/seo-in-southampton'>Southampton SEO Agency</a> that you are choosing. You should analyse if the services that they are offering you are relevant to your business. This will help you figure out the best <a href='https://www.glassfrogtech.co.uk/seo-in-southampton'>SEO Agency in Southampton</a> that can help you grow on Search Engine Rank Pages.        </p>
           </section>
@@ -376,14 +376,14 @@ When you are looking for the best Southampton SEO Services, there are several fa
       
       {/* Call to Action */}
       <section className="text-center py-20 px-5">
-       <motion.h1
+       <motion.h3
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
            How Glassfrog Helps You Attract More Leads from Southampton Customers 
-        </motion.h1>
+        </motion.h3>
         <p className="mt-4 text-lg">It is extremely important to select the best out of all the  <a href='https://www.glassfrogtech.co.uk/seo-in-southampton'>SEO consultant Southampton.</a> This can make or break your business in the local markets. Glassfrog totally understand that. Therefore, we offer better services that support your business’s growth. Our purpose is to help you find your audience in a better way. Our process is simple. We analyse, strategise, and implement. 
 
 The small things that we do can make the largest impact. Previously, our clients noticed an average hike of 68% in their monthly traffic which resulted in a much better turnover. The increasing number of leads led to much higher business numbers. Hence, as an  <a href='https://www.glassfrogtech.co.uk/seo-in-southampton'>SEO agency in Southampton</a>, we are not only relevant to your business but also crucial. 

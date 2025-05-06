@@ -306,14 +306,14 @@ As one of the <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO agenc
 
           <section className="pt-5 max-w-7xl mx-auto pb-10">
               
-<motion.h1
+<motion.h3
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           Searching for the best <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO agency Bristol</a>? We are here! 
-        </motion.h1>
+        </motion.h3>
         <p className="mt-4 text-lg ">
 If you are looking for the best <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO agencies in Bristol</a>, the common promises you will come across are of top rankings. But rankings don’t get you business altogether. It is the quality that comes into the play as well. Attracting quality leads that are right for your business is very important. You need to find the traffic that is interested in your business and product. We understand that.
                   <br></br><br></br>
@@ -321,14 +321,14 @@ We focus on helping to attract the right kind of traffic. This traffic can help 
           </section>
           <section className="pt-5 max-w-7xl mx-auto pb-10">
               
-<motion.h1
+<motion.h3
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
            <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO Services Bristol</a> to help you find your customers  
-        </motion.h1>
+        </motion.h3>
               <p className="mt-4 text-lg pb-4">
                   Every business is found with a different purpose and approach. Therefore, every business is different and unique. We tailor our services to your business. Our <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO services Bristol</a> are strategised in a way that they can help you find the best solution to your rankings as well as lead generation problems. We start by understanding your business and product. Accordingly, we strategise in the best way to create a solution that fits your business. 
         </p>
