@@ -117,22 +117,7 @@ const page = () => {
       };
   return (
     <>
-      <head>
-        <link rel="canonical" href="https://www.glassfrogtech.co.uk/seo-in-southampton" />
-        <meta property="og:url" content="https://www.glassfrogtech.co.uk/seo-in-southampton"/>
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Best Southampton SEO Agency | Southampton SEO Services   "/>
-<meta property="og:description" content="Get hold of the best SEO services in Southampton with expert SEO Agency in Southampton. Find the top ranking seo consultant Southampton strategy with us! "/>
-<meta property="og:image" content="https://www.glassfrogtech.co.uk/logo.svg"/>
-
-<meta name="twitter:card" content="summary_large_image"/>
-<meta property="twitter:domain" content="glassfrogtech.co.uk"/>
-<meta property="twitter:url" content="https://www.glassfrogtech.co.uk/seo-in-southampton"/>
-<meta name="twitter:title" content="Best Southampton SEO Agency | Southampton SEO Services   "/>
-<meta name="twitter:description" content="Get hold of the best SEO services in Southampton with expert SEO Agency in Southampton. Find the top ranking seo consultant Southampton strategy with us! "/>
-<meta name="twitter:image" content="https://www.glassfrogtech.co.uk/logo.svg"/>
-
-      </head>
+      
           <Header />
           <div className="flex max-w-7xl mx-auto  flex-col md:flex-row gap-4 pt-28 md:h-screen">
     <div className="flex-1 h-[80vh] flex flex-col items-center md:items-start  justify-center">
