@@ -11,21 +11,54 @@ import "react-toastify/dist/ReactToastify.css"; // Importing the required CSS
 const steps = [
     {
       title: "Step 1",
-      description: "First, you must determine and understand your brand goals and needs."
+      description: "Then, you will need to determine and know your brand needs and goals."
     },
     {
       title: "Step 2",
-      description: "Research the different SEO companies in Glasgow. Compare them based on experience, pricing, and client testimonials."
+      description: "Research various SEO firms in Glasgow. Compare them on experience, cost, and client reviews."
     },
     {
       title: "Step 3",
-      description: "Schedule a consultation with your selected companies; choose the SEO company that best suits."
+      description: "The final step is to book an appointment with your chosen companies; select the SEO company most appropriate for you."
     },
     {
       title: "Step 4",
-      description: "After the consultations, you'll be able to choose the SEO company that best suits your brand goals and needs."
+      description: "Upon the consultations, you are free to select the SEO agency best suited to your brand's requirements and goals."
     }
-  ];
+];
+  const services = [
+  {
+    title: 'Small Business SEO',
+    description:
+      'You thought that owning a small business would keep you away from competing with large businesses online. Think again. Glasgow small business SEO services are what you should have to become more noticed and attract local customers. We optimize your content according to your target market so that you achieve your target audience faster.',
+  },
+  {
+    title: 'SEO Content',
+    description:
+      "Your brand's authenticity requires authentic strategies. That means an SEO strategy is customized especially to your needs. As an SEO company in Glasgow, we provide user-friendly, optimized content. The fun fact is that it also supports search engine optimization! Our SEO copywriting will convey your product's unique selling points (USPs) and raise your website's search engine ranking (SERP).",
+  },
+  {
+    title: 'Local SEO',
+    description:
+      "To provide these services, we make use of maps. Why? To boost the local charts' rankings for your website. By using local SEO services, the company's reach is improved. We help you use the right keywords for the target audience in the area of your business. Our local SEO services in Glasgow will help you rank better in healthy searches.",
+  },
+  {
+    title: 'E-Commerce SEO',
+    description:
+      'Planning for your online business to be on top? With our SEO in Glasgow, you can easily connect with your target audience. Connecting with your clientele can be done in several ways. E-commerce SEO is one of them. By concentrating on consumers of your product kind, we ensure organic sales growth.',
+  },
+  {
+    title: 'On-Page SEO',
+    description:
+      'The SEO in Glasgow includes on-page SEO services, too! You must be thinking, "Why do I need on-page SEO?" Right? Well, your brand needs a well-optimised website for search engines to ensure increased visibility and traffic. Our on-page SEO techniques optimize elements such as meta tags, headings, and keyword placement to improve your overall search engine ranking.',
+  },
+  {
+    title: 'Off-Page SEO',
+    description:
+      "Off-Page SEO? Why on earth would I need that? Is that what you had in mind? Let us resolve this for you. Your website requires off-page SEO to boost its credibility and authority in search engines' perception. As Glasgow SEO company, we create helpful backlinks and a robust presence online via social media and others. This puts your website high up in the search results and boosts organic traffic.",
+  },
+  
+];
 const page = () => {
 
      const { showToast } = useToast();
@@ -153,7 +186,7 @@ const page = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-       People often confuse high ranking with the effectiveness of SEO strategies. It is important to keep in mind that success is not guaranteed by high ranking. Then what does?</motion.p>
+       People often confuse high ranking with the effectiveness of SEO strategies. It is essential to remember that high ranking does not guarantee success Then what does?</motion.p>
      
     </div>
 
@@ -346,7 +379,7 @@ const page = () => {
   <p className='pb-5'>Marketing strategies that have worked wonders for businesses in Glasgow by some experts from various SEO agencies in Glasgow were:</p><div className="grid md:grid-cols-3 gap-6">
     {[
       { title: 'Content optimisation', desc: "The kind of traffic a website attracts is the way to check its visibility. Thus, your website must attract organic traffic to survive digital marketing. To make your website achieve that, it is essential to create high-quality, relatable content. Moreover, search engines need to optimise the content to improve your website's ranking." },
-      { title: 'Keyword research', desc: "Understanding and filtering out the right keywords in a website's content is essential. Why? Your website needs keyword research to drive targeted traffic to your website. By undertaking thorough keyword research, an SEO company in Glasgow can be helpful to you for optimising your website. A good SEO agency will optimise it with the phrases your target audience seeks to increase the website's ranking." },
+      { title: 'Keyword research', desc: "Understanding and filtering out the right keywords in a website's content is essential. Why? Your website needs keyword research to drive targeted traffic to your website. By undertaking thorough keyword research, an SEO company in Glasgow can help you optimize your website. . A good SEO agency will optimise it with the phrases your target audience seeks to increase the website's ranking." },
       { title: 'Link building', desc: " Link building is another major factor that affects your website's authority and credibility. Generating high-quality backlinks from credible websites can help you improve your website's credibility in the eyes of several search engines. This helps you reach high rankings and attract organic traffic to your website." },
       { title: 'Local SEO tactics', desc: "Adopting local SEO techniques, such as upgrading your Google My Business listing and using location-specific keywords, can help your website appears in local search results. This can also be valuable for local or small businesses willing to attract target audiences in their area."},
        ].map((service, index) => (
@@ -375,9 +408,9 @@ const page = () => {
         transition={{ duration: 1 }}
         className="container mx-auto text-center"
       >
-        <h2 className="text-3xl font-semibold text-gray-800 mb-8">How to Find the Best SEO Company in Glasgow</h2>
+        <h2 className="text-3xl font-semibold text-gray-800 mb-8">Now, let's explore how to find the best SEO company in Glasgow to assist you and your website with practical, result-driven strategies.</h2>
         <p className="text-lg text-gray-600 mb-12">
-          Follow these simple steps to find the SEO agency that's your perfect digital marketing partner:
+          Make your way through these easy steps to discover the SEO agency that's your ideal digital marketing buddy:
         </p>
         <div className="space-y-8">
           {steps.map((step, index) => (
@@ -395,7 +428,8 @@ const page = () => {
         </div>
         <div className="mt-12">
           <p className="text-md text-gray-500">
-            NOTE: Remember to ask questions about their approach, communication style, and past successes to ensure a successful partnership.
+            NOTE: Don't forget to ask about their strategy, communication style, and past successes to ensure the partnership is a success.
+
           </p>
         </div>
       </motion.div>
@@ -417,8 +451,20 @@ const page = () => {
           </button> */}
         </motion.div>
       </section>
+      </div>
+         <section className="text-center py-20 px-5">
+ <div className="px-4 py-12 mx-auto max-w-7xl">
+      <h2 className="text-3xl font-bold text-center mb-8">Here's the thing: why should you choose Glassfrog as your Glasgow SEO partner?</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((service, index) => (
+          <div key={index} className="bg-white shadow-lg rounded-2xl p-6 border hover:shadow-xl transition-all">
+            <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+            <p className="text-gray-600 text-sm">{service.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
-
+</section>
           <Footer/>
       
       
