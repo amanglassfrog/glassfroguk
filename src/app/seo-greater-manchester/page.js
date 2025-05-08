@@ -9,6 +9,30 @@ import { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify"; // Importing toastify
 import "react-toastify/dist/ReactToastify.css"; // Importing the required CSS
 
+const faqs = [
+  {
+    question: 'What services does Glassfrog Technologies provide?',
+    answer: `As a top SEO agency in Manchester, Glassfrog Technologies operates organic SEO strategies. We provide customized strategies for your industry, target audience, and business goals. This involves a thorough approach, including several steps.
+We start with an audit of your website to understand its weaknesses. Then, we move forward with in-depth keyword research to target the right audience. The further process includes the creation of optimized and user-friendly content, on-page SEO techniques, off-page SEO, and ongoing analysis and adjustments to ensure your website ranks on the search engine results pages (SERPs).
+`,
+  },
+  {
+    question: 'How can Local SEO services help attract more local customers?',
+    answer: `Our Local SEO services in Manchester focus on making your website soar in local search results using maps and geographically relevant keywords. We help you target the specific area where your business operates, ensuring that when potential local clients search for services or products like yours, your website ranks higher in their searches. This enhances your business's outreach within the Manchester area and connects you directly with your local target audience.
+`,
+  },
+  {
+    question: 'How does your E-Commerce SEO in Greater Manchester differ from general SEO?',
+    answer: `Our Greater Manchester E-Commerce SEO is tailored to help your online business succeed. In contrast to broad SEO, we concentrate on methods that promote organic sales. Organic sales are increased by focusing on users who are looking for the kinds of products you sell. This includes optimizing product pages and enhancing online shopping site navigation. Apart from that, executing techniques to engage your particular customer demographic in the Greater Manchester area and beyond culminates in boosted organic sales and business success.
+`,
+  },
+  {
+    question: 'Why is "SEO Content" so important?',
+    answer: `SEO content is essential because it's the unique voice of your brand online and the key to connecting with your clients. As an SEO agency in Manchester, we deliver optimized content with relevant keywords. This is good for search engines but is also easy for your audience to understand. Our SEO copywriting highlights your unique selling points (USPs). Along with that, it is also structured in a way that search engines recognize and promote. This ultimately leads to improving your website's search engine ranking (SERP) and attracting more relevant traffic.
+`,
+  },
+];
+
 const page = () => {
 
      const { showToast } = useToast();
@@ -23,7 +47,10 @@ const page = () => {
       });
     const [errors, setErrors] = useState({});
       const [loading, setLoading] = useState(false);
-      const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(null);
+   const toggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
      useEffect(() => {
         const handleScroll = () => {
@@ -114,7 +141,9 @@ const page = () => {
       const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));
-      };
+  };
+  
+  
   return (
     <>
       
@@ -327,11 +356,11 @@ const page = () => {
   <div className="grid md:grid-cols-3 gap-6">
     {[
       { title: 'Local SEO', desc: "We use maps to deliver these services. Why? To get your website's rankings soaring in the local charts. This enhances the business's outreach through local SEO services. We assist you in using the important keywords for the area of your business for the target audience. You will rank higher in healthy searches with the help of our local <a href='/seo-greater-manchester' className='font-bold'><strong> SEO consultant in Manchester</strong></a>." },
-      { title: 'E-Commerce SEO', desc: "Need your online business to succeed? You can effortlessly reach your target audience with the help of our <a href='/seo-greater-manchester' ><strong>SEO in Greater Manchester</strong</a>. There are several ways to connect with your clients. Among them is SEO for e-commerce. We guarantee organic sales growth by focusing on users of your product kind." },
-      { title: 'SEO Content', desc: "The uniqueness of your brand deserves a unique tone. Then, what can be better than an SEO strategy that's designed especially for you? Can it help you connect with your clients? Yes! We, as an <a href='/seo-greater-manchester' ><strong>SEO agency in Manchester</strong></a>, deliver content that is optimized and easy to use. The bonus point is that it is promoted by search engines. In addition to communicating your product's unique selling points (USPs), our SEO copywriting will improve your website's search engine ranking (SERP)." },
-      { title: 'On-Page SEO', desc: "The <a href='/seo-greater-manchester' ><strong>SEO in Manchester</strong></a> includes the on-page <a href='/' ><strong>SEO services</strong></a> too! You must be thinking, 'Why do I need an on-page SEO?' Right? Well, your brand needs this to make sure that your website is effectively optimized for search engines, leading to increased visibility and traffic. Our on-page SEO techniques are concerned with optimizing elements such as meta tags, headings, and keyword placement to improve your overall search engine ranking."},
-      { title: 'Off-Page SEO', desc: "'Off-Page SEO? Now why would I need that?' Is it exactly what you thought? Let's answer this for you. Off-page SEO is needed to improve your website's authority and credibility in the eyes of search engines. By generating useful backlinks and creating a strong online presence through social media and other platforms. This helps your website rank better in search results and draw more organic traffic." },
-      { title: 'Small Business SEO', desc: "You were thinking that having a small business will not allow you to compete with larger companies in the online world. Think again. Small business <a href='/seo-greater-manchester' className='font-bold'><strong> SEO services in Manchester</strong></a> are important for increasing your visibility and attracting local customers. We optimize your content according to your desired market so that you can reach your target audience more in no time." },
+      { title: 'E-Commerce SEO', desc: "Need your online business to succeed? Reach your target audience without a hustle with the help of our SEO in Greater Manchester. There are several ways to connect with your clients. Among them is SEO for e-commerce. We guarantee organic sales growth by focusing on users of your product kind." },
+      { title: 'SEO Content', desc: "The uniqueness of your brand deserves a unique tone. Then, what can be better than an SEO strategy that's designed especially for you? Can it help you connect with your clients? Yes! We, as an <a href='/seo-greater-manchester' ><strong>SEO agency in Manchester</strong></a>, deliver content that is optimized and easy to use. The bonus point is that search engines promote it. In addition to communicating your product's unique selling points (USPs), our SEO copywriting will improve your website's search engine ranking (SERP)." },
+      { title: 'On-Page SEO', desc: "The <a href='/seo-greater-manchester' ><strong>SEO in Manchester</strong></a> includes the on-page <a href='/' ><strong>SEO services</strong></a> too! You must be thinking, Why do I need on-page SEO? Right? Well, your brand needs this to ensure that your website is being effectively optimized for search engines, leading to better visibility and traffic."},
+      { title: 'Off-Page SEO', desc: "Off-Page SEO? Now, why would I need that? Is this what you were expecting? Let's tell you. Off-page SEO is required in order to enhance the authority and credibility of your website in the vision of the search engines through obtaining quality backlinks and making a strong online presence on social media and other websites. This will help increase your website's rank in search rankings and attract more organic traffic." },
+      { title: 'Small Business SEO', desc: "You were considering that running a small business will not enable you to compete with bigger businesses in the digital world. Think again. Manchester SEO services for small businesses are crucial in order to enhance your visibility and bring in local customers. We optimize your content based on your target market so that you can reach your audience faster." },
     ].map((service, index) => (
       <motion.div
         key={index}
@@ -365,12 +394,12 @@ const page = () => {
   <div className="grid md:grid-cols-1 gap-6 max-w-6xl mx-auto">
     {[
       { step: 'Website Audit', description: "At the outset, we pinpoint the website's shortcomings. Thus, we carry out a thorough audit of the website. We evaluate your website's functionality in terms of both technical and usability. Thus, we identify the areas that require the most work." },
-      { step: 'Keyword Research', description: "Analyzing the kind of keywords that will work best for your audience is the next stage. The best keywords for your website are filtered out. This will help your business reach a wider audience. The SEO objectives are the primary focus of the keyword finalization process." },
+      { step: 'Keyword Research', description: "Analyzing the kind of keywords that will work best for your audience is the next stage. The best keywords for your website are filtered out. It will help your business reach a broader audience. The SEO objectives are the primary focus of the keyword finalization process." },
       { step: 'Content Optimization', description: "We begin developing optimized material, such as landing pages, blogs, and website content, based on the keywords. All your website needs is high-quality content that uses keywords to target viewers and communicates the goal of your website!"},
       { step: 'On-Page SEO', description: "We write captivating meta titles in addition to content that is targeted for keywords. We also assist you with headers and descriptions. Your website becomes more user-friendly and optimized as a result. This is our primary objective as an <a href='/seo-greater-manchester' className='font-bold'>SEO Agency London</a>."},
       { step: 'Technical SEO', description: "Technical SEO balances the backend while we concentrate on the content and on-site SEO. We enhance the structure and page loading speed of your website. We improve your site's mobile friendliness, which search engines take into account as well."},
       { step: 'Backlink Building', description: "High-quality, pertinent backlinks are essential to raising your website's ranks. We build high-quality backlinks to your website. Increasing the domain authority can improve your rankings. Our link-building approach is tailored to each individual."},
-      { step: 'UI/UX Improvement', description: "A website's user experience has an impact on its rankings. Therefore, UI/UX must be user-friendly when working on SEO. As we work on SEO, we also work on usability. This will improve the website's ranks." },
+      { step: 'Improved UI/UX', description: "A website's user experience has an impact on its rankings. Therefore, UI/UX must be user-friendly when working on SEO. As we work on SEO, we also work on usability. This will improve the website's ranks." },
       { step: 'Analysis & Mitigation', description: "We continuously monitor website performance as we carry out SEO strategies. We do a comprehensive study if a strategy does not work as planned. This aids in the development of pertinent strategies for preserving and improving website SEO." }
     ].map((item, index) => (
       <motion.div
@@ -387,7 +416,27 @@ const page = () => {
     ))}
   </div>
 </section>
-
+<div className="max-w-4xl mx-auto px-4 py-12">
+      <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+      <div className="space-y-4">
+        {faqs.map((faq, index) => (
+          <div key={index} className="border rounded-xl overflow-hidden shadow-sm">
+            <button
+              onClick={() => toggle(index)}
+              className="w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 font-medium flex justify-between items-center"
+            >
+              {faq.question}
+              <span className="text-lg">{openIndex === index ? '−' : '+'}</span>
+            </button>
+            {openIndex === index && (
+              <div className="px-6 py-4 text-gray-700 bg-white">
+                {faq.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
       
       {/* Call to Action */}
       <section className="text-center py-20 px-5">
@@ -396,9 +445,11 @@ const page = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Ready to Boost Your Rankings?
+          Do you briefly outline why such actions as website auditing and building backlinks are essential in increasing the ranking of my site?
         </motion.h2>
-        <p className="mt-4 text-lg">Partner with us for strategic and results-driven SEO solutions.</p>
+        <p className="mt-4 text-lg">Website Audit: This first step is crucial as it identifies the deficits in your website, both technically and usability-wise. Knowing what these areas are, we have a clear idea of where to target our efforts in order to lay a solid base for better rankings.<br></br><br></br>
+Backlink Building: Good-quality, targeted backlinks from other authoritative sites are crucial in establishing your site's credibility and trust with search engines. They are like votes of confidence. An authoritative backlink profile boosts your site to increase rank on search results pages and gain more organic traffic.
+</p>
         <motion.div
           className="mt-6"
           initial={{ opacity: 0, y: 20 }}
@@ -408,8 +459,10 @@ const page = () => {
             Contact Us
           </button> */}
         </motion.div>
-      </section>
-    </div>
+        </section>
+        
+      </div>
+       
 
           <Footer/>
       
