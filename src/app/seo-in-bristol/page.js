@@ -8,7 +8,33 @@ import { useToast } from "@/components/ui/ToastContext";
 import { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify"; // Importing toastify
 import "react-toastify/dist/ReactToastify.css"; // Importing the required CSS
+const faqs = [
+  {
+    question: 'Why is Glassfrog Technologies a strategic SEO firm in Bristol?',
+    answer: `We are an SEO firm in Bristol. We don't merely perform standard SEO. We craft intelligent plans. These plans are for your business objectives. We consider your success thoroughly.`,
+  },
+  {
+    question: 'Can SEO services in Bristol actually make my business grow?',
+    answer: `Yes, SEO services in Bristol are effective. They get your website noticed. More people will see your business online. This can bring more customers.
 
+`,
+  },
+  {
+    question: 'Why use Glassfrog Technologies for SEO in Bristol?',
+    answer: `We understand SEO in Bristol very well. Our experts are here. We do not guess. We make a definite plan for your website. We focus on real outcomes.
+`,
+  },
+  {
+    question: 'What type of SEO services in Bristol do you provide?',
+    answer: `We have numerous SEO services in Bristol. These comprise local SEO. We also do e-commerce SEO. We write SEO content to optimise your website itself. We also develop backlinks.
+`,
+  },
+   {
+    question: 'How does your Bristol SEO company develop a strategic plan?',
+    answer: `Our Bristol SEO company first considers your business. We find out about your customers. We discover what you want to achieve. Then we create a step-by-step plan for improved SEO.
+`,
+  },
+];
 const page = () => {
 
      const { showToast } = useToast();
@@ -24,7 +50,9 @@ const page = () => {
     const [errors, setErrors] = useState({});
       const [loading, setLoading] = useState(false);
       const [openIndex, setOpenIndex] = useState(null);
-
+const toggle = (index) => {
+      setOpenIndex(openIndex === index ? null : index);
+    };
      useEffect(() => {
         const handleScroll = () => {
           if (window.scrollY > 50) {
@@ -299,8 +327,8 @@ const page = () => {
               
 
         <p className="mt-4 text-lg ">
-SEO is not just simply ranking on the search engine pages. It is using that to attract more leads and customers for your business. If you are located in a city such as Bristol, a good <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO agency Bristol</a> will consider your location as well. They will understand you business, it’s needs, it’s quality, and it’s nature. Accordingly, they shall strategise to help you with the best SEO marketing that can not increase your visibility but also help you grow. <br></br><br></br>
-As one of the <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO agencies in Bristol</a>, we focus on doing this for your business. We aim to help you reach out to the right set of customers in the right way. By using basic <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO services Bristol</a>, we produce extraordinary results. We are not just any SEO agency in Bristol, we are your SEO marketing partner. 
+SEO is not just simply ranking on the search engine pages. It is used to attract more leads and customers for your business. If you are located in a city such as Bristol, a good <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO agency Bristol</a> will consider your location as well. They will understand your business, its needs, its quality, and its nature. Accordingly, they shall strategise to help you with the best SEO marketing that can not only increase your visibility but also help you grow.<br></br><br></br>
+As one of the <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO agencies in Bristol</a>,we produce extraordinary results. We are not just any SEO agency in Bristol; we are your SEO marketing partner.
         </p>
           </section>
 
@@ -330,8 +358,7 @@ We focus on helping to attract the right kind of traffic. This traffic can help 
            <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO Services Bristol</a> to help you find your customers  
         </motion.h3>
               <p className="mt-4 text-lg pb-4">
-                  Every business is found with a different purpose and approach. Therefore, every business is different and unique. We tailor our services to your business. Our <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO services Bristol</a> are strategised in a way that they can help you find the best solution to your rankings as well as lead generation problems. We start by understanding your business and product. Accordingly, we strategise in the best way to create a solution that fits your business. 
-        </p>
+Every business is founded with a different purpose and approach. Therefore, every business is different and unique. We tailor our services to your business. Our SEO services in Bristol are strategised in a way that they can help you find the best solution to your rankings as well as lead generation problems. We start by understanding your business and product. Accordingly, we strategise in the best way to create a solution that fits your business.        </p>
           </section>
             <div className="bg-[#060f3c] text-white min-h-screen">
       {/* Hero Section */}
@@ -371,8 +398,7 @@ We focus on helping to attract the right kind of traffic. This traffic can help 
           >
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Strategic SEO Marketing</h3>
             <p className="text-gray-600">
-We have been talking about SEO marketing more than just Search Engine Optimisation. This is because SEO just helps you rank. SEO marketing is a full fledged process of marketing that can help you find your audience in the most better way through rankings. SEO is not just about keywords or making the website user friendly. It is also about connecting with your audience. Targeting your customers to find the exact set of customers is exactly what SEO marketing is about. 
-            </p>
+We have been talking about SEO marketing more than just Search Engine Optimisation. This is because SEO just helps you rank. SEO marketing is a full-fledged process that can help you find your audience in the best way through rankings. SEO is not just about keywords or making the website user-friendly. It is also about connecting with your audience. Targeting your customers to find the exact set of customers is exactly what SEO marketing is about.            </p>
           </motion.div>
 
           {/* One Page Optimisation */}
@@ -429,16 +455,16 @@ simply checking your present rankings and working on the keywords to show you th
                   
                   <h2 className="text-3xl font-bold text-center mb-10">Our set of services in  <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO in Bristol </a></h2>
                   <p className='text-center w-full px-2 md:px-20'>
-                      We offer a variety of services in <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>Search Engine Optimisation Bristol</a> that our clients can use in order to grow their business. These services include not only the optimisation parts but also the technical parts.  By using all of the following services, we help our clients achieve their desired results quicker and better. Our <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO services Bristol</a> include the following:
+                      We offer a variety of services in <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>Search Engine Optimisation Bristol</a>  that our clients can use to grow their business. These services include not only the optimisation parts but also the technical parts. By using all of the following services, we help our clients achieve their desired results quickly and effectively. 
                   </p>
   <div className="grid md:grid-cols-1 gap-6 max-w-6xl mx-auto">
     {[
       { step: 'Keyword Research and Targeting', description: " We find the best keywords that match the product and the intent of the target audience searching for it. Accordingly, we target them on your page to help you rank better." },
-      { step: 'On Page Optimisation', description: " Another crucial step on Search Engine Optimisation is On Page Optimisation. As a part of it, we optimise the structure of the website, code, content, and more to make it more crawlable and indexable." },
-      { step: 'Off Page Optimisation', description: " High quality backlinks can really improve the quality of your website and improve its authority. This is crucial if you are looking to achieve credibility from search engines. We handle this part so that your website becomes trustworthy. "},
-      { step: 'Content Marketing', description: " The famous adage goes, “Content is the King”. It really is when it is about attracting users through the content. The more your content appears interesting and engaging, the higher it approaches your users. We improve your content so that your brand and product is voiced in the best way possible. "},
+      { step: 'On Page Optimisation', description: " Another crucial step in Search Engine Optimisation is On-Page Optimisation. As a part of it, we optimise the structure of the website, code, content, and more to make it more crawlable and indexable." },
+      { step: 'Off Page Optimisation', description: " High-quality backlinks can really improve the quality and authority of your website. This is crucial if you are looking to achieve credibility from search engines. We handle this part so that your website becomes trustworthy."},
+      { step: 'Content Marketing', description: " The famous adage goes, “Content is the King”. It really is when it is about attracting users through the content. The more your content appears interesting and engaging, the more it approaches your users. We improve your content so that your brand and product are voiced in the best way possible. "},
       { step: 'Local SEO', description: " If you are looking to grow in the location of Bristol with the help of <a href='https://www.glassfrogtech.co.uk/seo-in-bristol'>SEO agencies in Bristol</a>, then your Google My Business must be best optimised. You need local citation that are valuable to increase your visibility in the local search results. "},
-      { step: 'Technical SEO ', description: " Technical Challenges can really hamper the growth of your website. Search engines such as Google need to ensure that your website is user friendly and not against the policies. Only then, can it rank better on the search engine result pages. "},
+      { step: 'Technical SEO ', description: " Technical Challenges can really hamper the growth of your website. Search engines such as Google need to ensure that your website is user-friendly and not against the policies. Only then can it rank better on the search engine result pages."},
                       ].map((item, index) => (
       <motion.div
         key={index}
@@ -468,7 +494,28 @@ simply checking your present rankings and working on the keywords to show you th
           {/* <button className="px-6 py-3 text-lg bg-[#f76c6c] text-white rounded-xl shadow-md ">
             Contact Us
           </button> */}
-        </motion.div>
+          </motion.div>
+          <div className="max-w-4xl mx-auto px-4 py-12">
+      <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+      <div className="space-y-4">
+        {faqs.map((faq, index) => (
+          <div key={index} className="border rounded-xl overflow-hidden shadow-sm">
+            <button
+              onClick={() => toggle(index)}
+              className="w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 font-medium flex justify-between items-center"
+            >
+              {faq.question}
+              <span className="text-lg">{openIndex === index ? '−' : '+'}</span>
+            </button>
+            {openIndex === index && (
+              <div className="px-6 py-4 text-gray-700 bg-white">
+                {faq.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
       </section>
     </div>
 
