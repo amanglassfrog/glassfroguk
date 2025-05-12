@@ -8,7 +8,32 @@ import { useToast } from "@/components/ui/ToastContext";
 import { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify"; // Importing toastify
 import "react-toastify/dist/ReactToastify.css"; // Importing the required CSS
-
+const faqs = [
+  {
+    question: 'What turns SEO services in Edinburgh into a "magic weapon" for my business?',
+    answer: `Properly utilized SEO in Edinburgh is strong. It significantly raises your online profile. More customers will discover you on the internet. This 'magic' drives more targeted traffic.`,
+  },
+  {
+    question: 'How does an SEO business in Edinburgh make this "magic" work for my company?',
+    answer: `A quality SEO business in Edinburgh employs specialists. They develop a strategy specific to you. It makes your search rankings better. This guarantees the 'magic' produces actual results.
+`,
+  },
+  {
+    question: 'What if SEO in Edinburgh is not utilized in the right way for my brand?',
+    answer: `Bad SEO in Edinburgh won't do you any good. Your website may not be better. You might not get more clients. The 'magic' won't occur.
+`,
+  },
+  {
+    question: 'Why do I need SEO services in Edinburgh compared to other marketing tools?',
+    answer: `SEO services in Edinburgh provide a permanent solution. It assists you in acquiring organic traffic. This implies people discover you organically. It also establishes strong brand awareness.
+`,
+  },
+   {
+    question: 'How does an Edinburgh SEO company decide the "right method" of utilizing SEO for my business?',
+    answer: `An Edinburgh SEO company initially researches your business. They consider your objectives. They know your audience. And then they design a clever SEO strategy. This strategy employs the 'magic' to its best.
+`,
+  },
+];
 const page = () => {
 
      const { showToast } = useToast();
@@ -22,9 +47,12 @@ const page = () => {
         phoneNumber: "",
       });
     const [errors, setErrors] = useState({});
-      const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
+     
       const [openIndex, setOpenIndex] = useState(null);
-
+const toggle = (index) => {
+      setOpenIndex(openIndex === index ? null : index);
+    };
      useEffect(() => {
         const handleScroll = () => {
           if (window.scrollY > 50) {
@@ -339,9 +367,9 @@ Finally, you need to keep track of the progress of the work done by the SEO agen
       { title: 'Local SEO', desc: "To provide these services, we make use of maps. Why? to boost the local charts' rankings for your website. By using local SEO services, the company's reach is improved. We help you use the right keywords for the target audience in the area of your business. Our local <a href='https://www.glassfrogtech.co.uk/seo-in-edinburgh'>SEO services in Edinburgh</a> will help you rank better in healthy searches." },
       { title: 'E-Commerce SEO', desc: "Planning for your online business to be on top? With our  <a href='https://www.glassfrogtech.co.uk/seo-in-edinburgh' >SEO in Edinburgh</a>, you can easily connect with your target audience. Connecting with your clientele can be done in several ways. E-commerce SEO is one of them. By concentrating on consumers of your product kind, we ensure organic sales growth." },
       { title: 'SEO Content', desc: "Your brand's authenticity requires authentic strategies. That means an SEO strategy customized especially according to your needs. As an <a href='https://www.glassfrogtech.co.uk/seo-in-edinburgh'>SEO company in Edinburgh</a>, we provide user-friendly, optimized content. The fun fact is, it supports search engine optimization as well! Our SEO copywriting will not only convey the unique selling points (USPs) of your product but also raise the search engine ranking (SERP) of your website." },
-      { title: 'On-Page SEO', desc: "The <a href='https://www.glassfrogtech.co.uk/seo-in-edinburgh'>SEO in Edinburgh</a>, includes the on-page SEO services too! You must be thinking, 'Why do I need an on-page SEO?' Right? Well, your brand needs this to make sure that your website is effectively optimized for search engines, leading to increased visibility and traffic. Our on-page SEO techniques are concerned with optimizing elements such as meta tags, headings, and keyword placement to improve your overall search engine ranking."},
+      { title: 'On-Page SEO', desc: "The <a href='https://www.glassfrogtech.co.uk/seo-in-edinburgh'>SEO in Edinburgh</a>,  includes the on-page SEO services, too! You must be thinking, Why do I need on-page SEO? Right? Well, your brand needs this to ensure that your website content is well optimized for search engines. This leads to increased visibility and traffic. Our on-page SEO techniques are concerned with optimizing elements such as meta tags, headings, and keyword placement to improve your overall search engine ranking."},
       { title: 'Off-Page SEO', desc: "'Off-Page SEO? Now why would I need that?' Is it exactly what you thought? Let's answer this for you. Your website needs off-page SEO to improve it’s authority and credibility in the eyes of search engines. As an <a href='https://www.glassfrogtech.co.uk/seo-in-edinburgh'>SEO company in Edinburgh</a>, we generate useful backlinks and a strong online presence through social media and other platforms. This helps your website rank better in search results and draw more organic traffic." },
-      { title: 'Small Business SEO', desc: "You were thinking that having a small business will not allow you to compete with larger companies in the online world. Think again. Small business <a href='https://www.glassfrogtech.co.uk/seo-in-edinburgh'>SEO services in Edinburgh</a> are important to increase your visibility and attract local customers. We optimize your content according to your desired market so that you can reach your target audience more in no time" },
+      { title: 'Small Business SEO', desc: "You were considering that a small business would not enable you to compete with big companies in the online marketplace. Think again. Small business SEO benefits in Edinburgh are crucial to raise your visibility and draw local customers. We optimize your content based on your target market so that you can reach your target audience faster." },
     ].map((service, index) => (
       <motion.div
         key={index}
@@ -392,7 +420,8 @@ Finally, you need to keep track of the progress of the work done by the SEO agen
       {/* Call to Action */}
       <section className="text-center py-20 px-5">
        
-        <p className="mt-4 text-lg">Now you know why Glassfrog is the best choice for <a href='https://www.glassfrogtech.co.uk/seo-in-edinburgh'>SEO services in Edinburgh</a>. We have a team of experts who specialize in crafting SEO strategies, especially for your brand. We have a strong track record boasting about our successes. You can shake hands with Glassfrog Technologies to assist all kinds of businesses to stand out in the dense online economy and reach objective results.</p>
+        <p className="mt-4 text-lg">Now you know why Glassfrog is the best choice for <a href='https://www.glassfrogtech.co.uk/seo-in-edinburgh'>SEO services in Edinburgh</a>. We have a team of experts who specialize in crafting SEO strategies, especially for your brand. We have a strong track record of boasting about our successes. You can shake hands with Glassfrog Technologies to assist all kinds of businesses in standing out in the dense online economy and reaching objective results.
+</p>
         <motion.div
           className="mt-6"
           initial={{ opacity: 0, y: 20 }}
@@ -401,7 +430,28 @@ Finally, you need to keep track of the progress of the work done by the SEO agen
           {/* <button className="px-6 py-3 text-lg bg-[#f76c6c] text-white rounded-xl shadow-md ">
             Contact Us
           </button> */}
-        </motion.div>
+          </motion.div>
+          <div className="max-w-4xl mx-auto px-4 py-12">
+      <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+      <div className="space-y-4">
+        {faqs.map((faq, index) => (
+          <div key={index} className="border rounded-xl overflow-hidden shadow-sm">
+            <button
+              onClick={() => toggle(index)}
+              className="w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 font-medium flex justify-between items-center"
+            >
+              {faq.question}
+              <span className="text-lg">{openIndex === index ? '−' : '+'}</span>
+            </button>
+            {openIndex === index && (
+              <div className="px-6 py-4 text-gray-700 bg-white">
+                {faq.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
       </section>
     </div>
 
