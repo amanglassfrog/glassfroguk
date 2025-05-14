@@ -8,7 +8,29 @@ import { useToast } from "@/components/ui/ToastContext";
 import { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify"; // Importing toastify
 import "react-toastify/dist/ReactToastify.css"; // Importing the required CSS
-
+const faqs = [
+  {
+    question: 'Why is Glassfrog a strategic SEO agency in Southampton?',
+    answer: `We are a Southampton SEO agency. We plan for your business. Our Southampton SEO plans are intelligent. They target your long-term success.
+`,
+  },
+  {
+    question: ' Can SEO services in Southampton help my business grow?',
+    answer: `Yes, good SEO services in Southampton matter. They get more customers to find you online. This SEO in Southampton really can make your business larger.`,
+  },
+  {
+    question: 'Why choose Glassfrog for SEO in Southampton?',
+    answer: `We are experienced with SEO in Southampton. Our staff is good at this. We provide you with professional SEO services in Southampton. We also have a clear idea of what we are going to do.`,
+  },
+  {
+    question: 'What SEO services in Southampton do you offer?',
+    answer: `Our SEO services in Southampton are numerous. We perform local SEO in Southampton. We assist with website content. We work to enhance your website itself.`,
+  },
+   {
+    question: 'How does your SEO agency in Southampton plan strategically?',
+    answer: ` Our SEO agency in Southampton initially learns about your business. We notice who your customers are. We learn about your business goals. Then we create a solid SEO strategy in Southampton.`,
+  },
+];
 const page = () => {
 
      const { showToast } = useToast();
@@ -24,7 +46,9 @@ const page = () => {
     const [errors, setErrors] = useState({});
       const [loading, setLoading] = useState(false);
       const [openIndex, setOpenIndex] = useState(null);
-
+const toggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
      useEffect(() => {
         const handleScroll = () => {
           if (window.scrollY > 50) {
@@ -396,7 +420,28 @@ The small things that we do can make the largest impact. Previously, our clients
           {/* <button className="px-6 py-3 text-lg bg-[#f76c6c] text-white rounded-xl shadow-md ">
             Contact Us
           </button> */}
-        </motion.div>
+          </motion.div>
+           <div className="max-w-4xl mx-auto px-4 py-12">
+      <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+      <div className="space-y-4">
+        {faqs.map((faq, index) => (
+          <div key={index} className="border rounded-xl overflow-hidden shadow-sm">
+            <button
+              onClick={() => toggle(index)}
+              className="w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 font-medium flex justify-between items-center"
+            >
+              {faq.question}
+              <span className="text-lg">{openIndex === index ? '−' : '+'}</span>
+            </button>
+            {openIndex === index && (
+              <div className="px-6 py-4 text-gray-700 bg-white">
+                {faq.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
       </section>
     </div>
 

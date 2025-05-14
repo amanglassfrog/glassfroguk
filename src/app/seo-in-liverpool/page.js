@@ -381,7 +381,7 @@ If you are looking for an <a href='https://www.glassfrogtech.co.uk/seo-in-liverp
 
       
       {/* Call to Action */}
-      <section className="text-center py-20 px-5">
+      <section className=" py-20 px-5">
        <motion.h3
           className="text-3xl font-bold"
           initial={{ opacity: 0, y: -50 }}
