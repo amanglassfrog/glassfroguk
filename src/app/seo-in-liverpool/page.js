@@ -8,7 +8,31 @@ import { useToast } from "@/components/ui/ToastContext";
 import { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify"; // Importing toastify
 import "react-toastify/dist/ReactToastify.css"; // Importing the required CSS
-
+const faqs = [
+  {
+    question: 'What makes Glassfrog a strategic SEO company in Liverpool?',
+    answer: `Glassfrog is a SEO company in Liverpool. We think carefully about your business. Our SEO in Liverpool plans are smart. They aim for your long-term success online.`,
+  },
+  {
+    question: ' Can SEO services in Liverpool really help my business grow?',
+    answer: `Yes, good SEO services in Liverpool are important. They make more customers find you online. This SEO in Liverpool can truly help your business get bigger and better.
+`,
+  },
+  {
+    question: 'Why should I choose Glassfrog for SEO in Liverpool?',
+    answer: `We know SEO in Liverpool well. Our team has great skills in this area. We give you expert SEO services in Liverpool. We also have a clear plan for the work we will do.`,
+  },
+  {
+    question: 'What SEO services in Liverpool do you provide for businesses?',
+    answer: `Our SEO services in Liverpool are many and varied. We do local SEO in Liverpool. We also help with your website's content. We work to make your website itself better for search engines.
+`,
+  },
+   {
+    question: 'How does your SEO company in Liverpool create a strategic plan for my website?',
+    answer: `Our SEO company in Liverpool first learns all about your business. We find out who your customers are. We understand what your business goals are. Then we create a strong SEO in Liverpool plan just for you.
+`,
+  },
+];
 const page = () => {
 
      const { showToast } = useToast();
@@ -24,7 +48,9 @@ const page = () => {
     const [errors, setErrors] = useState({});
       const [loading, setLoading] = useState(false);
       const [openIndex, setOpenIndex] = useState(null);
-
+   const toggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
      useEffect(() => {
         const handleScroll = () => {
           if (window.scrollY > 50) {
@@ -364,9 +390,33 @@ If you are looking for an <a href='https://www.glassfrogtech.co.uk/seo-in-liverp
         >
           Our <a href='https://www.glassfrogtech.co.uk/seo-in-liverpool'>Liverpool SEO</a> Process
         </motion.h3>
-        <p className="mt-4 text-lg">At Glassfrog, best <a href='https://www.glassfrogtech.co.uk/seo-in-liverpool'>SEO Agency Liverpool</a>, the process is simple. We understand your business, study your goals, strategise your marketing plans, and execute them. This helps us deliver the results. If you are looking for an <a href='https://www.glassfrogtech.co.uk/seo-in-liverpool'>SEO agency in Liverpool</a> which can carefully help you achieve your marketing goals through Search Engine Marketing, we are the right choice. 
-Connect with us now and change the way you approach your customers! 
-</p>
+        <p className="mt-4 text-lg">Here's how Glassfrog, the best SEO Agency in Liverpool, works for you:
+          </p>
+          <ul>
+            <li>
+              1. We first understand your business deeply.
+            </li>
+            <li>
+              2. Next, we study your specific goals.
+            </li><li>
+              3. Then, we strategise your marketing plans carefully.
+            </li><li>
+              4. After planning, we actively execute those plans.
+            </li><li>
+              5. This helps us deliver the results you want.
+            </li><li>
+              6. Are you seeking an SEO agency in Liverpool?
+            </li><li>
+              7. Do you want help reaching marketing goals via SEM?
+            </li><li>
+              8. Then, we are the right choice for you.
+
+            </li><li>
+              9. Connect with us right now.
+            </li><li>
+              10. We will change how you reach your customers.
+            </li>
+          </ul>
         <motion.div
           className="mt-6"
           initial={{ opacity: 0, y: 20 }}
@@ -375,8 +425,30 @@ Connect with us now and change the way you approach your customers!
           {/* <button className="px-6 py-3 text-lg bg-[#f76c6c] text-white rounded-xl shadow-md ">
             Contact Us
           </button> */}
-        </motion.div>
-      </section>
+          </motion.div>
+          <div className="max-w-4xl mx-auto px-4 py-12">
+      <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+      <div className="space-y-4">
+        {faqs.map((faq, index) => (
+          <div key={index} className="border rounded-xl overflow-hidden shadow-sm">
+            <button
+              onClick={() => toggle(index)}
+              className="w-full text-left px-6 py-4 bg-gray-50 hover:bg-gray-100 font-medium flex justify-between items-center"
+            >
+              {faq.question}
+              <span className="text-lg">{openIndex === index ? '−' : '+'}</span>
+            </button>
+            {openIndex === index && (
+              <div className="px-6 py-4 text-gray-700 bg-white">
+                {faq.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+        </section>
+        
     </div>
 
           <Footer/>
